@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Botanical Bytes — Website
 
-## Getting Started
+Die Website von **Botanical Bytes**, einem Schülerforschungsprojekt aus Tübingen:
+Pflanzenwachstum messbar machen mit selbst entwickelten Sensorplatinen, einem
+neuronalen Netz und Messung im Minutentakt. Teil der [TFLIT](https://tflit.com)-Familie.
 
-First, run the development server:
+Zweisprachiger Einseiter (`/de` + `/en`) mit Presse-Marquee, Story, Technik-Bento,
+Stat-Sektion, Team, FAQ und Double-Opt-in-Newsletter.
+
+## Stack
+
+- **Next.js 15** (App Router, Turbopack), React 19, TypeScript
+- **Tailwind CSS v4** — Design-Tokens als `@theme` in `src/app/globals.css`
+- **Fonts:** Newsreader (Serif-Display) · Inter (Body) · Jost (Eyebrows) · DM Mono (Messwerte), alle via `next/font`
+- **Newsletter:** [Resend](https://resend.com) (Contacts + Double-Opt-in mit HMAC-Tokens, keine Datenbank)
+- Nur 4 kleine Client-Islands (MobileNav, PcbTabs, ImageCompare, NewsletterForm) — der Rest sind Server Components
+
+## Entwicklung
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # Werte eintragen
+npm run dev                  # http://localhost:3000 → /de
+npm run build && npm start   # Produktions-Build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Inhalte & Sprachen
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Alle Texte liegen in `src/content/de.ts` (Quelle der Wahrheit) und `src/content/en.ts`.
+`en.ts` ist gegen den Typ von `de.ts` geprüft — fehlt ein Key, schlägt der Build fehl.
 
-## Learn More
+## Asset-Pipeline
 
-To learn more about Next.js, take a look at the following resources:
+Die Web-Bilder in `src/assets/img/` werden aus den Original-Fotos des Projekt-Repos
+(`BWKI_24_Plant_Growth_Optimizer`) und den geretteten Bildern in `assets-src/blob/` erzeugt:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+node scripts/prepare-images.mjs      # sharp: Derivate, OG-Bild, Apple-Icon
+node scripts/transcode-timelapse.mjs # ffmpeg-static: Wachstum.gif → mp4/webm/poster
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`assets-src/blob/` ist committet — diese Dateien existierten nur im v0.dev-Blob-Storage
+der alten Website und sind sonst nirgends gesichert.
 
-## Deploy on Vercel
+## Umgebungsvariablen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Variable            | Zweck                                                        |
+| ------------------- | ------------------------------------------------------------ |
+| `RESEND_API_KEY`    | Resend-API-Key                                               |
+| `NEWSLETTER_SECRET` | ≥ 32 zufällige Zeichen, signiert Confirm-/Unsubscribe-Links |
+| `SITE_URL`          | Öffentliche Basis-URL (für Mails, Sitemap, OG)              |
+| `NEWSLETTER_FROM`   | Absender (erst nach Domain-Verifizierung bei Resend ändern) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Offene Punkte vor Veröffentlichung
+
+- [ ] Impressum + Datenschutzerklärung ausfüllen (`src/content/de.ts` / `en.ts`, Platzhalter sind markiert)
+- [ ] Presse-Einträge bestätigen (`press.outlets` in den Dictionaries)
+- [ ] Resend: Domain verifizieren, Env-Vars in Vercel setzen
+- [ ] Logo-Datei einsetzen, falls vorhanden (aktuell Wortmarke + `src/app/icon.svg`)

@@ -1,0 +1,232 @@
+export const de = {
+  locale: "de",
+  meta: {
+    title: "Botanical Bytes – Pflanzenwachstum messbar machen",
+    description:
+      "Schülerforschungsprojekt aus Tübingen: selbst entwickelte Sensorplatinen, ein neuronales Netz und Messung im Minutentakt. BWKI-Juniorpreis 2023, BWKI-Finalist 2024.",
+    ogLocale: "de_DE",
+  },
+  header: {
+    skip: "Zum Inhalt springen",
+    nav: [
+      { href: "#story", label: "Story" },
+      { href: "#technik", label: "Technik" },
+      { href: "#team", label: "Team" },
+      { href: "#faq", label: "FAQ" },
+    ],
+    github: "GitHub",
+    menuOpen: "Menü öffnen",
+    menuClose: "Menü schließen",
+    menuLabel: "Menü",
+    localeSwitch: "Sprache wechseln",
+  },
+  hero: {
+    eyebrow: "Ein Schülerforschungsprojekt aus Tübingen",
+    headline1: "Pflanzen reden nicht.",
+    headline2: "Unsere Sensoren schon.",
+    sub: "Botanical Bytes macht Pflanzenanbau messbar – mit selbst entwickelten Sensorplatinen, einem neuronalen Netz und tausenden Messwerten pro Anbauzyklus.",
+    ctaPrimary: "Projekt entdecken",
+    ctaGithub: "Code auf GitHub",
+    imgAlt: "Nahaufnahme junger Kressepflanzen im Gegenlicht",
+  },
+  press: {
+    eyebrow: "Bekannt aus",
+    ariaLabel: "Presse und Auszeichnungen",
+    outlets: ["SWR", "Reutlinger General-Anzeiger", "DASDING", "Bundeswettbewerb KI", "Jugend forscht"],
+    awards: [
+      "BWKI-Juniorpreis 2023",
+      "BWKI-Finalist 2024",
+      "Jugend forscht 2024: Sonderpreis der Gesellschaft für Produktentwicklung",
+      "Jugend forscht 2024: Sonderpreis Interdisziplinär „Smarte Methoden in der Landwirtschaft“",
+    ],
+  },
+  story: {
+    eyebrow: "Die Story",
+    headline: "Alles begann mit 10 Gramm Kresse.",
+    paragraphs: [
+      "2023 traten wir als botanical_bytes beim Bundeswettbewerb Künstliche Intelligenz an – und gewannen den Juniorpreis. 2024 kamen wir mit dem Nachfolgeprojekt Plant Growth Optimizer ins Finale nach Tübingen.",
+      "Unsere Methode ist bewusst einfach: exakt 10 Gramm Kressesamen pro Aussaat, auf Watte oder Erde. Jeden Tag ein Foto. Am Ende wird der Ertrag gewogen – auf einer Küchenwaage.",
+      "Was sich ändert, sind die Bedingungen. Was gleich bleibt, ist die Messung. So werden Anbauzyklen vergleichbar – Minute für Minute, Zyklus für Zyklus.",
+    ],
+    timeline: [
+      { year: "2023", text: "BWKI-Juniorpreis als botanical_bytes" },
+      { year: "2024", text: "BWKI-Finale in Tübingen mit dem Plant Growth Optimizer" },
+      { year: "2024", text: "Zwei Sonderpreise beim Landeswettbewerb Jugend forscht" },
+    ],
+    img1Alt: "Exakt 10 Gramm Kressesamen werden abgemessen",
+    img2Alt: "Der Messestand beim BWKI-Finale mit Anzuchtschalen und Sensorik",
+    daysHeading: "Ein Zyklus in fünf Tagen",
+    dayLabel: "Tag",
+    daysAlt: "Microgreens-Testreihe, Tag {n} von 5",
+    videoHeading: "Und im Zeitraffer",
+    videoAlt: "Zeitraffer eines Kresse-Wachstumszyklus",
+  },
+  tech: {
+    eyebrow: "Die Technik",
+    headline: "Drei Bausteine. Ein Ziel.",
+    intro: "Eigene Hardware, ein neuronales Netz und Bildverarbeitung – alles offen auf GitHub.",
+    pcb: {
+      headline: "Selbst entworfen. Dreimal verbessert.",
+      body: "Unsere Data-Collector-Platine auf ESP32-S3-Basis misst Temperatur, Luftdruck, Luftfeuchte, Gaswerte, CO₂, Bodenfeuchte und Helligkeit. Alle 60 Sekunden schreibt sie die Werte auf SD-Karte und in die Cloud. Die nächste Generation soll zusätzlich pH-Wert und Nährstoffdichte messen – entworfen ist sie schon, angekommen war sie zur Abgabe 2024 noch nicht.",
+      tabs: [
+        {
+          label: "Prototyp",
+          caption: "Der Anfang: Steckbrett-Elektronik unter der Anzuchtschale im Gewächshaus.",
+          alt: "Anzuchtschale im Gewächshaus mit sichtbarer Prototyp-Elektronik",
+        },
+        {
+          label: "Platine v2",
+          caption: "Die eigene Platine: SD-Karten-Logger mit Anschlüssen für CO₂- und Bodensensor.",
+          alt: "3D-Rendering einer frühen Data-Collector-Platine",
+        },
+        {
+          label: "v3.0",
+          caption: "Plant Growth Optimizer v.3.0: ESP32-S3, BME680 und USB-C – der Name steht im Platinendruck.",
+          alt: "3D-Rendering der Data-Collector-Platine Version 3.0",
+        },
+      ],
+      downloads: "Pläne als PDF:",
+      downloadSchematic: "Schaltplan",
+      downloadPcb: "Platinen-Layout",
+    },
+    nn: {
+      headline: "Ein kleines Netz. Ein großes Ziel.",
+      body: "Unser Keras-Netz (Dense 128 → 64 → 1) lernt aus den Sensordaten: Es sagt die Luftfeuchte aus den übrigen Kanälen voraus. Das ist der erste Schritt. Das Ziel: ein Netz, das die Bewässerung in Echtzeit steuert. Daran arbeiten wir.",
+      codeCaption: "Echter Code aus dem Repo – kein Mockup.",
+      dashboardAlt: "Dashboard mit erfassten Sensordaten eines Wachstumszyklus",
+      dashboardCaption: "Das Admin-Panel zeigt einen Zyklus live.",
+    },
+    seed: {
+      headline: "Jeder Samen zählt. Wörtlich.",
+      body: "Mit OpenCV-Kantenerkennung (Sobel und Canny) analysieren wir auf Fotos, wie die Samen zueinander liegen – denn der Abstand beeinflusst die Keimung. Die Auswertung läuft noch von Hand. Automatisierung: geplant.",
+      originalAlt: "Originalfoto der Kressesamen auf Watte",
+      compareLabel: "Canny und Sobel im Vergleich",
+      compareHint: "Regler ziehen: links Canny, rechts Sobel",
+      cannyAlt: "Canny-Kantenerkennung der Samen",
+      sobelAlt: "Sobel-Kantenerkennung der Samen",
+    },
+  },
+  stats: {
+    big: "Bis zu 25 % mehr Ertrag.",
+    sub: "Nicht durch Magie. Durch die experimentell ermittelte, optimale Wassermenge. Gewogen auf einer Küchenwaage.",
+    imgAlt: "Der Kresse-Ertrag wird auf einer Küchenwaage gewogen",
+    small: [
+      { value: "8.182", label: "Messreihen pro Anbauzyklus" },
+      { value: "60 s", label: "Abstand zwischen zwei Messungen" },
+      { value: "3", label: "Hardware-Generationen" },
+    ],
+  },
+  team: {
+    eyebrow: "Das Team",
+    headline: "Zwei Köpfe. Ein Gewächshaus.",
+    body: "Hinter Botanical Bytes stehen Tillmann Lang und Finn Paparisto. Kennengelernt über den BWKI, zusammengewachsen über Kresse. Botanical Bytes ist Teil der TFLIT-Familie.",
+    imgAlt: "Tillmann und Finn im Fotostudio mit Anzuchtschale und Platine",
+    credit: "Foto: Ale Zea",
+    tflitLabel: "Mehr bei TFLIT",
+  },
+  faq: {
+    eyebrow: "FAQ",
+    headline: "Gute Fragen. Ehrliche Antworten.",
+    items: [
+      {
+        q: "Was ist Botanical Bytes?",
+        a: "Ein Schülerforschungsprojekt, gestartet 2023 für den Bundeswettbewerb Künstliche Intelligenz (BWKI). Wir machen Pflanzenwachstum messbar – mit selbst entwickelten Sensorplatinen, standardisierten Aussaaten und einem neuronalen Netz.",
+      },
+      {
+        q: "Steuert die KI schon die Bewässerung?",
+        a: "Nein – noch nicht. Unser aktuelles Netz sagt die Luftfeuchte aus den übrigen Sensordaten voraus. Die Echtzeit-Steuerung der Bewässerung ist unser erklärtes Ziel und steht auf der Roadmap.",
+      },
+      {
+        q: "Woher kommen die 25 % mehr Ertrag?",
+        a: "Aus Experimenten mit der Wassermenge: Wir haben verschiedene Mengen getestet, die Ernte auf einer Küchenwaage gewogen und die optimale Menge ermittelt. Das war klassische Versuchsarbeit – nicht das neuronale Netz.",
+      },
+      {
+        q: "Warum ausgerechnet Kresse?",
+        a: "Weil sie schnell wächst. Ein protokollierter Zyklus dauert rund 5,7 Tage und liefert bei Messungen im Minutentakt 8.182 Messreihen über sechs aufgezeichnete Sensorkanäle. Außerdem testen wir Radieschen-Microgreens.",
+      },
+      {
+        q: "Was misst die Platine genau?",
+        a: "Temperatur, Luftdruck, Luftfeuchte und Gaswerte (BME680), dazu CO₂, Bodenfeuchte und Helligkeit. Alle 60 Sekunden auf SD-Karte und in die Cloud. Die nächste Platinengeneration soll zusätzlich pH-Wert und Nährstoffdichte erfassen.",
+      },
+      {
+        q: "Ist das Projekt Open Source?",
+        a: "Ja. Platinendesign, Firmware, das neuronale Netz und ein kompletter Beispieldatensatz liegen offen auf GitHub.",
+      },
+    ],
+  },
+  newsletter: {
+    headline: "Kresse wächst schnell. Unser Projekt auch.",
+    sub: "Neues aus dem Gewächshaus, direkt ins Postfach. Selten, aber ehrlich.",
+    label: "E-Mail-Adresse",
+    placeholder: "du@beispiel.de",
+    button: "Abonnieren",
+    loading: "Wird gesendet …",
+    consentPre:
+      "Ich bin einverstanden, dass meine E-Mail-Adresse zum Versand des Newsletters gespeichert wird. Details in der",
+    consentLinkLabel: "Datenschutzerklärung",
+    successConfirm: "Fast geschafft. Bitte bestätige deine E-Mail.",
+    confirmed: "Danke! Dein Abo ist bestätigt.",
+    unsubscribed: "Du bist abgemeldet. Schade – aber jederzeit wieder willkommen.",
+    invalidToken: "Dieser Link ist ungültig oder abgelaufen. Bitte trag dich noch einmal ein.",
+    errInvalid: "Das sieht nicht nach einer E-Mail-Adresse aus.",
+    errConsent: "Bitte bestätige die Einwilligung.",
+    errServer: "Etwas ist schiefgelaufen. Bitte versuch es später noch einmal.",
+    note: "Kein Spam. Abmeldung jederzeit.",
+    confirmPage: {
+      title: "Anmeldung bestätigen",
+      body: "Ein Klick, und du bist dabei: Bestätige, dass du den Botanical-Bytes-Newsletter erhalten möchtest.",
+      button: "Jetzt bestätigen",
+    },
+    unsubPage: {
+      title: "Vom Newsletter abmelden",
+      body: "Schade! Ein Klick, und du bekommst keine Mails mehr von uns.",
+      button: "Jetzt abmelden",
+    },
+  },
+  footer: {
+    brandLine: "Botanical Bytes – ein Projekt der TFLIT-Familie",
+    tflitUrl: "https://tflit.com/arbeiten/botanical-bytes",
+    github: "GitHub",
+    impressum: "Impressum",
+    datenschutz: "Datenschutz",
+    copyright: "© 2026 Botanical Bytes",
+    tagline: "Gebaut mit echten Sensoren und echter Kresse.",
+  },
+  notFound: {
+    headline: "Hier wächst nichts.",
+    body: "Diese Seite gibt es nicht – oder noch nicht. Zurück zur Kresse?",
+    cta: "Zur Startseite",
+  },
+  impressum: {
+    title: "Impressum",
+    todoNote: "Platzhalter – vor Veröffentlichung ausfüllen.",
+    sections: [
+      { h: "Angaben gemäß § 5 DDG", lines: ["[TODO: Vor- und Nachname]", "[TODO: Straße und Hausnummer]", "[TODO: PLZ und Ort]"] },
+      { h: "Kontakt", lines: ["[TODO: E-Mail-Adresse]"] },
+      { h: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV", lines: ["[TODO: Name und Anschrift]"] },
+    ],
+    backHome: "Zurück zur Startseite",
+  },
+  datenschutz: {
+    title: "Datenschutzerklärung",
+    todoNote: "Platzhalter-Struktur – vor Veröffentlichung durch geprüfte Texte ersetzen.",
+    sections: [
+      { h: "Verantwortlicher", lines: ["[TODO: Name und Kontaktdaten des Verantwortlichen]"] },
+      {
+        h: "Hosting",
+        lines: [
+          "Diese Website wird bei Vercel Inc. gehostet. [TODO: Hinweise zu Auftragsverarbeitung, Server-Logs und Standard­vertragsklauseln ergänzen]",
+        ],
+      },
+      {
+        h: "Newsletter",
+        lines: [
+          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren. Zum Versand nutzen wir den Dienst Resend. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung kann jederzeit über den Abmeldelink widerrufen werden. [TODO: vollständigen Text ergänzen]",
+        ],
+      },
+      { h: "Ihre Rechte", lines: ["[TODO: Betroffenenrechte nach DSGVO aufführen]"] },
+      { h: "Stand", lines: ["[TODO: Datum]"] },
+    ],
+    backHome: "Zurück zur Startseite",
+  },
+};
