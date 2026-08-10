@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale } from "@/content";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { NewsletterActionCard } from "@/components/NewsletterActionCard";
+import { PillNav } from "@/components/PillNav";
 
 // Muss pro Request rendern — sonst wird ?token= beim statischen Export ignoriert
 export const dynamic = "force-dynamic";
@@ -36,7 +36,7 @@ export default async function NewsletterConfirmPage({
 
   return (
     <>
-      <Header locale={locale} dict={dict} path="" />
+      <PillNav locale={locale} dict={dict} path="" />
       <NewsletterActionCard
         locale={locale}
         dict={dict}

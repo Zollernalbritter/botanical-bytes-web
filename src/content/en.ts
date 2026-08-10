@@ -3,73 +3,160 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   locale: "en",
   meta: {
-    title: "Botanical Bytes – Making plant growth measurable",
+    title: "Botanical Bytes — Making plant growth measurable",
     description:
       "Student research project from Tübingen: self-built sensor boards, a neural network, and minute-by-minute data. BWKI Junior Prize 2023, BWKI Finalist 2024.",
     ogLocale: "en_US",
   },
-  header: {
+  nav: {
     skip: "Skip to content",
-    nav: [
-      { href: "#story", label: "Story" },
+    home: "Botanical Bytes — home",
+    items: [
       { href: "#technik", label: "Technology" },
-      { href: "#team", label: "Team" },
       { href: "#faq", label: "FAQ" },
     ],
     github: "GitHub",
-    menuOpen: "Open menu",
-    menuClose: "Close menu",
-    menuLabel: "Menu",
-    localeSwitch: "Switch language",
+    localeSwitch: "switch to the German version",
   },
   hero: {
-    eyebrow: "A student research project from Tübingen",
     headline1: "Plants don't talk.",
     headline2: "Our sensors do.",
-    sub: "Botanical Bytes makes plant cultivation measurable — with self-built sensor boards, a neural network, and thousands of data points per growing cycle.",
-    ctaPrimary: "Explore the project",
-    ctaGithub: "Code on GitHub",
-    imgAlt: "Backlit close-up of young cress seedlings",
+    sub: "Botanical Bytes makes growth measurable",
+    videoAlt: "Camera gliding through a sunlit greenhouse toward a tray of young cress",
+    chips: [
+      "Logged 21.8 °C air temperature",
+      "Measured humidity at 64%",
+      "Checked soil moisture",
+      "Synced readings to the cloud",
+      "Captured photo of day 3",
+      "Stored 8,182 data rows",
+      "Logged 986 hPa air pressure",
+      "Next reading in 60 seconds",
+    ],
+    emailPlaceholder: "Your email",
+    emailButton: "Get updates",
+    emailLegal: "Double opt-in, no spam. By submitting you agree to storage —",
+    emailLegalLink: "privacy policy",
+    pause: "Pause video",
+    play: "Play video",
   },
-  press: {
-    eyebrow: "As featured in",
-    ariaLabel: "Press and awards",
-    outlets: ["SWR", "Reutlinger General-Anzeiger", "DASDING", "Bundeswettbewerb KI", "Jugend forscht"],
-    awards: [
-      "BWKI Junior Prize 2023",
-      "BWKI Finalist 2024",
-      "Jugend forscht 2024: Special Award of the Gesellschaft für Produktentwicklung",
-      "Jugend forscht 2024: Interdisciplinary Special Award “Smart Methods in Agriculture”",
+  features: {
+    heading1: "Measure, learn,",
+    heading2: "grow.",
+    blocks: [
+      {
+        title: "Measures around the clock",
+        body: "Every 60 seconds, our self-built board records temperature, humidity, CO₂, light, and soil moisture — to an SD card and the cloud.",
+        mediaAlt: "Time-lapse of a cress growing cycle",
+        card: {
+          title: "Data Collector v3.0",
+          rows: [
+            { label: "Temperature", value: "21.8 °C" },
+            { label: "Humidity", value: "64%" },
+            { label: "Next reading", value: "60 s" },
+          ],
+        },
+      },
+      {
+        title: "Learns from every cycle",
+        body: "One growing cycle yields 8,182 data rows across six channels. Our neural network learns how the conditions relate.",
+        mediaAlt: "Seed tray in the greenhouse with visible prototype electronics",
+        card: {
+          title: "Training …",
+          rows: [
+            { label: "Epoch", value: "940 / 1000" },
+            { label: "Data points", value: "8,182" },
+            { label: "Error", value: "falling ✓" },
+          ],
+        },
+      },
+      {
+        title: "Finds the right amount of water",
+        body: "Through experiments we determined the optimal amount of water — weighed on a kitchen scale, cycle by cycle. The goal: real-time recommendations.",
+        mediaAlt: "Weighing the cress harvest on a kitchen scale",
+        card: {
+          title: "Experiment 12",
+          rows: [
+            { label: "Sowing", value: "10 g cress" },
+            { label: "Water", value: "optimized" },
+            { label: "Yield", value: "+25% ✓" },
+          ],
+        },
+      },
     ],
   },
-  story: {
-    eyebrow: "The story",
-    headline: "It all started with 10 grams of cress.",
-    paragraphs: [
-      "In 2023 we entered Germany's national AI competition (BWKI) as botanical_bytes — and won the Junior Prize. In 2024, our follow-up project Plant Growth Optimizer made the finals in Tübingen.",
-      "Our method is deliberately simple: exactly 10 grams of cress seed per sowing, on cotton wool or soil. A photo every day. At the end, the harvest goes on a kitchen scale.",
-      "The conditions change. The measurement doesn't. That's what makes growing cycles comparable — minute by minute, cycle by cycle.",
+  collage: {
+    qualifier: "up to",
+    big: "25%",
+    line1: "more yield through the",
+    line2: "optimal amount of water",
+    sub1: "The more cycles we measure,",
+    sub2: "the better we understand growth",
+    cards: [
+      { title: "Data row #4,211", rows: ["21.4 °C", "78% RH", "986 hPa"] },
+      { title: "Harvest weighed", rows: ["Cycle 12", "+25% vs. reference"] },
     ],
-    timeline: [
-      { year: "2023", text: "BWKI Junior Prize as botanical_bytes" },
-      { year: "2024", text: "BWKI finals in Tübingen with the Plant Growth Optimizer" },
-      { year: "2024", text: "Two special awards at the Jugend forscht state competition" },
+    imgAlts: [
+      "Backlit close-up of young cress seedlings",
+      "Microgreens on day five of the cycle",
     ],
-    img1Alt: "Measuring out exactly 10 grams of cress seed",
-    img2Alt: "The team's booth at the BWKI finals with seed trays and sensors",
-    daysHeading: "One cycle in five days",
-    dayLabel: "Day",
-    daysAlt: "Microgreens test series, day {n} of 5",
-    videoHeading: "And in time-lapse",
-    videoAlt: "Time-lapse of a cress growing cycle",
+  },
+  milestones: {
+    heading1: "Three years.",
+    heading2: "Three milestones.",
+    items: [
+      {
+        quote: "Junior Prize at Germany's national AI competition.",
+        meta: "2023 · as botanical_bytes",
+        imgAlt: "Tillmann and Finn in the photo studio with a seed tray and a PCB",
+      },
+      {
+        quote: "Finalists in Tübingen with the Plant Growth Optimizer.",
+        meta: "2024 · BWKI",
+        imgAlt: "The team's booth at the BWKI finals with seed trays and sensors",
+      },
+      {
+        quote: "Two special awards at the Jugend forscht state competition.",
+        meta: "2024 · Jugend forscht",
+        imgAlt: "Tillmann and Finn at their Jugend forscht state competition booth",
+      },
+    ],
+    outro: "Behind it all: Tillmann Lang and Finn Paparisto from Tübingen.",
+    pressLine: "As featured in: SWR · Reutlinger General-Anzeiger · DASDING",
+  },
+  how: {
+    heading: "How it works",
+    steps: [
+      {
+        title: "Measure",
+        body: "The Data Collector board sits beneath the seed tray and records seven quantities every minute — from temperature to soil moisture.",
+        imgAlt: "3D render of the Data Collector board revision 3.0",
+      },
+      {
+        title: "Learn",
+        body: "Standardized sowings — always exactly 10 grams of seed — make cycles comparable. The neural network learns the relationships.",
+        imgAlt: "Exactly 10 grams of cress seed on the scale",
+      },
+      {
+        title: "Optimize",
+        body: "The data yields the optimal amount of water. The result: up to 25% more yield — and a system that gets smarter with every cycle.",
+        imgAlt: "Fully grown cress in the seed tray",
+      },
+    ],
+    diagram: {
+      ariaLabel:
+        "Flow diagram: the board measures the plant every minute, the data trains the neural network — the recommendation is planned to flow back to the plant automatically",
+      nodes: ["Plant", "Board", "Data", "Neural network", "Recommendation"],
+      measureLabel: "every 60 seconds",
+      loopLabel: "return loop planned",
+    },
   },
   tech: {
-    eyebrow: "The technology",
-    headline: "Three building blocks. One goal.",
-    intro: "Our own hardware, a neural network, and computer vision — all open on GitHub.",
+    heading: "The hardware in detail",
+    intro: "Board design, firmware, network, and dataset — all open on GitHub.",
     pcb: {
       headline: "Self-designed. Improved three times.",
-      body: "Our ESP32-S3-based Data Collector board measures temperature, air pressure, humidity, gas levels, CO₂, soil moisture, and brightness. Every 60 seconds it logs to an SD card and to the cloud. The next generation adds pH and nutrient density — already designed, but it hadn't arrived by the 2024 deadline.",
+      body: "Our ESP32-S3-based Data Collector board measures temperature, air pressure, humidity, gas levels, CO₂, soil moisture, and brightness. The next generation adds pH and nutrient density — already designed, but it hadn't arrived by the 2024 deadline.",
       tabs: [
         {
           label: "Prototype",
@@ -91,16 +178,9 @@ export const en: Dictionary = {
       downloadSchematic: "Schematic",
       downloadPcb: "PCB layout",
     },
-    nn: {
-      headline: "A small network. A big goal.",
-      body: "Our Keras network (Dense 128 → 64 → 1) learns from the sensor data: it predicts humidity from the other channels. That's step one. The goal: a network that controls irrigation in real time. We're working on it.",
-      codeCaption: "Real code from the repo — not a mockup.",
-      dashboardAlt: "Dashboard showing recorded sensor data from a growing cycle",
-      dashboardCaption: "The admin panel shows a cycle live.",
-    },
     seed: {
       headline: "Every seed counts. Literally.",
-      body: "Using OpenCV edge detection (Sobel and Canny), we analyze photos to see how seeds are spaced — because spacing affects germination. The analysis is still done by hand. Automation: on the roadmap.",
+      body: "Using OpenCV edge detection we analyze how seeds are spaced — spacing affects germination. The analysis is still done by hand.",
       originalAlt: "Original photo of cress seeds on cotton wool",
       compareLabel: "Canny and Sobel compared",
       compareHint: "Drag the slider: Canny on the left, Sobel on the right",
@@ -108,27 +188,8 @@ export const en: Dictionary = {
       sobelAlt: "Sobel edge detection of the seeds",
     },
   },
-  stats: {
-    big: "Up to 25% more yield.",
-    sub: "No magic. Just the experimentally determined, optimal amount of water. Weighed on a kitchen scale.",
-    imgAlt: "Weighing the cress harvest on a kitchen scale",
-    small: [
-      { value: "8,182", label: "data rows per growing cycle" },
-      { value: "60 s", label: "between two measurements" },
-      { value: "3", label: "hardware generations" },
-    ],
-  },
-  team: {
-    eyebrow: "The team",
-    headline: "Two minds. One greenhouse.",
-    body: "Botanical Bytes is Tillmann Lang and Finn Paparisto. Brought together by the BWKI competition, grown together over cress. Botanical Bytes is part of the TFLIT family.",
-    imgAlt: "Tillmann and Finn in the photo studio with a seed tray and a PCB",
-    credit: "Photo: Ale Zea",
-    tflitLabel: "More at TFLIT",
-  },
   faq: {
-    eyebrow: "FAQ",
-    headline: "Good questions. Honest answers.",
+    heading: "FAQ",
     items: [
       {
         q: "What is Botanical Bytes?",
@@ -156,9 +217,12 @@ export const en: Dictionary = {
       },
     ],
   },
+  cta: {
+    heading1: "News from the",
+    heading2: "greenhouse.",
+    imgAlt: "Backlit close-up of young cress seedlings",
+  },
   newsletter: {
-    headline: "Cress grows fast. So does this project.",
-    sub: "News from the greenhouse, straight to your inbox. Rare, but honest.",
     label: "Email address",
     placeholder: "you@example.com",
     button: "Subscribe",
@@ -186,13 +250,18 @@ export const en: Dictionary = {
     },
   },
   footer: {
-    brandLine: "Botanical Bytes — part of the TFLIT family",
+    tagline1: "Making plant growth",
+    tagline2: "measurable.",
+    githubCta: "View the code on GitHub",
+    colProject: "Project",
+    colLegal: "Legal",
+    tflit: "TFLIT",
     tflitUrl: "https://tflit.com/en/arbeiten/botanical-bytes",
     github: "GitHub",
     impressum: "Legal notice",
     datenschutz: "Privacy",
-    copyright: "© 2026 Botanical Bytes",
-    tagline: "Built with real sensors and real cress.",
+    copyright: "© 2026 Botanical Bytes. Made in Tübingen.",
+    family: "Part of the TFLIT family",
   },
   notFound: {
     headline: "Nothing grows here.",

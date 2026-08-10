@@ -1,34 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette: warmer Creme-Grund, Waldgrün-Tinte, TFLIT-Lime als Akzent — nie Weiß */
-  --color-cream: #f8f0e3;
-  --color-cream-soft: #fdf8ef;
-  --color-ink: #123007;
-  --color-lime: #94c11f;
-  --color-offwhite: #f6faef;
-  --color-sage: #e4eedc;
-  --color-sage-deep: #5c6b57;
+  /* Lassie-System: Fast-Weiß + warmer Sand als Grounds, warme Tinte,
+     ein ruhiger Moosgrün-Akzent (statt Lassies Himmelblau) */
+  --color-paper: #f9f8f5;
+  --color-sand: #e3ddcf;
+  --color-ink: #120c08;
+  --color-muted: #57534a;
+  --color-moss: #5a7a4b;
+  --color-moss-deep: #3f5a33;
+  --color-moss-tint: #e2ead9;
 
-  /* Schriftrollen: Serif-Display, Sans-Body, Jost-Eyebrows, Mono für Messwerte */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Schriftrollen wie Lassie: Serif-Display + DM Sans Body + DM Mono Labels */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
-  --font-eyebrow: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-dm-mono), ui-monospace, "Cascadia Mono", monospace;
 
-  --radius-card: 1.25rem;
-  --shadow-card: 0 1px 2px rgb(18 48 7 / 0.06), 0 8px 24px rgb(18 48 7 / 0.07);
-
-  --animate-marquee: marquee 40s linear infinite;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
+  --radius-card: 1.75rem;
+  --radius-media: 2rem;
+  --shadow-pill: 0 1px 2px rgb(18 12 8 / 0.08), 0 4px 12px rgb(18 12 8 / 0.06);
+  --shadow-float: 0 2px 6px rgb(18 12 8 / 0.08), 0 16px 40px rgb(18 12 8 / 0.12);
 }
 
 @layer base {
@@ -37,25 +28,25 @@
   }
 
   body {
-    background-color: var(--color-cream);
+    background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: var(--color-lime);
+    background-color: var(--color-moss-tint);
     color: var(--color-ink);
   }
 
-  /* Tinte auf hellem Grund (Lime schafft dort keine 3:1), Lime auf Ink-Flächen */
   :focus-visible {
     outline: 2px solid var(--color-ink);
     outline-offset: 2px;
   }
 
-  .bg-ink :focus-visible {
-    outline-color: var(--color-lime);
+  .bg-ink :focus-visible,
+  .on-video :focus-visible {
+    outline-color: var(--color-paper);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -72,27 +63,94 @@
   }
 }
 
-/* Edge-Fade für den Presse-Marquee (Fauna-Prinzip); ohne Animation kein Fade,
-   sonst bleibt der erste Eintrag dauerhaft halb ausgeblendet */
-@utility marquee-mask {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+/* ————— Scroll-Choreografie (Lassie-Prinzip) ————— */
 
-  @media (prefers-reduced-motion: reduce) {
-    mask-image: none;
+/* Sektionen faden beim Eintritt sanft nach oben ein */
+@utility fade-up {
+  @supports (animation-timeline: view()) {
+    animation: fade-up-kf linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 45%;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 }
 
-/* FAQ-Chevron: rotiert bei geöffnetem <details> */
-@utility faq-chevron {
-  transition: transform 200ms ease;
+/* Einblendung der rotierenden Hero-Chips */
+@utility chip-in {
+  animation: chip-in-kf 500ms ease;
+}
 
-  details[open] & {
-    transform: rotate(180deg);
+@keyframes chip-in-kf {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up-kf {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero: Full-Bleed-Video schrumpft beim Scrollen in eine abgerundete Karte */
+.hero-scroll {
+  height: 100svh;
+}
+
+@supports (animation-timeline: view()) {
+  .hero-scroll {
+    height: 175svh;
+    view-timeline-name: --hero;
+  }
+
+  .hero-frame {
+    animation: hero-shrink-kf linear both;
+    animation-timeline: --hero;
+    animation-range: exit-crossing 0% exit-crossing 90%;
+  }
+
+  .hero-content {
+    animation: hero-content-out-kf linear both;
+    animation-timeline: --hero;
+    animation-range: exit-crossing 0% exit-crossing 35%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scroll {
+      height: 100svh;
+    }
+    .hero-frame,
+    .hero-content {
+      animation: none;
+    }
+  }
+}
+
+@keyframes hero-shrink-kf {
+  to {
+    transform: scale(0.42);
+    border-radius: 4rem;
+  }
+}
+
+@keyframes hero-content-out-kf {
+  to {
+    opacity: 0;
+    transform: translateY(-24px);
+    /* nimmt die ausgeblendeten Controls aus Tab-Reihenfolge und Hit-Testing */
+    visibility: hidden;
   }
 }

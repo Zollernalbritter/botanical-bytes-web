@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale } from "@/content";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { LegalArticle } from "@/components/LegalArticle";
+import { PillNav } from "@/components/PillNav";
 
 export async function generateMetadata({
   params,
@@ -33,8 +33,8 @@ export default async function ImpressumPage({
 
   return (
     <>
-      <Header locale={locale} dict={dict} path="/impressum" />
-      <main id="main">
+      <PillNav locale={locale} dict={dict} path="/impressum" />
+      <main id="main" className="pt-16">
         <LegalArticle locale={locale} data={dict.impressum} />
       </main>
       <Footer locale={locale} dict={dict} />

@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale } from "@/content";
+import { ClosingCta } from "@/components/ClosingCta";
 import { Faq } from "@/components/Faq";
+import { FeatureBlocks } from "@/components/FeatureBlocks";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { PressMarquee } from "@/components/PressMarquee";
-import { StatsSection } from "@/components/StatsSection";
-import { StorySection } from "@/components/StorySection";
-import { TeamSection } from "@/components/TeamSection";
-import { TechSection } from "@/components/TechSection";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Milestones } from "@/components/Milestones";
+import { PillNav } from "@/components/PillNav";
+import { StatCollage } from "@/components/StatCollage";
+import { TechDetail } from "@/components/TechDetail";
+import { VideoHero } from "@/components/VideoHero";
 
 export async function generateMetadata({
   params,
@@ -37,16 +37,16 @@ export default async function Home({
 
   return (
     <>
-      <Header locale={locale} dict={dict} path="" />
+      <PillNav locale={locale} dict={dict} path="" />
       <main id="main">
-        <Hero locale={locale} dict={dict} />
-        <PressMarquee dict={dict} />
-        <StorySection dict={dict} />
-        <TechSection dict={dict} />
-        <StatsSection dict={dict} />
-        <TeamSection dict={dict} />
+        <VideoHero locale={locale} dict={dict} />
+        <FeatureBlocks dict={dict} />
+        <StatCollage dict={dict} />
+        <Milestones dict={dict} />
+        <HowItWorks dict={dict} />
+        <TechDetail dict={dict} />
         <Faq dict={dict} />
-        <NewsletterSection locale={locale} dict={dict} />
+        <ClosingCta locale={locale} dict={dict} />
       </main>
       <Footer locale={locale} dict={dict} />
     </>

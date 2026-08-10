@@ -22,7 +22,7 @@ export function LegalArticle({
       <h1 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
         {data.title}
       </h1>
-      <p className="mt-4 inline-block rounded-full bg-lime/25 px-3.5 py-1.5 text-xs font-medium">
+      <p className="mt-4 inline-block rounded-full bg-moss-tint px-3.5 py-1.5 text-xs font-medium">
         {data.todoNote}
       </p>
       {data.sections.map((section) => (

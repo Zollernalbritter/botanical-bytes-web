@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Mono, Inter, Jost, Newsreader } from "next/font/google";
+import { DM_Mono, DM_Sans, Newsreader } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, locales, type Locale } from "@/content";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -16,13 +16,6 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-newsreader",
-  display: "swap",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  weight: "500",
-  variable: "--font-jost",
   display: "swap",
 });
 
@@ -97,7 +90,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${newsreader.variable} ${jost.variable} ${dmMono.variable}`}
+      className={`${dmSans.variable} ${newsreader.variable} ${dmMono.variable}`}
     >
       <body>
         <script

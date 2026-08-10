@@ -60,7 +60,7 @@ export function PcbTabs({
             onClick={() => setSelected(i)}
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               i === selected
-                ? "bg-ink text-offwhite"
+                ? "bg-ink text-paper"
                 : "border border-ink/15 text-ink/70 hover:text-ink"
             }`}
           >
@@ -74,7 +74,7 @@ export function PcbTabs({
         aria-labelledby={`pcb-tab-${selected}`}
         className="mt-4"
       >
-        <div className="overflow-hidden rounded-xl bg-sage/50">
+        <div className="overflow-hidden rounded-xl bg-sand/40">
           <Image
             src={item.image}
             alt={item.alt}
@@ -86,7 +86,7 @@ export function PcbTabs({
             }`}
           />
         </div>
-        <figcaption className="mt-2 text-sm text-sage-deep">
+        <figcaption className="mt-2 text-sm text-muted">
           {item.caption}
         </figcaption>
       </figure>

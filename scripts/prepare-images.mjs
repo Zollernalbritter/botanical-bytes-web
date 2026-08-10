@@ -27,6 +27,7 @@ const photos = [
   [`${BLOB}/team-studio.jpeg`, "team-studio.jpg", 2000],
   [`${BLOB}/bwki-stage.png`, "bwki-stage.jpg", 1600],
   [`${BLOB}/jufo-regional.png`, "jufo-regional.jpg", 1600],
+  [`${BLOB}/jufo-landeswettbewerb.png`, "jufo-landeswettbewerb.jpg", 1600],
 ];
 
 const pngs = [

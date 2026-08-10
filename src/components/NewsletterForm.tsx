@@ -8,8 +8,8 @@ type Status = "idle" | "loading" | "success" | "error";
 type BannerKind = "success" | "info" | "error";
 
 const bannerStyles: Record<BannerKind, string> = {
-  success: "bg-lime/25",
-  info: "bg-sage",
+  success: "bg-moss-tint",
+  info: "bg-sand",
   error: "bg-[#a03325]/10 text-[#7a2417]",
 };
 
@@ -105,12 +105,12 @@ export function NewsletterForm({
             required
             placeholder={t.placeholder}
             autoComplete="email"
-            className="w-full rounded-full border border-ink/15 bg-cream-soft px-5 py-2.5 text-sm placeholder:text-ink/55 focus:border-ink/40"
+            className="w-full rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm placeholder:text-ink/55 focus:border-ink/40"
           />
           <button
             type="submit"
             disabled={status === "loading"}
-            className="shrink-0 rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-offwhite transition-colors hover:bg-ink/85 disabled:opacity-60"
+            className="shrink-0 rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-ink/85 disabled:opacity-60"
           >
             {status === "loading" ? t.loading : t.button}
           </button>
@@ -152,7 +152,7 @@ export function NewsletterForm({
             </span>
           )}
         </p>
-        <p className="text-xs text-sage-deep">{t.note}</p>
+        <p className="text-xs text-muted">{t.note}</p>
       </form>
     </div>
   );

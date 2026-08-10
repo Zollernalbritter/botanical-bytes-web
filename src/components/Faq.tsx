@@ -1,30 +1,32 @@
 import type { Dictionary } from "@/content";
-import { Eyebrow } from "./ui/Eyebrow";
-import { Section } from "./ui/Section";
 import { ChevronDownIcon } from "./ui/icons";
 
+// Minimales Lassie-FAQ: Serif-Überschrift, Haarlinien statt Karten.
 export function Faq({ dict }: { dict: Dictionary }) {
   return (
-    <Section id="faq">
-      <Eyebrow>{dict.faq.eyebrow}</Eyebrow>
-      <h2 className="mt-4 font-display text-3xl font-medium tracking-tight md:text-4xl">
-        {dict.faq.headline}
-      </h2>
-      <div className="mt-8 max-w-3xl space-y-3">
-        {dict.faq.items.map((item) => (
-          <details
-            key={item.q}
-            name="faq"
-            className="rounded-card bg-cream-soft px-6 py-4 shadow-card"
-          >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium [&::-webkit-details-marker]:hidden">
-              {item.q}
-              <ChevronDownIcon className="faq-chevron size-5 shrink-0 text-sage-deep" />
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-ink/80">{item.a}</p>
-          </details>
-        ))}
+    <section id="faq" className="scroll-mt-6 px-5 py-24 md:py-36">
+      <div className="mx-auto max-w-2xl">
+        <h2 className="fade-up text-center font-display text-4xl font-medium tracking-tight md:text-6xl">
+          {dict.faq.heading}
+        </h2>
+        <div className="fade-up mt-12 border-t border-ink/10">
+          {dict.faq.items.map((item) => (
+            <details
+              key={item.q}
+              name="faq"
+              className="group border-b border-ink/10"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium [&::-webkit-details-marker]:hidden">
+                {item.q}
+                <ChevronDownIcon className="size-5 shrink-0 text-muted transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="pb-6 text-sm leading-relaxed text-muted">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

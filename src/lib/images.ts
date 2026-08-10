@@ -13,6 +13,7 @@ import day5 from "@/assets/img/day5.jpg";
 import teamStudio from "@/assets/img/team-studio.jpg";
 import bwkiStage from "@/assets/img/bwki-stage.jpg";
 import jufoRegional from "@/assets/img/jufo-regional.jpg";
+import jufoLandeswettbewerb from "@/assets/img/jufo-landeswettbewerb.jpg";
 import pcbV2 from "@/assets/img/pcb-v2.png";
 import pcbV3 from "@/assets/img/pcb-v3.png";
 import seedOriginal from "@/assets/img/seed-original.png";
@@ -31,6 +32,7 @@ export const images = {
   teamStudio,
   bwkiStage,
   jufoRegional,
+  jufoLandeswettbewerb,
   pcbV2,
   pcbV3,
   seedOriginal,

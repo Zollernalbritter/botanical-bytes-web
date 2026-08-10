@@ -21,7 +21,7 @@ export function NewsletterActionCard({
       id="main"
       className="flex min-h-[70vh] items-center justify-center px-5 py-16"
     >
-      <div className="w-full max-w-md rounded-card bg-cream-soft p-8 text-center shadow-card">
+      <div className="w-full max-w-md rounded-card bg-white p-8 text-center shadow-pill">
         <h1 className="font-display text-3xl font-medium tracking-tight">
           {data.title}
         </h1>
@@ -35,7 +35,7 @@ export function NewsletterActionCard({
               <input type="hidden" name="locale" value={locale} />
               <button
                 type="submit"
-                className="rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-offwhite transition-colors hover:bg-ink/85"
+                className="rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-ink/85"
               >
                 {data.button}
               </button>

@@ -4,16 +4,18 @@ Die Website von **Botanical Bytes**, einem Schülerforschungsprojekt aus Tübing
 Pflanzenwachstum messbar machen mit selbst entwickelten Sensorplatinen, einem
 neuronalen Netz und Messung im Minutentakt. Teil der [TFLIT](https://tflit.com)-Familie.
 
-Zweisprachiger Einseiter (`/de` + `/en`) mit Presse-Marquee, Story, Technik-Bento,
-Stat-Sektion, Team, FAQ und Double-Opt-in-Newsletter.
+Zweisprachiger Einseiter (`/de` + `/en`) im Stil von lassie.ai: Full-Screen-Hero-Video
+mit Scroll-Shrink, schwebende Pill-Navigation, Feature-Karten mit Floating-UI-Kärtchen,
+25-%-Stat-Collage, Meilenstein-Sektion, Infografik, FAQ und Double-Opt-in-Newsletter.
 
 ## Stack
 
 - **Next.js 15** (App Router, Turbopack), React 19, TypeScript
-- **Tailwind CSS v4** — Design-Tokens als `@theme` in `src/app/globals.css`
-- **Fonts:** Newsreader (Serif-Display) · Inter (Body) · Jost (Eyebrows) · DM Mono (Messwerte), alle via `next/font`
+- **Tailwind CSS v4** — Design-Tokens als `@theme` in `src/app/globals.css` (Paper/Sand-Grounds, Moosgrün-Akzent)
+- **Fonts:** Newsreader (Serif-Display) · DM Sans (Body) · DM Mono (Messwerte), alle via `next/font`
+- **Scroll-Choreografie:** CSS scroll-driven animations (`view-timeline`) mit `@supports`-Fallback und Reduced-Motion-Pfad
+- **Hero-Video:** KI-generiert (Higgsfield, Seedance), Rohdatei in `assets-src/hero-raw.mp4`, Web-Fassung via `scripts/prepare-hero-video.mjs`
 - **Newsletter:** [Resend](https://resend.com) (Contacts + Double-Opt-in mit HMAC-Tokens, keine Datenbank)
-- Nur 4 kleine Client-Islands (MobileNav, PcbTabs, ImageCompare, NewsletterForm) — der Rest sind Server Components
 
 ## Entwicklung
 
