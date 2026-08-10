@@ -1,26 +1,28 @@
 import type { Dictionary } from "@/content";
 import { ChevronDownIcon } from "./ui/icons";
 
-// Minimales Lassie-FAQ: Serif-Überschrift, Haarlinien statt Karten.
+// Lassie-FAQ: eine ruhige weiße Karte, Haarlinien zwischen den Fragen,
+// immer nur eine Antwort offen.
 export function Faq({ dict }: { dict: Dictionary }) {
   return (
-    <section id="faq" className="scroll-mt-6 px-5 py-24 md:py-36">
+    <section id="faq" className="scroll-mt-24 px-5 pb-24 md:pb-36">
       <div className="mx-auto max-w-2xl">
-        <h2 className="fade-up text-center font-display text-4xl font-medium tracking-tight md:text-6xl">
+        <h2 className="fade-up text-center display text-[clamp(2rem,5.5vw,3.6rem)]">
           {dict.faq.heading}
         </h2>
-        <div className="fade-up mt-12 border-t border-ink/10">
+
+        <div className="fade-up mt-10 overflow-hidden rounded-2xl bg-white shadow-pill md:mt-14">
           {dict.faq.items.map((item) => (
             <details
               key={item.q}
               name="faq"
-              className="group border-b border-ink/10"
+              className="group border-b border-hair last:border-0"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium [&::-webkit-details-marker]:hidden">
                 {item.q}
-                <ChevronDownIcon className="size-5 shrink-0 text-muted transition-transform group-open:rotate-180" />
+                <ChevronDownIcon className="size-4 shrink-0 text-muted transition-transform group-open:rotate-180" />
               </summary>
-              <p className="pb-6 text-sm leading-relaxed text-muted">
+              <p className="px-5 pb-5 text-[13px] leading-relaxed text-muted">
                 {item.a}
               </p>
             </details>

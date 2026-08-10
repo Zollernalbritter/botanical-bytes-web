@@ -38,66 +38,75 @@ export const de = {
     pause: "Video pausieren",
     play: "Video abspielen",
   },
-  features: {
-    heading1: "Messen, lernen,",
-    heading2: "wachsen.",
-    blocks: [
+  stack: {
+    heading1: "KI, die das",
+    heading2: "Gewächshaus versteht",
+    prompt: "Frag den Datensatz",
+    items: [
       {
-        title: "Misst rund um die Uhr",
-        body: "Alle 60 Sekunden erfasst unsere eigene Platine Temperatur, Luftfeuchte, CO₂, Licht und Bodenfeuchte – auf SD-Karte und in die Cloud.",
-        mediaAlt: "Zeitraffer eines Kresse-Wachstumszyklus",
-        card: {
-          title: "Data Collector v3.0",
-          rows: [
-            { label: "Temperatur", value: "21,8 °C" },
-            { label: "Luftfeuchte", value: "64 %" },
-            { label: "Nächste Messung", value: "60 s" },
-          ],
-        },
+        title1: "Botanical Bytes misst",
+        title2: "rund um die Uhr",
+        body: "Temperatur, Luftfeuchte, CO₂, Licht und Bodenfeuchte – alle 60 Sekunden, auf SD-Karte und in die Cloud.",
+        mediaAlt: "Nahaufnahme junger Kressepflanzen im Gegenlicht",
+        uiTitle: "Botanical Bytes misst …",
+        uiRow: "Messreihe #8.182 wird geschrieben",
+        uiValue: "21,8 °C",
       },
       {
-        title: "Lernt aus jedem Zyklus",
-        body: "Ein Anbauzyklus liefert 8.182 Messreihen über sechs Kanäle. Unser neuronales Netz lernt daraus, wie die Bedingungen zusammenhängen.",
-        mediaAlt: "Anzuchtschale im Gewächshaus mit sichtbarer Prototyp-Elektronik",
-        card: {
-          title: "Training läuft …",
-          rows: [
-            { label: "Epoche", value: "940 / 1000" },
-            { label: "Datenpunkte", value: "8.182" },
-            { label: "Fehler", value: "sinkt ✓" },
-          ],
-        },
+        title1: "Hält dich",
+        title2: "im Bild",
+        body: "Verfolge jeden Zyklus live und greif nur dort ein, wo eine Messreihe aus dem Rahmen fällt.",
+        mediaAlt: "Microgreens am dritten Tag des Zyklus",
+        uiTitle: "Zyklus 12 läuft",
+        uiRow: "Tag 3 von 6 · nächste Messung",
+        uiValue: "60 s",
       },
       {
-        title: "Findet die richtige Wassermenge",
-        body: "In Experimenten haben wir die optimale Wassermenge ermittelt – gewogen auf der Küchenwaage, Zyklus für Zyklus. Das Ziel: Empfehlungen in Echtzeit.",
-        mediaAlt: "Der Kresse-Ertrag wird auf einer Küchenwaage gewogen",
-        card: {
-          title: "Experiment 12",
-          rows: [
-            { label: "Aussaat", value: "10 g Kresse" },
-            { label: "Wassermenge", value: "optimiert" },
-            { label: "Ertrag", value: "+25 % ✓" },
-          ],
-        },
+        title1: "Und beantwortet",
+        title2: "deine Fragen",
+        body: "Wie lief Zyklus 12 im Vergleich? Wie viel Wasser war optimal? Der Datensatz liegt offen – frag ihn.",
+        mediaAlt: "Ausgewachsene Kresse in der Anzuchtschale",
+        uiTitle: "Datensatz",
+        uiRow: "8.182 Messreihen geladen",
+        uiValue: "bereit",
       },
     ],
   },
-  collage: {
-    qualifier: "bis zu",
-    big: "25 %",
-    line1: "mehr Ertrag durch die",
-    line2: "optimale Wassermenge",
-    sub1: "Je mehr Zyklen wir messen,",
-    sub2: "desto besser verstehen wir Wachstum",
+  orbit: {
+    stat: "25 %",
+    statLine1: "mehr Ertrag durch die",
+    statLine2: "optimale Wassermenge",
+    beat1: "Je mehr Zyklen wir messen,",
+    beat2: "desto weniger müssen wir raten.",
     cards: [
-      { title: "Messreihe #4.211", rows: ["21,4 °C", "78 % rF", "986 hPa"] },
-      { title: "Ernte gewogen", rows: ["Zyklus 12", "+25 % vs. Referenz"] },
+      {
+        title: "Zyklus 12 abgeschlossen",
+        rows: [
+          { label: "Ertrag", value: "+25 %" },
+          { label: "Wassermenge", value: "optimiert" },
+        ],
+      },
+      {
+        title: "Wochenauswertung",
+        rows: [
+          { label: "Messreihen", value: "8.182" },
+          { label: "Sensorkanäle", value: "6" },
+          { label: "Ausreißer", value: "3" },
+        ],
+      },
+      {
+        title: "Training läuft …",
+        rows: [
+          { label: "Epoche", value: "940 / 1000" },
+          { label: "Fehler", value: "sinkt" },
+        ],
+      },
     ],
-    imgAlts: [
-      "Nahaufnahme junger Kressepflanzen im Gegenlicht",
-      "Microgreens am fünften Tag des Zyklus",
-    ],
+  },
+  trust: {
+    heading1: "Offen für alle.",
+    heading2: "Überall nachbaubar.",
+    note: "Platinendesign, Firmware, das neuronale Netz und ein kompletter Beispieldatensatz liegen auf GitHub.",
   },
   milestones: {
     heading1: "Drei Jahre.",
@@ -105,17 +114,20 @@ export const de = {
     items: [
       {
         quote: "Juniorpreis beim Bundeswettbewerb Künstliche Intelligenz.",
-        meta: "2023 · als botanical_bytes",
+        name: "Tillmann & Finn",
+        org: "BWKI 2023",
         imgAlt: "Tillmann und Finn im Fotostudio mit Anzuchtschale und Platine",
       },
       {
         quote: "Mit dem Plant Growth Optimizer im Finale in Tübingen.",
-        meta: "2024 · Bundeswettbewerb KI",
+        name: "Tillmann & Finn",
+        org: "BWKI 2024",
         imgAlt: "Der Messestand beim BWKI-Finale mit Anzuchtschalen und Sensorik",
       },
       {
         quote: "Zwei Sonderpreise beim Landeswettbewerb Jugend forscht.",
-        meta: "2024 · Jugend forscht",
+        name: "Tillmann & Finn",
+        org: "Jugend forscht 2024",
         imgAlt: "Tillmann und Finn am Stand beim Landeswettbewerb Jugend forscht",
       },
     ],
@@ -123,31 +135,42 @@ export const de = {
     pressLine: "Bekannt aus: SWR · Reutlinger General-Anzeiger · DASDING",
   },
   how: {
-    heading: "Wie es funktioniert",
+    heading: "Wie Botanical Bytes arbeitet",
     steps: [
       {
-        title: "Messen",
-        body: "Die Data-Collector-Platine sitzt unter der Anzuchtschale und erfasst sieben Größen im Minutentakt – von Temperatur bis Bodenfeuchte.",
-        imgAlt: "3D-Rendering der Data-Collector-Platine Version 3.0",
+        title: "Misst jede Minute",
+        body: "Die Data-Collector-Platine sitzt unter der Anzuchtschale und erfasst sieben Größen – von Temperatur bis Bodenfeuchte.",
+        pill: "Sensoren verbunden",
+        top: { title: "Data Collector v3.0", label: "BME680", value: "21,8 °C" },
+        rows: [
+          { label: "Luftfeuchte", value: "64 %" },
+          { label: "Bodenfeuchte", value: "38 %" },
+          { label: "CO₂", value: "812 ppm" },
+        ],
       },
       {
-        title: "Lernen",
+        title: "Lernt aus jedem Zyklus",
         body: "Standardisierte Aussaaten – immer exakt 10 Gramm Samen – machen Zyklen vergleichbar. Das neuronale Netz lernt die Zusammenhänge.",
-        imgAlt: "Exakt 10 Gramm Kressesamen auf der Waage",
+        pill: "Zyklus vergleichbar",
+        top: { title: "Aussaat Zyklus 12", label: "Kressesamen", value: "10,0 g" },
+        rows: [
+          { label: "Messreihen", value: "8.182" },
+          { label: "Dauer", value: "5,7 Tage" },
+          { label: "Epoche", value: "940 / 1000" },
+        ],
       },
       {
-        title: "Optimieren",
+        title: "Findet die richtige Wassermenge",
         body: "Aus den Daten wird die optimale Wassermenge. Das Ergebnis: bis zu 25 % mehr Ertrag – und ein System, das mit jedem Zyklus klüger wird.",
-        imgAlt: "Ausgewachsene Kresse in der Anzuchtschale",
+        pill: "Ertrag gewogen",
+        top: { title: "Experiment 12", label: "Wassermenge", value: "optimiert" },
+        rows: [
+          { label: "Ertrag", value: "+25 %" },
+          { label: "Referenz", value: "Zyklus 8" },
+          { label: "Nächster Zyklus", value: "geplant" },
+        ],
       },
     ],
-    diagram: {
-      ariaLabel:
-        "Ablaufdiagramm: Die Platine misst die Pflanze im Minutentakt, die Daten trainieren das neuronale Netz – die Empfehlung soll künftig automatisch zur Pflanze zurückfließen",
-      nodes: ["Pflanze", "Platine", "Daten", "Neuronales Netz", "Empfehlung"],
-      measureLabel: "alle 60 Sekunden",
-      loopLabel: "Rückführung geplant",
-    },
   },
   tech: {
     heading: "Die Hardware im Detail",
@@ -250,16 +273,18 @@ export const de = {
   footer: {
     tagline1: "Pflanzenwachstum",
     tagline2: "messbar machen.",
-    githubCta: "Code auf GitHub ansehen",
+    ctaLabel: "Updates erhalten",
     colProject: "Projekt",
+    colFamily: "Familie",
     colLegal: "Rechtliches",
+    github: "GitHub",
+    tech: "Technik",
+    faq: "FAQ",
     tflit: "TFLIT",
     tflitUrl: "https://tflit.com/arbeiten/botanical-bytes",
-    github: "GitHub",
     impressum: "Impressum",
     datenschutz: "Datenschutz",
-    copyright: "© 2026 Botanical Bytes. Made in Tübingen.",
-    family: "Ein Projekt der TFLIT-Familie",
+    copyright: "© 2026 Botanical Bytes. Alle Rechte vorbehalten.\nEin Projekt der TFLIT-Familie, made in Tübingen.",
   },
   notFound: {
     headline: "Hier wächst nichts.",

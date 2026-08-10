@@ -12,10 +12,13 @@ export function HeroSignup({
   locale,
   hero,
   newsletter,
+  // das Formular steht zweimal auf der Seite — die ID muss eindeutig bleiben
+  id = "hero-email",
 }: {
   locale: Locale;
   hero: Dictionary["hero"];
   newsletter: Dictionary["newsletter"];
+  id?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState<string | null>(null);
@@ -54,11 +57,11 @@ export function HeroSignup({
         noValidate
         className="flex items-center gap-1 rounded-full bg-white/95 p-1 shadow-float focus-within:ring-2 focus-within:ring-ink"
       >
-        <label htmlFor="hero-email" className="sr-only">
+        <label htmlFor={id} className="sr-only">
           {newsletter.label}
         </label>
         <input
-          id="hero-email"
+          id={id}
           name="email"
           type="email"
           required

@@ -1,37 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-  /* Lassie-System: Fast-Weiß + warmer Sand als Grounds, warme Tinte,
-     ein ruhiger Moosgrün-Akzent (statt Lassies Himmelblau) */
+  /* Exakt Lassies Grundtöne: fast-weißes Papier, warme Tinte, sandige Karten.
+     Der Akzent ist bei uns Moosgrün statt Lassies Himmelblau. */
   --color-paper: #f9f8f5;
-  --color-sand: #e3ddcf;
-  --color-ink: #120c08;
-  --color-muted: #57534a;
+  --color-card: #f1eee7;
+  --color-sand: #e6e0d3;
+  --color-ink: #1a1613;
+  --color-muted: #6b655e;
+  --color-hair: #1a161314;
   --color-moss: #5a7a4b;
   --color-moss-deep: #3f5a33;
   --color-moss-tint: #e2ead9;
+  --color-sky: #cfe6ef;
 
-  /* Schriftrollen wie Lassie: Serif-Display + DM Sans Body + DM Mono Labels */
+  /* Lassie-Schriftrollen: Serif-Display, DM Sans, DM Mono */
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
   --font-mono: var(--font-dm-mono), ui-monospace, "Cascadia Mono", monospace;
 
-  --radius-card: 1.75rem;
+  --radius-card: 1.5rem;
   --radius-media: 2rem;
-  --shadow-pill: 0 1px 2px rgb(18 12 8 / 0.08), 0 4px 12px rgb(18 12 8 / 0.06);
-  --shadow-float: 0 2px 6px rgb(18 12 8 / 0.08), 0 16px 40px rgb(18 12 8 / 0.12);
+  --shadow-pill: 0 1px 2px rgb(26 22 19 / 0.06), 0 4px 12px rgb(26 22 19 / 0.06);
+  --shadow-float: 0 2px 6px rgb(26 22 19 / 0.06), 0 18px 44px rgb(26 22 19 / 0.13);
+
+  /* ————— Bauklotz-System (Seite /v2) —————
+     Warmer Creme-Grund, fast-schwarze Tinte, ein Set gedeckter Spielfarben.
+     Regel der Palette: jede Farbe muss als Vollfläche direkt neben jeder
+     anderen bestehen — darum durchgehend mittlere Helligkeit und Sättigung.
+     Kontrast gegen Creme (#f8f1e4): night 17.6:1, clay 4.9:1, leaf 4.1:1. */
+  --color-cream: #f8f1e4;
+  --color-shell: #ece4d5;
+  --color-shell-deep: #ded2bd;
+  --color-night: #16100b;
+
+  --color-coral: #e8623c;
+  --color-leaf: #4d8c5f;
+  --color-azure: #63a4bc;
+  --color-wheat: #dbb154;
+  --color-clay: #a7625a;
+  --color-blush: #dfa6ce;
+  --color-olive: #8a8259;
+  --color-lime: #c6d44b;
+
+  --font-grotesk: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-space-mono), ui-monospace, monospace;
+
+  --radius-bento: 2rem;
+  --radius-frame: 2.5rem;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   ::selection {
@@ -44,15 +69,21 @@
     outline-offset: 2px;
   }
 
-  .bg-ink :focus-visible,
-  .on-video :focus-visible {
+  .on-dark :focus-visible {
     outline-color: var(--color-paper);
   }
 
+  /* Lenis übernimmt das Scrollen; ohne JS bleibt natives Scrollen aktiv. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
     *,
     ::before,
     ::after {
@@ -63,14 +94,30 @@
   }
 }
 
-/* ————— Scroll-Choreografie (Lassie-Prinzip) ————— */
+/* ————— Typografie-Bausteine ————— */
 
-/* Sektionen faden beim Eintritt sanft nach oben ein */
+/* Lassies Display-Setzung: 350er Schnitt, enge Spur, Zeilenabstand 1.05 */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+}
+
+/* ————— Scroll-Choreografie ————— */
+
 @utility fade-up {
   @supports (animation-timeline: view()) {
     animation: fade-up-kf linear both;
     animation-timeline: view();
-    animation-range: entry 5% entry 45%;
+    animation-range: entry 5% entry 40%;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
@@ -78,7 +125,17 @@
   }
 }
 
-/* Einblendung der rotierenden Hero-Chips */
+@keyframes fade-up-kf {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @utility chip-in {
   animation: chip-in-kf 500ms ease;
 }
@@ -94,17 +151,6 @@
   }
 }
 
-@keyframes fade-up-kf {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* Hero: Full-Bleed-Video schrumpft beim Scrollen in eine abgerundete Karte */
 .hero-scroll {
   height: 100svh;
@@ -112,20 +158,20 @@
 
 @supports (animation-timeline: view()) {
   .hero-scroll {
-    height: 175svh;
+    height: 190svh;
     view-timeline-name: --hero;
   }
 
   .hero-frame {
     animation: hero-shrink-kf linear both;
     animation-timeline: --hero;
-    animation-range: exit-crossing 0% exit-crossing 90%;
+    animation-range: exit-crossing 0% exit-crossing 92%;
   }
 
   .hero-content {
     animation: hero-content-out-kf linear both;
     animation-timeline: --hero;
-    animation-range: exit-crossing 0% exit-crossing 35%;
+    animation-range: exit-crossing 0% exit-crossing 30%;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -141,8 +187,8 @@
 
 @keyframes hero-shrink-kf {
   to {
-    transform: scale(0.42);
-    border-radius: 4rem;
+    transform: scale(0.4);
+    border-radius: 3.5rem;
   }
 }
 
@@ -150,7 +196,214 @@
   to {
     opacity: 0;
     transform: translateY(-24px);
-    /* nimmt die ausgeblendeten Controls aus Tab-Reihenfolge und Hit-Testing */
     visibility: hidden;
+  }
+}
+
+/* Der Globus dreht sich langsam — reine Dekoration hinter der Sektion. */
+@keyframes globe-spin-kf {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Bauklotz-System — nur für die Seite /v2.
+   Alles hier hängt an .studio, damit die bestehende Startseite unberührt
+   bleibt. Grundidee: warmer Creme-Grund, fast-schwarze Grotesk, Flächen aus
+   wenigen geometrischen Grundformen in gedeckten Spielfarben.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.studio {
+  background-color: var(--color-cream);
+  color: var(--color-night);
+  font-family: var(--font-grotesk);
+}
+
+/* Damit auch Überscrollen und Adressleiste den Creme-Ton treffen. */
+body:has(.studio) {
+  background-color: var(--color-cream);
+}
+
+.studio ::selection {
+  background-color: var(--color-lime);
+  color: var(--color-night);
+}
+
+/* ————— Typografie —————
+   Die Referenz setzt Display und Fließtext aus derselben Grotesk; getrennt
+   werden sie nur über Grad und Spur. Je größer der Grad, desto enger. */
+
+@utility t-mega {
+  font-weight: 500;
+  font-size: clamp(3.25rem, 9.5vw, 7.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+
+@utility t-hero {
+  font-weight: 500;
+  font-size: clamp(2.1rem, 5vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+@utility t-section {
+  font-weight: 500;
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+@utility t-card {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+@utility t-tag {
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ————— Laufband —————
+   Zwei identische Hälften im Track; bei -50 % beginnt die Schleife von vorn.
+   Tempo kommt pro Instanz über --marquee-duration. */
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6rem,
+    black calc(100% - 6rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6rem,
+    black calc(100% - 6rem),
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x-kf var(--marquee-duration, 46s) linear infinite;
+}
+
+.marquee-track[data-direction="reverse"] {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-x-kf {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ————— Karte mit Aufdeckung —————
+   Ruhezustand: nur eine Pille mit dem Titel. Bei Hover oder Tastaturfokus
+   tauscht die Pille gegen Überschrift und Fließtext. */
+
+.reveal-card .reveal-rest {
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.reveal-card .reveal-open {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.reveal-card:hover .reveal-rest,
+.reveal-card:focus-within .reveal-rest {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.reveal-card:hover .reveal-open,
+.reveal-card:focus-within .reveal-open {
+  opacity: 1;
+  transform: none;
+}
+
+/* ————— Treibende Streuformen —————
+   Die kleinen Quadrate und Kreise im Sensorik-Feld wandern endlos auf sehr
+   flachen Bahnen. Der Versatz kommt pro Form über --drift-delay. */
+
+@utility drift {
+  animation: drift-kf 9s ease-in-out infinite alternate;
+  animation-delay: var(--drift-delay, 0s);
+}
+
+@keyframes drift-kf {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--drift-x, 10px), var(--drift-y, -12px), 0);
+  }
+}
+
+/* Ein Kern-Element pulsiert langsam — das ist der „aktive Messpunkt“. */
+@utility pulse-soft {
+  animation: pulse-soft-kf 3.2s ease-in-out infinite;
+}
+
+@keyframes pulse-soft-kf {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* ————— Grundformen —————
+   Die Figuren im Baukasten bestehen ausschließlich aus diesen Silhouetten. */
+
+@utility shape-arch {
+  border-radius: 100vw 100vw 0 0;
+}
+
+@utility shape-arch-down {
+  border-radius: 0 0 100vw 100vw;
+}
+
+@utility shape-leaf {
+  border-radius: 100vw 0 100vw 0;
+}
+
+@utility shape-capsule {
+  border-radius: 100vw;
+}
+
+/* Eine Ecke bleibt spitz — die Signatur-Silhouette der Referenz. */
+@utility shape-notch {
+  border-radius: 1rem 6rem 1rem 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }

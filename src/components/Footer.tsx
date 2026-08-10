@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { GITHUB_URL, type Dictionary, type Locale } from "@/content";
-import { ArrowUpRightIcon } from "./ui/icons";
 
-// Lassie-Footer: große Serif-Zeile, wenige Spalten, ruhige Schlusszeile.
+const columnLink =
+  "text-ink/75 transition-colors hover:text-ink";
+
+// Lassie-Footer: links die große Serif-Zeile mit dunklem Knopf, rechts drei
+// schmale Linkspalten. Ganz unten läuft die Wortmarke riesig über die volle
+// Breite und wird am Seitenrand angeschnitten.
 export function Footer({
   locale,
   dict,
@@ -10,90 +14,115 @@ export function Footer({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const f = dict.footer;
+
   return (
-    <footer className="bg-ink px-5 py-16 text-paper md:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
-              {dict.footer.tagline1}
-              <br />
-              <span className="italic">{dict.footer.tagline2}</span>
-            </p>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-sand"
-            >
-              {dict.footer.githubCta}
-              <ArrowUpRightIcon className="size-4" />
-            </a>
-          </div>
-          <div className="flex gap-16">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-paper/50">
-                {dict.footer.colProject}
-              </p>
-              <ul className="mt-3 space-y-2 text-sm">
-                <li>
-                  <a
-                    href={GITHUB_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-paper/80 transition-colors hover:text-paper"
-                  >
-                    {dict.footer.github}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={dict.footer.tflitUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-paper/80 transition-colors hover:text-paper"
-                  >
-                    {dict.footer.tflit}
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-paper/50">
-                {dict.footer.colLegal}
-              </p>
-              <ul className="mt-3 space-y-2 text-sm">
-                <li>
-                  <Link
-                    href={`/${locale}/impressum`}
-                    className="text-paper/80 transition-colors hover:text-paper"
-                  >
-                    {dict.footer.impressum}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/datenschutz`}
-                    className="text-paper/80 transition-colors hover:text-paper"
-                  >
-                    {dict.footer.datenschutz}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="mt-14 flex flex-col gap-1 border-t border-paper/10 pt-6 text-xs text-paper/50 sm:flex-row sm:justify-between">
-          <span>{dict.footer.copyright}</span>
+    <footer className="relative overflow-hidden">
+      <div className="mx-auto grid max-w-[86rem] gap-12 px-5 pb-16 pt-20 md:grid-cols-[1fr_auto] md:gap-24 md:pb-24 md:pt-28">
+        <div>
+          <p className="display text-[clamp(1.9rem,4.4vw,3rem)]">
+            {f.tagline1}
+            <br />
+            <span className="italic">{f.tagline2}</span>
+          </p>
           <a
-            href={dict.footer.tflitUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-paper"
+            href={`#newsletter`}
+            className="mt-7 inline-flex items-center rounded-lg bg-ink px-4 py-2.5 text-[13px] font-medium text-paper transition-colors hover:bg-ink/85"
           >
-            {dict.footer.family}
+            {f.ctaLabel}
           </a>
         </div>
+
+        <div className="grid grid-cols-2 gap-x-12 gap-y-10 text-[13px] sm:grid-cols-3 md:gap-x-16">
+          <div>
+            <p className="label-mono">{f.colProject}</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={columnLink}>
+                  {f.github}
+                </a>
+              </li>
+              <li>
+                <Link href={`/${locale}#technik`} className={columnLink}>
+                  {f.tech}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}#faq`} className={columnLink}>
+                  {f.faq}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="label-mono">{f.colFamily}</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a href={f.tflitUrl} target="_blank" rel="noopener noreferrer" className={columnLink}>
+                  {f.tflit}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="label-mono">{f.colLegal}</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link href={`/${locale}/impressum`} className={columnLink}>
+                  {f.impressum}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/datenschutz`} className={columnLink}>
+                  {f.datenschutz}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[86rem] px-5 pb-12">
+        <svg viewBox="0 0 24 24" className="size-6 text-ink" aria-hidden="true">
+          <g fill="currentColor">
+            <circle cx="12" cy="6.4" r="3.4" />
+            <circle cx="17.3" cy="10.2" r="3.4" />
+            <circle cx="15.3" cy="16.4" r="3.4" />
+            <circle cx="8.7" cy="16.4" r="3.4" />
+            <circle cx="6.7" cy="10.2" r="3.4" />
+          </g>
+        </svg>
+        <p className="mt-3 whitespace-pre-line font-mono text-[11px] leading-relaxed text-muted">
+          {f.copyright}
+        </p>
+      </div>
+
+      {/* Riesen-Wortmarke, unten angeschnitten — Lassies Schlussbild.
+          Als SVG mit textLength, damit sie in jeder Breite exakt randbündig
+          sitzt, statt je nach Viewport zu überlaufen oder zu schrumpfen. */}
+      <div
+        aria-hidden="true"
+        className="relative overflow-hidden bg-gradient-to-b from-paper via-moss-tint/30 to-sky"
+      >
+        <svg
+          viewBox="0 0 1000 150"
+          className="block h-auto w-full"
+        >
+          <text
+            x="500"
+            y="152"
+            textAnchor="middle"
+            textLength="980"
+            lengthAdjust="spacingAndGlyphs"
+            fontFamily="var(--font-display)"
+            fontSize="200"
+            fill="#ffffff"
+          >
+            Botanical Bytes
+          </text>
+        </svg>
       </div>
     </footer>
   );
