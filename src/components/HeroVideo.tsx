@@ -45,11 +45,11 @@ export function HeroVideo({
         loop
         playsInline
         preload="metadata"
-        poster="/media/hero-poster.jpg"
+        poster="/media/hero-lab-poster.jpg"
         aria-label={label}
         className="size-full object-cover"
       >
-        <source src="/media/hero.mp4" type="video/mp4" />
+        <source src="/media/hero-lab.mp4" type="video/mp4" />
       </video>
       <button
         type="button"

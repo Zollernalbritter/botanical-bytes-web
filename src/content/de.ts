@@ -20,7 +20,7 @@ export const de = {
     headline1: "Pflanzen reden nicht.",
     headline2: "Unsere Sensoren schon.",
     sub: "Botanical Bytes macht Wachstum messbar",
-    videoAlt: "Kamerafahrt durch ein sonniges Gewächshaus auf eine Schale junger Kresse zu",
+    videoAlt: "Kamerafahrt hinter einer Forscherin her durch ein sonniges Gewächshaus; im Hintergrund begutachten zwei Kollegen Anzuchtschalen",
     chips: [
       "21,8 °C Lufttemperatur erfasst",
       "Luftfeuchte bei 64 % gemessen",

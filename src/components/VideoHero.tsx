@@ -24,7 +24,7 @@ export function VideoHero({
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/25 via-ink/10 to-ink/40"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/35 to-ink/55"
           />
         </div>
 

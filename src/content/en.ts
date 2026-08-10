@@ -22,7 +22,7 @@ export const en: Dictionary = {
     headline1: "Plants don't talk.",
     headline2: "Our sensors do.",
     sub: "Botanical Bytes makes growth measurable",
-    videoAlt: "Camera gliding through a sunlit greenhouse toward a tray of young cress",
+    videoAlt: "Camera following a researcher through a sunlit greenhouse; two colleagues examine seedling trays in the background",
     chips: [
       "Logged 21.8 °C air temperature",
       "Measured humidity at 64%",
