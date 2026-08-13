@@ -359,32 +359,98 @@ export const en: Dictionary = {
   },
   impressum: {
     title: "Legal notice (Impressum)",
-    todoNote: "Placeholder — fill in before publishing. The German version is legally binding.",
+    todoNote: "The e-mail address is still missing. The German version is legally binding.",
     sections: [
-      { h: "Information according to § 5 DDG", lines: ["[TODO: full name]", "[TODO: street and number]", "[TODO: postal code and city]"] },
-      { h: "Contact", lines: ["[TODO: email address]"] },
-      { h: "Responsible for content according to § 18 (2) MStV", lines: ["[TODO: name and address]"] },
+      {
+        h: "Information according to § 5 DDG",
+        lines: [
+          "TFL Holding UG (haftungsbeschränkt)",
+          "Gölzstraße 12",
+          "72072 Tübingen",
+          "Germany",
+        ],
+      },
+      { h: "Represented by", lines: ["Tillmann Lang, Managing Director"] },
+      {
+        h: "Register entry",
+        lines: [
+          "Entered in the commercial register",
+          "Register court: Amtsgericht Stuttgart",
+          "Register number: HRB 801753",
+        ],
+      },
+      {
+        h: "Contact",
+        lines: ["Phone: +49 1511 4490016", "E-mail: [TODO: email address]"],
+      },
+      {
+        h: "Responsible for content according to § 18 (2) MStV",
+        lines: ["Tillmann Lang", "Gölzstraße 12", "72072 Tübingen"],
+      },
+      {
+        h: "EU dispute resolution",
+        lines: [
+          "The European Commission provides a platform for online dispute resolution: https://ec.europa.eu/consumers/odr",
+          "You will find our e-mail address above in this legal notice.",
+          "We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.",
+        ],
+      },
+      {
+        h: "Liability for content",
+        lines: [
+          "As a service provider we are responsible for our own content on these pages under the general laws, in accordance with § 7 (1) DDG. Under §§ 8 to 10 DDG, however, we are not obliged to monitor transmitted or stored third-party information, or to investigate circumstances that indicate unlawful activity.",
+          "Obligations to remove or block the use of information under the general laws remain unaffected. Liability in this respect is only possible from the point in time at which we become aware of a specific infringement. If we become aware of such infringements, we will remove the content immediately.",
+        ],
+      },
+      {
+        h: "Liability for links",
+        lines: [
+          "Our website contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this third-party content. The respective provider or operator of the linked pages is always responsible for their content.",
+          "The linked pages were checked for possible legal violations at the time of linking. Unlawful content was not recognisable at that time. If we become aware of any infringements, we will remove such links immediately.",
+        ],
+      },
+      {
+        h: "Copyright",
+        lines: [
+          "The content and works created by the site operators on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+          "Where the content on this page was not created by the operator, the copyrights of third parties are respected. Should you nevertheless become aware of a copyright infringement, please let us know.",
+        ],
+      },
     ],
     backHome: "Back to home",
   },
   datenschutz: {
     title: "Privacy policy",
-    todoNote: "Placeholder structure — replace with reviewed text before publishing. The German version is legally binding.",
+    todoNote: "Hosting, data subject rights and the date are still missing. The German version is legally binding.",
     sections: [
-      { h: "Controller", lines: ["[TODO: name and contact details of the controller]"] },
+      {
+        h: "Controller",
+        lines: [
+          "TFL Holding UG (haftungsbeschränkt)",
+          "Gölzstraße 12, 72072 Tübingen, Germany",
+          "Represented by Tillmann Lang, Managing Director",
+          "Phone: +49 1511 4490016",
+          "E-mail: [TODO: email address]",
+        ],
+      },
       {
         h: "Hosting",
         lines: [
-          "This website is hosted by Vercel Inc. [TODO: add notes on data processing, server logs, and standard contractual clauses]",
+          "[TODO: add hosting provider, server location, data processing agreement, server log files and retention period]",
         ],
       },
       {
         h: "Newsletter",
         lines: [
-          "Sign-up uses a double-opt-in process. We use the service Resend for sending. The legal basis is Art. 6 (1) (a) GDPR; consent can be withdrawn at any time via the unsubscribe link. [TODO: add full text]",
+          "Sign-up uses a double opt-in procedure: after entering your address you receive an e-mail with a confirmation link; only then is the address stored. We use the service Resend to send the messages.",
+          "The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time via the unsubscribe link at the end of every e-mail; the address is then deleted.",
+          "[TODO: add data processing agreement with Resend, retention period and consent logging]",
         ],
       },
-      { h: "Your rights", lines: ["[TODO: list data-subject rights under the GDPR]"] },
+      {
+        h: "Your rights",
+        lines: ["[TODO: list data subject rights under the GDPR]"],
+      },
       { h: "Last updated", lines: ["[TODO: date]"] },
     ],
     backHome: "Back to home",

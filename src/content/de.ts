@@ -389,34 +389,116 @@ export const de = {
     body: "Diese Seite gibt es nicht – oder noch nicht. Zurück zur Kresse?",
     cta: "Zur Startseite",
   },
+  // Betreiberangaben von tflit.com übernommen — Botanical Bytes läuft unter
+  // demselben Träger. Zwei Abweichungen zur Quelle sind Absicht:
+  //
+  // 1. Die Haftungsabschnitte zitieren das DDG, nicht das TMG. Das
+  //    Telemediengesetz ist im Mai 2024 vom Digitale-Dienste-Gesetz abgelöst
+  //    worden; die Paragrafen sind inhaltsgleich, aber die alte Fundstelle
+  //    gibt es nicht mehr.
+  // 2. Die Verantwortlichkeit steht nach § 18 Abs. 2 MStV statt § 55 Abs. 2
+  //    RStV — der Rundfunkstaatsvertrag ist seit November 2020 durch den
+  //    Medienstaatsvertrag ersetzt.
   impressum: {
     title: "Impressum",
-    todoNote: "Platzhalter – vor Veröffentlichung ausfüllen.",
+    todoNote: "Es fehlt noch die E-Mail-Adresse.",
     sections: [
-      { h: "Angaben gemäß § 5 DDG", lines: ["[TODO: Vor- und Nachname]", "[TODO: Straße und Hausnummer]", "[TODO: PLZ und Ort]"] },
-      { h: "Kontakt", lines: ["[TODO: E-Mail-Adresse]"] },
-      { h: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV", lines: ["[TODO: Name und Anschrift]"] },
+      {
+        h: "Angaben gemäß § 5 DDG",
+        lines: [
+          "TFL Holding UG (haftungsbeschränkt)",
+          "Gölzstraße 12",
+          "72072 Tübingen",
+          "Deutschland",
+        ],
+      },
+      { h: "Vertreten durch", lines: ["Tillmann Lang, Geschäftsführer"] },
+      {
+        h: "Registereintrag",
+        lines: [
+          "Eingetragen im Handelsregister",
+          "Registergericht: Amtsgericht Stuttgart",
+          "Registernummer: HRB 801753",
+        ],
+      },
+      {
+        h: "Kontakt",
+        lines: ["Telefon: +49 1511 4490016", "E-Mail: [TODO: E-Mail-Adresse]"],
+      },
+      {
+        h: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+        lines: ["Tillmann Lang", "Gölzstraße 12", "72072 Tübingen"],
+      },
+      {
+        h: "EU-Streitschlichtung",
+        lines: [
+          "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: https://ec.europa.eu/consumers/odr",
+          "Unsere E-Mail-Adresse finden Sie oben in diesem Impressum.",
+          "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+        ],
+      },
+      {
+        h: "Haftung für Inhalte",
+        lines: [
+          "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+          "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+        ],
+      },
+      {
+        h: "Haftung für Links",
+        lines: [
+          "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+          "Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
+        ],
+      },
+      {
+        h: "Urheberrecht",
+        lines: [
+          "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
+          "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie dennoch auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.",
+        ],
+      },
     ],
     backHome: "Zurück zur Startseite",
   },
+  // Der Verantwortliche ist derselbe wie im Impressum — das ist keine
+  // Auslegungsfrage, sondern folgt daraus. Die übrigen Abschnitte bleiben
+  // bewusst als Lücke stehen: Hosting hängt am Betreibermodell (Coolify auf
+  // welchem Server, in welchem Land), und Betroffenenrechte gehören von
+  // jemandem geschrieben, der dafür geradesteht. Erfundene Angaben wären hier
+  // schlimmer als sichtbar fehlende.
   datenschutz: {
     title: "Datenschutzerklärung",
-    todoNote: "Platzhalter-Struktur – vor Veröffentlichung durch geprüfte Texte ersetzen.",
+    todoNote: "Hosting, Betroffenenrechte und Stand fehlen noch.",
     sections: [
-      { h: "Verantwortlicher", lines: ["[TODO: Name und Kontaktdaten des Verantwortlichen]"] },
+      {
+        h: "Verantwortlicher",
+        lines: [
+          "TFL Holding UG (haftungsbeschränkt)",
+          "Gölzstraße 12, 72072 Tübingen, Deutschland",
+          "Vertreten durch Tillmann Lang, Geschäftsführer",
+          "Telefon: +49 1511 4490016",
+          "E-Mail: [TODO: E-Mail-Adresse]",
+        ],
+      },
       {
         h: "Hosting",
         lines: [
-          "Diese Website wird bei Vercel Inc. gehostet. [TODO: Hinweise zu Auftragsverarbeitung, Server-Logs und Standardvertragsklauseln ergänzen]",
+          "[TODO: Hostinganbieter, Standort der Server, Auftragsverarbeitungsvertrag, Server-Logfiles und Speicherdauer ergänzen]",
         ],
       },
       {
         h: "Newsletter",
         lines: [
-          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren. Zum Versand nutzen wir den Dienst Resend. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung kann jederzeit über den Abmeldelink widerrufen werden. [TODO: vollständigen Text ergänzen]",
+          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Nach dem Eintragen erhalten Sie eine E-Mail mit einem Bestätigungslink; erst danach ist die Adresse gespeichert. Zum Versand nutzen wir den Dienst Resend.",
+          "Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Sie können sie jederzeit über den Abmeldelink am Ende jeder E-Mail widerrufen; die Adresse wird dann gelöscht.",
+          "[TODO: Auftragsverarbeitung mit Resend, Speicherdauer und Protokollierung der Einwilligung ergänzen]",
         ],
       },
-      { h: "Ihre Rechte", lines: ["[TODO: Betroffenenrechte nach DSGVO aufführen]"] },
+      {
+        h: "Ihre Rechte",
+        lines: ["[TODO: Betroffenenrechte nach DSGVO aufführen]"],
+      },
       { h: "Stand", lines: ["[TODO: Datum]"] },
     ],
     backHome: "Zurück zur Startseite",
