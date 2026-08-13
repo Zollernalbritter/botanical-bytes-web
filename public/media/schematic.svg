@@ -1,0 +1,987 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169 827.3" role="img" shape-rendering="geometricPrecision" xml:space="preserve">
+<title>Schaltplan der Sensorplatine (ESP32-S3)</title>
+<!-- Der Hinweis steht in <metadata> statt in einem Kommentar: XML-Kommentare
+     dürfen keine doppelten Bindestriche enthalten, CSS-Variablen aber schon. -->
+<metadata>Aus schematic.pdf erzeugt von scripts/extract-schematic.mjs, nicht von Hand bearbeiten.
+Umfärbbar über --sch-frame, --sch-wire, --sch-label, --sch-part, --sch-paper; ohne Vorgabe gelten die Originalfarben.</metadata>
+<g transform="translate(0,827.3) scale(1,-1)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="100">
+<path fill="var(--sch-paper, #ffffff)" d="M0 827.3L1169 827.3L1169 0L0 0Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M216 806.5L216 816.5M216 20.5L216 10.5M412 806.5L412 816.5M412 20.5L412 10.5M608 806.5L608 816.5M608 20.5L608 10.5M804 806.5L804 816.5M804 20.5L804 10.5M1000 806.5L1000 816.5M1000 20.5L1000 10.5M20 610.5L10 610.5M1149 610.5L1159 610.5M20 414.5L10 414.5M1149 414.5L1159 414.5M20 218.5L10 218.5M1149 218.5L1159 218.5M20 22.5L10 22.5M1149 22.5L1159 22.5"/>
+<text transform="matrix(1 0 0 -1 11.5 708.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">A</text>
+<text transform="matrix(1 0 0 -1 1150.5 708.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">A</text>
+<text transform="matrix(1 0 0 -1 11.5 512.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">B</text>
+<text transform="matrix(1 0 0 -1 1150.5 512.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">B</text>
+<text transform="matrix(1 0 0 -1 11.5 316.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">C</text>
+<text transform="matrix(1 0 0 -1 1150.5 316.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">C</text>
+<text transform="matrix(1 0 0 -1 11.5 120.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">D</text>
+<text transform="matrix(1 0 0 -1 1150.5 120.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">D</text>
+<text transform="matrix(1 0 0 -1 118 808)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">1</text>
+<text transform="matrix(1 0 0 -1 118 12)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">1</text>
+<text transform="matrix(1 0 0 -1 314 808)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">2</text>
+<text transform="matrix(1 0 0 -1 314 12)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">2</text>
+<text transform="matrix(1 0 0 -1 510 808)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">3</text>
+<text transform="matrix(1 0 0 -1 510 12)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">3</text>
+<text transform="matrix(1 0 0 -1 706 808)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">4</text>
+<text transform="matrix(1 0 0 -1 706 12)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">4</text>
+<text transform="matrix(1 0 0 -1 902 808)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">5</text>
+<text transform="matrix(1 0 0 -1 902 12)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #880000)">5</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M20 806.5L1149 806.5L1149 20.5L20 20.5Z"/>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M10 816.5L1159 816.5L1159 10.5L10 10.5Z"/>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M705 100.5L1149 100.5L1149 20.5L705 20.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M705.1 61.25L1148.63 61.25"/>
+<path stroke="var(--sch-frame, #870000)" d="M809.63 41.25L1148.63 41.25"/>
+<path stroke="var(--sch-frame, #870000)" d="M1069.61 100.43L1069.63 61.25"/>
+<path stroke="var(--sch-frame, #870000)" d="M1069.63 61.25L1069.63 41.25"/>
+<text transform="matrix(1 0 0 -1 710 87.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">TITLE:</text>
+<text transform="matrix(1 0 0 -1 767.62 74.91)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="13" fill="var(--sch-label, #0000ff)">Bitonical Bytes</text>
+<text transform="matrix(1 0 0 -1 1074.62 74.25)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">REV:</text>
+<text transform="matrix(1 0 0 -1 1112.62 74.25)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="12" fill="var(--sch-label, #0000ff)">1.0</text>
+<text transform="matrix(1 0 0 -1 814.62 25.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">Date:</text>
+<text transform="matrix(1 0 0 -1 861.62 25.02)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="12" fill="var(--sch-label, #0000ff)">2023-10-22</text>
+<text transform="matrix(1 0 0 -1 1073.62 45.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">Sheet:</text>
+<text transform="matrix(1 0 0 -1 1118.62 45.02)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="12" fill="var(--sch-label, #0000ff)">1/1</text>
+<text transform="matrix(1 0 0 -1 953.62 25.25)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">Drawn By:</text>
+<text transform="matrix(1 0 0 -1 1018.63 25.25)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="12" fill="var(--sch-label, #0000ff)">Tillmann</text>
+<text transform="matrix(1 0 0 -1 814.62 47.25)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="11" fill="var(--sch-frame, #880000)">Company:</text>
+<text transform="matrix(1 0 0 -1 881.25 47.14)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="12" fill="var(--sch-label, #0000ff)">T&amp;F Cooperation</text>
+<path stroke="var(--sch-frame, #870000)" d="M809.63 61.25L809.63 21.25"/>
+<text transform="matrix(1 0 0 -1 289.04 763.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">ESP32-S3-WROOM-1(N8R2)</text>
+<text transform="matrix(1 0 0 -1 289.04 772.53)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U1</text>
+<text transform="matrix(1 0 0 -1 347.36 672.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">GND</text>
+<text transform="matrix(1 0 0 -1 370 676.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">41</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 675.5L370 675.5"/>
+<text transform="matrix(1 0 0 -1 345.66 651.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 370.5 656.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">40</text>
+<path stroke="var(--sch-part, #000000)" d="M380 655.5L370 655.5"/>
+<text transform="matrix(1 0 0 -1 349.72 641.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO1</text>
+<text transform="matrix(1 0 0 -1 370.5 646.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">39</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 645.5L370 645.5"/>
+<text transform="matrix(1 0 0 -1 349.72 631.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO2</text>
+<text transform="matrix(1 0 0 -1 370.5 636.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">38</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 635.5L370 635.5"/>
+<text transform="matrix(1 0 0 -1 341.95 621.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">TXD0</text>
+<text transform="matrix(1 0 0 -1 370.5 626.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">37</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 625.5L370 625.5"/>
+<text transform="matrix(1 0 0 -1 341.24 611.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">RXD0</text>
+<text transform="matrix(1 0 0 -1 370.5 616.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">36</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 615.5L370 615.5"/>
+<text transform="matrix(1 0 0 -1 344.01 601.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO42</text>
+<text transform="matrix(1 0 0 -1 370.5 606.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">35</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 605.5L370 605.5"/>
+<text transform="matrix(1 0 0 -1 344.01 591.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO41</text>
+<text transform="matrix(1 0 0 -1 370.5 596.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">34</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 595.5L370 595.5"/>
+<text transform="matrix(1 0 0 -1 344.01 581.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO40</text>
+<text transform="matrix(1 0 0 -1 370.5 586.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">33</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 585.5L370 585.5"/>
+<text transform="matrix(1 0 0 -1 344.01 571.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO39</text>
+<text transform="matrix(1 0 0 -1 370.5 576.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">32</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 575.5L370 575.5"/>
+<text transform="matrix(1 0 0 -1 344.01 561.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO38</text>
+<text transform="matrix(1 0 0 -1 370.5 566.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">31</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 565.5L370 565.5"/>
+<text transform="matrix(1 0 0 -1 344.01 551.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO37</text>
+<text transform="matrix(1 0 0 -1 370.5 556.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">30</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 555.5L370 555.5"/>
+<text transform="matrix(1 0 0 -1 344.01 541.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO36</text>
+<text transform="matrix(1 0 0 -1 370.5 546.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">29</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 545.5L370 545.5"/>
+<text transform="matrix(1 0 0 -1 344.01 531.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO35</text>
+<text transform="matrix(1 0 0 -1 370.5 536.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">28</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 535.5L370 535.5"/>
+<text transform="matrix(1 0 0 -1 349.72 521.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO0</text>
+<text transform="matrix(1 0 0 -1 370.5 526.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">27</text>
+<path stroke="var(--sch-frame, #870000)" d="M380 525.5L370 525.5"/>
+<text transform="matrix(0 1 1 0 354 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO45</text>
+<text transform="matrix(0 1 1 0 349 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">26</text>
+<path stroke="var(--sch-frame, #870000)" d="M350 475.5L350 485.5"/>
+<text transform="matrix(0 1 1 0 344 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO48</text>
+<text transform="matrix(0 1 1 0 339 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">25</text>
+<path stroke="var(--sch-frame, #870000)" d="M340 475.5L340 485.5"/>
+<text transform="matrix(0 1 1 0 334 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO47</text>
+<text transform="matrix(0 1 1 0 329 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">24</text>
+<path stroke="var(--sch-frame, #870000)" d="M330 475.5L330 485.5"/>
+<text transform="matrix(0 1 1 0 324 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO21</text>
+<text transform="matrix(0 1 1 0 319 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">23</text>
+<path stroke="var(--sch-frame, #870000)" d="M320 475.5L320 485.5"/>
+<text transform="matrix(0 1 1 0 314 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO14</text>
+<text transform="matrix(0 1 1 0 309 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">22</text>
+<path stroke="var(--sch-frame, #870000)" d="M310 475.5L310 485.5"/>
+<text transform="matrix(0 1 1 0 304 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO13</text>
+<text transform="matrix(0 1 1 0 299 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">21</text>
+<path stroke="var(--sch-frame, #870000)" d="M300 475.5L300 485.5"/>
+<text transform="matrix(0 1 1 0 294 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO12</text>
+<text transform="matrix(0 1 1 0 289 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">20</text>
+<path stroke="var(--sch-frame, #870000)" d="M290 475.5L290 485.5"/>
+<text transform="matrix(0 1 1 0 284 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO11</text>
+<text transform="matrix(0 1 1 0 279 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">19</text>
+<path stroke="var(--sch-frame, #870000)" d="M280 475.5L280 485.5"/>
+<text transform="matrix(0 1 1 0 274 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO10</text>
+<text transform="matrix(0 1 1 0 269 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">18</text>
+<path stroke="var(--sch-frame, #870000)" d="M270 475.5L270 485.5"/>
+<text transform="matrix(0 1 1 0 264 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO9</text>
+<text transform="matrix(0 1 1 0 259 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">17</text>
+<path stroke="var(--sch-frame, #870000)" d="M260 475.5L260 485.5"/>
+<text transform="matrix(0 1 1 0 254 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO46</text>
+<text transform="matrix(0 1 1 0 249 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">16</text>
+<path stroke="var(--sch-frame, #870000)" d="M250 475.5L250 485.5"/>
+<text transform="matrix(0 1 1 0 244 489.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO3</text>
+<text transform="matrix(0 1 1 0 239 473.57)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">15</text>
+<path stroke="var(--sch-frame, #870000)" d="M240 475.5L240 485.5"/>
+<text transform="matrix(1 0 0 -1 223.7 521.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO20</text>
+<text transform="matrix(1 0 0 -1 208.07 526.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">14</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 525.5L220 525.5"/>
+<text transform="matrix(1 0 0 -1 223.7 531.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO19</text>
+<text transform="matrix(1 0 0 -1 208.07 536.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">13</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 535.5L220 535.5"/>
+<text transform="matrix(1 0 0 -1 223.7 541.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO8</text>
+<text transform="matrix(1 0 0 -1 208.07 546.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">12</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 545.5L220 545.5"/>
+<text transform="matrix(1 0 0 -1 223.7 551.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO18</text>
+<text transform="matrix(1 0 0 -1 208.07 556.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">11</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 555.5L220 555.5"/>
+<text transform="matrix(1 0 0 -1 223.7 561.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO17</text>
+<text transform="matrix(1 0 0 -1 208.07 566.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">10</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 565.5L220 565.5"/>
+<text transform="matrix(1 0 0 -1 223.7 571.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO16</text>
+<text transform="matrix(1 0 0 -1 213.78 576.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">9</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 575.5L220 575.5"/>
+<text transform="matrix(1 0 0 -1 223.7 581.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO15</text>
+<text transform="matrix(1 0 0 -1 213.78 586.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">8</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 585.5L220 585.5"/>
+<text transform="matrix(1 0 0 -1 223.7 591.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO7</text>
+<text transform="matrix(1 0 0 -1 213.78 596.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">7</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 595.5L220 595.5"/>
+<text transform="matrix(1 0 0 -1 223.7 601.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO6</text>
+<text transform="matrix(1 0 0 -1 213.78 606.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 605.5L220 605.5"/>
+<text transform="matrix(1 0 0 -1 223.7 611.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO5</text>
+<text transform="matrix(1 0 0 -1 213.78 616.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 615.5L220 615.5"/>
+<text transform="matrix(1 0 0 -1 223.7 621.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IO4</text>
+<text transform="matrix(1 0 0 -1 213.78 626.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 625.5L220 625.5"/>
+<text transform="matrix(1 0 0 -1 223.7 631.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">EN</text>
+<text transform="matrix(1 0 0 -1 213.78 636.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 635.5L220 635.5"/>
+<text transform="matrix(1 0 0 -1 223.7 641.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3V3</text>
+<text transform="matrix(1 0 0 -1 213.78 646.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M210 645.5L220 645.5"/>
+<text transform="matrix(1 0 0 -1 223.7 651.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 213.78 656.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">1</text>
+<path stroke="var(--sch-part, #000000)" d="M210 655.5L220 655.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" d="M226.5 675.5C226.5 676.33 225.83 677 225 677C224.17 677 223.5 676.33 223.5 675.5C223.5 674.67 224.17 674 225 674C225.83 674 226.5 674.67 226.5 675.5Z"/>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M222 760.5L368 760.5C369.11 760.5 370 759.61 370 758.5L370 487.5C370 486.4 368.9 485.5 368 485.5L222 485.5C220.9 485.5 220 486.61 220 487.5L220 758.5C220 759.61 221.11 760.5 222 760.5"/>
+<text transform="matrix(1 0 0 -1 142 674.67)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M155 665.5L155 655.5"/>
+<path stroke="var(--sch-part, #000000)" d="M164 665.5L146 665.5"/>
+<path stroke="var(--sch-part, #000000)" d="M161 667.5L149 667.5"/>
+<path stroke="var(--sch-part, #000000)" d="M158 669.5L152 669.5"/>
+<path stroke="var(--sch-part, #000000)" d="M156 671.5L154 671.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M155 655.5L210 655.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M210 645.5L190 645.5L190 635.5L210 635.5"/>
+<text transform="matrix(1 0 0 -1 104.72 531.88)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">USB_D-</text>
+<path stroke="var(--sch-label, #0000ff)" d="M165 535.5L160 530.5L145 530.5L145 540.5L160 540.5L165 535.5"/>
+<text transform="matrix(1 0 0 -1 102.19 521.88)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">USB_D+</text>
+<path stroke="var(--sch-label, #0000ff)" d="M165 525.5L160 520.5L145 520.5L145 530.5L160 530.5L165 525.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M165 525.5L210 525.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M165 535.5L210 535.5"/>
+<text transform="matrix(1 0 0 -1 412 674.67)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M425 665.5L425 655.5"/>
+<path stroke="var(--sch-part, #000000)" d="M434 665.5L416 665.5"/>
+<path stroke="var(--sch-part, #000000)" d="M431 667.5L419 667.5"/>
+<path stroke="var(--sch-part, #000000)" d="M428 669.5L422 669.5"/>
+<path stroke="var(--sch-part, #000000)" d="M426 671.5L424 671.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M380 655.5L425 655.5"/>
+<text transform="matrix(1 0 0 -1 982.81 388.08)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">TYPEC-304-ACP16</text>
+<text transform="matrix(1 0 0 -1 982.81 397.17)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">USB1</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M962 475.5L1028 475.5C1029.11 475.5 1030 474.61 1030 473.5L1030 407.5C1030 406.4 1028.9 405.5 1028 405.5L962 405.5C960.9 405.5 960 406.61 960 407.5L960 473.5C960 474.61 961.11 475.5 962 475.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M966.5 470.5C966.5 471.33 965.83 472 965 472C964.17 472 963.5 471.33 963.5 470.5C963.5 469.67 964.17 469 965 469C965.83 469 966.5 469.67 966.5 470.5Z"/>
+<text transform="matrix(1 0 0 -1 963.7 461.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 930.04 466.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">A1B12</text>
+<path stroke="var(--sch-part, #000000)" d="M950 465.5L960 465.5"/>
+<text transform="matrix(1 0 0 -1 963.7 451.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">VBUS</text>
+<text transform="matrix(1 0 0 -1 935.76 456.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A4B9</text>
+<path stroke="var(--sch-frame, #870000)" d="M950 455.5L960 455.5"/>
+<text transform="matrix(1 0 0 -1 963.7 441.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CC1</text>
+<text transform="matrix(1 0 0 -1 947.64 446.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A5</text>
+<path stroke="var(--sch-frame, #870000)" d="M950 445.5L960 445.5"/>
+<text transform="matrix(1 0 0 -1 963.7 431.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">D+</text>
+<text transform="matrix(1 0 0 -1 947.64 436.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A6</text>
+<path stroke="var(--sch-frame, #870000)" d="M950 435.5L960 435.5"/>
+<text transform="matrix(1 0 0 -1 963.7 421.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">D-</text>
+<text transform="matrix(1 0 0 -1 947.64 426.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A7</text>
+<path stroke="var(--sch-frame, #870000)" d="M950 425.5L960 425.5"/>
+<text transform="matrix(1 0 0 -1 963.7 411.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">SBU1</text>
+<text transform="matrix(1 0 0 -1 947.64 416.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A8</text>
+<path stroke="var(--sch-frame, #870000)" d="M950 415.5L960 415.5"/>
+<text transform="matrix(1 0 0 -1 1001.26 411.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">VBUS</text>
+<text transform="matrix(1 0 0 -1 1030.5 416.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B4A9</text>
+<path stroke="var(--sch-frame, #870000)" d="M1040 415.5L1030 415.5"/>
+<text transform="matrix(1 0 0 -1 1001.69 421.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">SBU2</text>
+<text transform="matrix(1 0 0 -1 1030.5 426.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B8</text>
+<path stroke="var(--sch-frame, #870000)" d="M1040 425.5L1030 425.5"/>
+<text transform="matrix(1 0 0 -1 1015.28 431.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">D-</text>
+<text transform="matrix(1 0 0 -1 1030.5 436.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B7</text>
+<path stroke="var(--sch-frame, #870000)" d="M1040 435.5L1030 435.5"/>
+<text transform="matrix(1 0 0 -1 1012.01 441.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">D+</text>
+<text transform="matrix(1 0 0 -1 1030.5 446.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B6</text>
+<path stroke="var(--sch-frame, #870000)" d="M1040 445.5L1030 445.5"/>
+<text transform="matrix(1 0 0 -1 1008.02 451.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CC2</text>
+<text transform="matrix(1 0 0 -1 1030.5 456.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B5</text>
+<path stroke="var(--sch-frame, #870000)" d="M1040 455.5L1030 455.5"/>
+<text transform="matrix(1 0 0 -1 1005.66 461.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 1030.5 466.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">B1A12</text>
+<path stroke="var(--sch-part, #000000)" d="M1040 465.5L1030 465.5"/>
+<text transform="matrix(0 1 1 0 1003 462.38)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">EP</text>
+<text transform="matrix(0 1 1 0 999 480.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">EP</text>
+<path stroke="var(--sch-frame, #870000)" d="M1000 495.5L1000 475.5"/>
+<text transform="matrix(1 0 0 -1 862.19 431.88)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">USB_D+</text>
+<path stroke="var(--sch-label, #0000ff)" d="M925 435.5L920 430.5L905 430.5L905 440.5L920 440.5L925 435.5"/>
+<text transform="matrix(1 0 0 -1 864.72 406.88)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">USB_D-</text>
+<path stroke="var(--sch-label, #0000ff)" d="M925 410.5L920 405.5L905 405.5L905 415.5L920 415.5L925 410.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M925 435.5L950 435.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M925 410.5L925 425.5L950 425.5"/>
+<text transform="matrix(1 0 0 -1 1064.28 394.33)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M1075 405.5L1075 415.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1080 405.5L1070 405.5"/>
+<text transform="matrix(1 0 0 -1 874.28 468.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M885 465.5L885 455.5"/>
+<path stroke="var(--sch-part, #000000)" d="M880 465.5L890 465.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M885 455.5L950 455.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1075 415.5L1040 415.5"/>
+<text transform="matrix(1 0 0 -1 1057 438.17)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M1070 455.5L1070 465.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1061 455.5L1079 455.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1064 453.5L1076 453.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1067 451.5L1073 451.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1069 449.5L1071 449.5"/>
+<text transform="matrix(1 0 0 -1 902 484.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M915 475.5L915 465.5"/>
+<path stroke="var(--sch-part, #000000)" d="M924 475.5L906 475.5"/>
+<path stroke="var(--sch-part, #000000)" d="M921 477.5L909 477.5"/>
+<path stroke="var(--sch-part, #000000)" d="M918 479.5L912 479.5"/>
+<path stroke="var(--sch-part, #000000)" d="M916 481.5L914 481.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M915 465.5L950 465.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1040 465.5L1070 465.5"/>
+<text transform="matrix(1 0 0 -1 483.03 518.83)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">XDZ254-1-03-W-2.5-G1</text>
+<text transform="matrix(1 0 0 -1 483.03 527.83)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U2</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M487 515.5L503 515.5C504.11 515.5 505 514.61 505 513.5L505 477.5C505 476.4 503.9 475.5 503 475.5L487 475.5C485.9 475.5 485 476.61 485 477.5L485 513.5C485 514.61 486.11 515.5 487 515.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M491.5 510.5C491.5 511.33 490.83 512 490 512C489.17 512 488.5 511.33 488.5 510.5C488.5 509.67 489.17 509 490 509C490.83 509 491.5 509.67 491.5 510.5Z"/>
+<text transform="matrix(1 0 0 -1 488.7 501.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(1 0 0 -1 478.79 506.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M475 505.5L485 505.5"/>
+<text transform="matrix(1 0 0 -1 488.7 491.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(1 0 0 -1 478.79 496.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M475 495.5L485 495.5"/>
+<text transform="matrix(1 0 0 -1 488.7 481.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<text transform="matrix(1 0 0 -1 478.79 486.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M475 485.5L485 485.5"/>
+<text transform="matrix(1 0 0 -1 442 524.67)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M455 515.5L455 505.5"/>
+<path stroke="var(--sch-part, #000000)" d="M464 515.5L446 515.5"/>
+<path stroke="var(--sch-part, #000000)" d="M461 517.5L449 517.5"/>
+<path stroke="var(--sch-part, #000000)" d="M458 519.5L452 519.5"/>
+<path stroke="var(--sch-part, #000000)" d="M456 521.5L454 521.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M455 505.5L475 505.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M380 675.5L395 675.5L395 655.5"/>
+<text transform="matrix(1 0 0 -1 57 578.4)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M70 595.5L70 605.5"/>
+<path stroke="var(--sch-part, #000000)" d="M61 595.5L79 595.5"/>
+<path stroke="var(--sch-part, #000000)" d="M64 593.5L76 593.5"/>
+<path stroke="var(--sch-part, #000000)" d="M67 591.5L73 591.5"/>
+<path stroke="var(--sch-part, #000000)" d="M69 589.5L71 589.5"/>
+<text transform="matrix(1 0 0 -1 107 578.4)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M120 595.5L120 605.5"/>
+<path stroke="var(--sch-part, #000000)" d="M111 595.5L129 595.5"/>
+<path stroke="var(--sch-part, #000000)" d="M114 593.5L126 593.5"/>
+<path stroke="var(--sch-part, #000000)" d="M117 591.5L123 591.5"/>
+<path stroke="var(--sch-part, #000000)" d="M119 589.5L121 589.5"/>
+<text transform="matrix(1 0 0 -1 80 613.3)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">20uF</text>
+<text transform="matrix(1 0 0 -1 80 622.3)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">C1</text>
+<path stroke="var(--sch-frame, #a10000)" d="M78 623.5L62 623.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M70 615.5L70 605.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M70 635.5L70 627.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M62 627.5L78 627.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M70 635.5L70 645.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M70 623.5L70 615.5"/>
+<text transform="matrix(1 0 0 -1 130 613.3)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">0.1u</text>
+<text transform="matrix(1 0 0 -1 130 622.3)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">C2</text>
+<path stroke="var(--sch-frame, #a10000)" d="M128 623.5L112 623.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M120 615.5L120 605.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M120 635.5L120 627.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M112 627.5L128 627.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M120 635.5L120 645.5"/>
+<path stroke="var(--sch-frame, #a10000)" d="M120 623.5L120 615.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M70 665.5L70 645.5L120 645.5L190 645.5"/>
+<text transform="matrix(1 0 0 -1 58 677.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M70 675.5L70 665.5"/>
+<path stroke="var(--sch-part, #000000)" d="M65 675.5L75 675.5"/>
+<text transform="matrix(1 0 0 -1 962.5 621.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M995 625.5L1005 625.5"/>
+<path stroke="var(--sch-part, #000000)" d="M995 634.5L995 616.5"/>
+<path stroke="var(--sch-part, #000000)" d="M993 631.5L993 619.5"/>
+<path stroke="var(--sch-part, #000000)" d="M991 628.5L991 622.5"/>
+<path stroke="var(--sch-part, #000000)" d="M989 626.5L989 624.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1015 655.5L1005 655.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1015 645.5L1005 645.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1015 635.5L1005 635.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1015 695.5L1005 695.5L1005 625.5L1015 625.5"/>
+<text transform="matrix(1 0 0 -1 1041.11 758.95)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">MR01A-01211</text>
+<text transform="matrix(1 0 0 -1 1041.11 768.19)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">CARD1</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M1027 755.5L1093 755.5C1094.11 755.5 1095 754.61 1095 753.5L1095 617.5C1095 616.4 1093.9 615.5 1093 615.5L1027 615.5C1025.9 615.5 1025 616.61 1025 617.5L1025 753.5C1025 754.61 1026.11 755.5 1027 755.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M1031.5 750.5C1031.5 751.33 1030.83 752 1030 752C1029.17 752 1028.5 751.33 1028.5 750.5C1028.5 749.67 1029.17 749 1030 749C1030.83 749 1031.5 749.67 1031.5 750.5Z"/>
+<text transform="matrix(1 0 0 -1 1028.7 741.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">DAT2</text>
+<text transform="matrix(1 0 0 -1 1018.78 746.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 745.5L1025 745.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 731.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CD/DAT3</text>
+<text transform="matrix(1 0 0 -1 1018.78 736.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 735.5L1025 735.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 721.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CMD</text>
+<text transform="matrix(1 0 0 -1 1018.78 726.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 725.5L1025 725.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 711.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">VDD</text>
+<text transform="matrix(1 0 0 -1 1018.78 716.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">4</text>
+<path stroke="var(--sch-frame, #ff0000)" d="M1015 715.5L1025 715.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 701.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CLK</text>
+<text transform="matrix(1 0 0 -1 1018.78 706.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 705.5L1025 705.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 691.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">VSS</text>
+<text transform="matrix(1 0 0 -1 1018.78 696.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">6</text>
+<path stroke="var(--sch-part, #000000)" d="M1015 695.5L1025 695.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 681.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">DAT0</text>
+<text transform="matrix(1 0 0 -1 1018.78 686.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">7</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 685.5L1025 685.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 671.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">DAT1</text>
+<text transform="matrix(1 0 0 -1 1018.78 676.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">8</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 675.5L1025 675.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 661.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">CARD_DET</text>
+<text transform="matrix(1 0 0 -1 1018.78 666.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">9</text>
+<path stroke="var(--sch-frame, #870000)" d="M1015 665.5L1025 665.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 651.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 1013.07 656.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">10</text>
+<path stroke="var(--sch-part, #000000)" d="M1015 655.5L1025 655.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 641.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 1013.07 646.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">11</text>
+<path stroke="var(--sch-part, #000000)" d="M1015 645.5L1025 645.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 631.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 1013.07 636.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">12</text>
+<path stroke="var(--sch-part, #000000)" d="M1015 635.5L1025 635.5"/>
+<text transform="matrix(1 0 0 -1 1028.7 621.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 1013.07 626.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">13</text>
+<path stroke="var(--sch-part, #000000)" d="M1015 625.5L1025 625.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1060 220.5L1060 295.5L950 295.5"/>
+<text transform="matrix(1 0 0 -1 996.5 271.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M990 275.5L980 275.5"/>
+<path stroke="var(--sch-part, #000000)" d="M990 266.5L990 284.5"/>
+<path stroke="var(--sch-part, #000000)" d="M992 269.5L992 281.5"/>
+<path stroke="var(--sch-part, #000000)" d="M994 272.5L994 278.5"/>
+<path stroke="var(--sch-part, #000000)" d="M996 274.5L996 276.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M960 230.5L960 275.5L980 275.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M960 210.5L945 210.5L945 170.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M940 255.5L950 255.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M950 315.5L950 220.5L960 220.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M905 200.5L905 210.5"/>
+<text transform="matrix(1 0 0 -1 862.5 206.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M895 210.5L905 210.5"/>
+<path stroke="var(--sch-part, #000000)" d="M895 219.5L895 201.5"/>
+<path stroke="var(--sch-part, #000000)" d="M893 216.5L893 204.5"/>
+<path stroke="var(--sch-part, #000000)" d="M891 213.5L891 207.5"/>
+<path stroke="var(--sch-part, #000000)" d="M889 211.5L889 209.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M905 210.5L905 220.5L905 255.5L910 255.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M945 165.5L945 170.5L905 170.5"/>
+<text transform="matrix(1 0 0 -1 934.28 144.33)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M945 155.5L945 165.5"/>
+<path stroke="var(--sch-part, #000000)" d="M950 155.5L940 155.5"/>
+<text transform="matrix(1 0 0 -1 919.03 266.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">10uF</text>
+<text transform="matrix(1 0 0 -1 919.03 275.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">C4</text>
+<path stroke="var(--sch-frame, #870000)" d="M927 247.5L927 263.5"/>
+<path stroke="var(--sch-part, #000000)" d="M940 255.5L930 255.5"/>
+<path stroke="var(--sch-part, #000000)" d="M910 255.5L920 255.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M930 255.5L927 255.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M923 255.5L920 255.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M919.78 247.83C923.59 251.38 924.09 257.68 920.9 261.92C920.69 262.19 920.48 262.45 920.25 262.69"/>
+<path stroke="var(--sch-frame, #870000)" d="M935 252.5L931 252.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M933 250.5L933 254.5"/>
+<text transform="matrix(1 0 0 -1 915 173.33)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">10uF</text>
+<text transform="matrix(1 0 0 -1 915 182.33)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">C3</text>
+<path stroke="var(--sch-frame, #870000)" d="M897 183.5L913 183.5"/>
+<path stroke="var(--sch-part, #000000)" d="M905 170.5L905 180.5"/>
+<path stroke="var(--sch-part, #000000)" d="M905 200.5L905 190.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M905 180.5L905 183.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M905 187.5L905 190.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M897.33 190.72C900.88 186.91 907.18 186.41 911.42 189.6C911.69 189.81 911.95 190.02 912.19 190.25"/>
+<path stroke="var(--sch-frame, #870000)" d="M902 175.5L902 179.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M900 177.5L904 177.5"/>
+<text transform="matrix(1 0 0 -1 1004.03 243.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">LD1117-3.3</text>
+<text transform="matrix(1 0 0 -1 1004.03 252.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U4</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M972 240.5L1048 240.5C1049.11 240.5 1050 239.61 1050 238.5L1050 202.5C1050 201.4 1048.9 200.5 1048 200.5L972 200.5C970.9 200.5 970 201.61 970 202.5L970 238.5C970 239.61 971.11 240.5 972 240.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M976.5 235.5C976.5 236.33 975.83 237 975 237C974.17 237 973.5 236.33 973.5 235.5C973.5 234.67 974.17 234 975 234C975.83 234 976.5 234.67 976.5 235.5Z"/>
+<text transform="matrix(1 0 0 -1 973.7 226.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">ADJ(GND)</text>
+<text transform="matrix(1 0 0 -1 963.78 231.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">1</text>
+<path stroke="var(--sch-part, #000000)" d="M960 230.5L970 230.5"/>
+<text transform="matrix(1 0 0 -1 973.7 216.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">VOUT(TAB)</text>
+<text transform="matrix(1 0 0 -1 963.78 221.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M960 220.5L970 220.5"/>
+<text transform="matrix(1 0 0 -1 973.7 206.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">IN</text>
+<text transform="matrix(1 0 0 -1 963.78 211.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M960 210.5L970 210.5"/>
+<text transform="matrix(1 0 0 -1 1028.44 216.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">TAB</text>
+<text transform="matrix(1 0 0 -1 1050.5 221.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M1060 220.5L1050 220.5"/>
+<text transform="matrix(1 0 0 -1 937.66 328.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M950 325.5L950 315.5"/>
+<path stroke="var(--sch-part, #000000)" d="M945 325.5L955 325.5"/>
+<path stroke="var(--sch-part, #000000)" stroke-linecap="square" stroke-linejoin="miter" d="M820 525.5L1150 525.5L1150 350.5L820 350.5Z"/>
+<path stroke="var(--sch-part, #000000)" stroke-linecap="square" stroke-linejoin="miter" d="M705 350.5L1150 350.5L1150 100.5L705 100.5Z"/>
+<text transform="matrix(1 0 0 -1 735 130.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="16" fill="var(--sch-label, #0000ff)">Powersupply</text>
+<text transform="matrix(1 0 0 -1 835 365.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="16" fill="var(--sch-label, #0000ff)">USB-C Connector</text>
+<text transform="matrix(1 0 0 -1 937.66 694.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M950 705.5L950 715.5"/>
+<path stroke="var(--sch-part, #000000)" d="M955 705.5L945 705.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M950 715.5L1015 715.5"/>
+<text transform="matrix(1 0 0 -1 966.66 701.9)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">CLK</text>
+<path stroke="var(--sch-label, #0000ff)" d="M1010 705.5L1005 700.5L990 700.5L990 710.5L1005 710.5L1010 705.5"/>
+<text transform="matrix(1 0 0 -1 960.19 730.5)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">CS</text>
+<path stroke="var(--sch-label, #0000ff)" d="M995 735.5L990 730.5L975 730.5L975 740.5L990 740.5L995 735.5"/>
+<text transform="matrix(1 0 0 -1 946.11 720.5)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">MOSI</text>
+<path stroke="var(--sch-label, #0000ff)" d="M995 725.5L990 720.5L975 720.5L975 730.5L990 730.5L995 725.5"/>
+<text transform="matrix(1 0 0 -1 941.11 680.5)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">MISO</text>
+<path stroke="var(--sch-label, #0000ff)" d="M990 685.5L985 680.5L970 680.5L970 690.5L985 690.5L990 685.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M995 735.5L1015 735.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1010 705.5L1015 705.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M995 725.5L1015 725.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M990 685.5L1015 685.5"/>
+<text transform="matrix(0 1 1 0 275 425.95)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">CS</text>
+<path stroke="var(--sch-label, #0000ff)" d="M270 460.5L275 455.5L275 440.5L265 440.5L265 455.5L270 460.5"/>
+<text transform="matrix(0 1 1 0 295 417.67)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">CLK</text>
+<path stroke="var(--sch-label, #0000ff)" d="M290 460.5L295 455.5L295 440.5L285 440.5L285 455.5L290 460.5"/>
+<text transform="matrix(0 1 1 0 285 412.33)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">MOSI</text>
+<path stroke="var(--sch-label, #0000ff)" d="M280 460.5L285 455.5L285 440.5L275 440.5L275 455.5L280 460.5"/>
+<text transform="matrix(0 1 1 0 305 412.33)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">MISO</text>
+<path stroke="var(--sch-label, #0000ff)" d="M300 460.5L305 455.5L305 440.5L295 440.5L295 455.5L300 460.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M300 460.5L300 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M280 460.5L280 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M290 460.5L290 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M270 460.5L270 475.5"/>
+<text transform="matrix(1 0 0 -1 108.28 313.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">Header-Female-2.54_1x4</text>
+<text transform="matrix(1 0 0 -1 108.29 322.66)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">CO2_SENSOR</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M112 310.5L128 310.5C129.1 310.5 130 309.61 130 308.5L130 262.5C130 261.4 128.9 260.5 128 260.5L112 260.5C110.9 260.5 110 261.61 110 262.5L110 308.5C110 309.61 111.11 310.5 112 310.5"/>
+<text transform="matrix(1 0 0 -1 115 297.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">1</text>
+<path stroke="var(--sch-part, #000000)" d="M100 300.5L110 300.5"/>
+<text transform="matrix(1 0 0 -1 115 287.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">2</text>
+<path stroke="var(--sch-part, #000000)" d="M100 290.5L110 290.5"/>
+<text transform="matrix(1 0 0 -1 115 277.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">3</text>
+<path stroke="var(--sch-part, #000000)" d="M100 280.5L110 280.5"/>
+<text transform="matrix(1 0 0 -1 115 267.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">4</text>
+<path stroke="var(--sch-part, #000000)" d="M100 270.5L110 270.5"/>
+<text transform="matrix(1 0 0 -1 138.28 203.8)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">Header-Female-2.54_1x6</text>
+<text transform="matrix(1 0 0 -1 138.29 212.95)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">BME680</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M142 200.5L158 200.5C159.1 200.5 160 199.61 160 198.5L160 132.5C160 131.4 158.9 130.5 158 130.5L142 130.5C140.9 130.5 140 131.6 140 132.5L140 198.5C140 199.61 141.1 200.5 142 200.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M146.5 195.5C146.5 196.33 145.83 197 145 197C144.17 197 143.5 196.33 143.5 195.5C143.5 194.67 144.17 194 145 194C145.83 194 146.5 194.67 146.5 195.5Z"/>
+<text transform="matrix(1 0 0 -1 143.7 186.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(1 0 0 -1 133.78 191.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 190.5L140 190.5"/>
+<text transform="matrix(1 0 0 -1 143.7 176.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(1 0 0 -1 133.78 181.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 180.5L140 180.5"/>
+<text transform="matrix(1 0 0 -1 143.7 166.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<text transform="matrix(1 0 0 -1 133.78 171.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 170.5L140 170.5"/>
+<text transform="matrix(1 0 0 -1 143.7 156.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<text transform="matrix(1 0 0 -1 133.78 161.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 160.5L140 160.5"/>
+<text transform="matrix(1 0 0 -1 143.7 146.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<text transform="matrix(1 0 0 -1 133.78 151.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 150.5L140 150.5"/>
+<text transform="matrix(1 0 0 -1 143.7 136.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<text transform="matrix(1 0 0 -1 133.78 141.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<path stroke="var(--sch-frame, #870000)" d="M130 140.5L140 140.5"/>
+<text transform="matrix(1 0 0 -1 77 319.87)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M90 310.5L90 300.5"/>
+<path stroke="var(--sch-part, #000000)" d="M99 310.5L81 310.5"/>
+<path stroke="var(--sch-part, #000000)" d="M96 312.5L84 312.5"/>
+<path stroke="var(--sch-part, #000000)" d="M93 314.5L87 314.5"/>
+<path stroke="var(--sch-part, #000000)" d="M91 316.5L89 316.5"/>
+<text transform="matrix(1 0 0 -1 63.06 286.57)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M85 290.5L95 290.5"/>
+<path stroke="var(--sch-part, #000000)" d="M85 285.5L85 295.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M90 300.5L100 300.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M100 290.5L95 290.5"/>
+<text transform="matrix(1 0 0 -1 114.28 119.27)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M125 130.5L125 140.5"/>
+<path stroke="var(--sch-part, #000000)" d="M130 130.5L120 130.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M125 140.5L130 140.5"/>
+<text transform="matrix(1 0 0 -1 82.5 146.57)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M115 150.5L125 150.5"/>
+<path stroke="var(--sch-part, #000000)" d="M115 159.5L115 141.5"/>
+<path stroke="var(--sch-part, #000000)" d="M113 156.5L113 144.5"/>
+<path stroke="var(--sch-part, #000000)" d="M111 153.5L111 147.5"/>
+<path stroke="var(--sch-part, #000000)" d="M109 151.5L109 149.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M125 150.5L130 150.5"/>
+<text transform="matrix(1 0 0 -1 379.66 303.8)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">XH-4AK</text>
+<text transform="matrix(1 0 0 -1 379.66 312.95)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">BODENSENSOR1</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M387 300.5L403 300.5C404.11 300.5 405 299.61 405 298.5L405 252.5C405 251.4 403.9 250.5 403 250.5L387 250.5C385.9 250.5 385 251.61 385 252.5L385 298.5C385 299.61 386.11 300.5 387 300.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M391.5 295.5C391.5 296.33 390.83 297 390 297C389.17 297 388.5 296.33 388.5 295.5C388.5 294.67 389.17 294 390 294C390.83 294 391.5 294.67 391.5 295.5Z"/>
+<text transform="matrix(1 0 0 -1 388.7 286.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(1 0 0 -1 378.79 291.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 290.5L385 290.5"/>
+<text transform="matrix(1 0 0 -1 388.7 276.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(1 0 0 -1 378.79 281.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 280.5L385 280.5"/>
+<text transform="matrix(1 0 0 -1 388.7 266.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<text transform="matrix(1 0 0 -1 378.79 271.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 270.5L385 270.5"/>
+<text transform="matrix(1 0 0 -1 388.7 256.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<text transform="matrix(1 0 0 -1 378.79 261.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 260.5L385 260.5"/>
+<text transform="matrix(1 0 0 -1 352 309.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M365 300.5L365 290.5"/>
+<path stroke="var(--sch-part, #000000)" d="M374 300.5L356 300.5"/>
+<path stroke="var(--sch-part, #000000)" d="M371 302.5L359 302.5"/>
+<path stroke="var(--sch-part, #000000)" d="M368 304.5L362 304.5"/>
+<path stroke="var(--sch-part, #000000)" d="M366 306.5L364 306.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M365 290.5L375 290.5"/>
+<text transform="matrix(1 0 0 -1 349.28 259.25)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M360 270.5L360 280.5"/>
+<path stroke="var(--sch-part, #000000)" d="M365 270.5L355 270.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M360 280.5L375 280.5"/>
+<text transform="matrix(1 0 0 -1 164.96 592)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A2</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 595.5L195 590.5L180 590.5L180 600.5L195 600.5L200 595.5"/>
+<text transform="matrix(1 0 0 -1 164.96 602)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A3</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 605.5L195 600.5L180 600.5L180 610.5L195 610.5L200 605.5"/>
+<text transform="matrix(1 0 0 -1 164.96 622)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A5</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 625.5L195 620.5L180 620.5L180 630.5L195 630.5L200 625.5"/>
+<text transform="matrix(1 0 0 -1 164.96 612)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A4</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 615.5L195 610.5L180 610.5L180 620.5L195 620.5L200 615.5"/>
+<text transform="matrix(1 0 0 -1 1028.33 585.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">BL-HZH35A-L16-TRB</text>
+<text transform="matrix(1 0 0 -1 1028.33 594.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">LED2</text>
+<path stroke="var(--sch-frame, #870000)" d="M1045 565.5L1052 558.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M1041 561.5L1048 554.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M1052 558.5L1048 560.5L1050 562.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M1048 554.5L1044 556.5L1046 558.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M1020 575.5L1035 575.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M1060 575.5L1045 575.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M1035 581.5L1045 575.5L1035 568.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M1045 582.5L1045 568.5"/>
+<text transform="matrix(1 0 0 -1 989.03 582.5)" font-family="Arial, Helvetica, sans-serif" font-size="9"><tspan font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">220</tspan><tspan font-family="'Segoe UI Symbol', 'Noto Sans Symbols 2', sans-serif" font-size="9" fill="var(--sch-label, #000080)">Ω</tspan></text>
+<text transform="matrix(1 0 0 -1 989.03 591.59)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R3</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M985 579.5L1005 579.5L1005 571.5L985 571.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M1005 575.5L1015 575.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M985 575.5L975 575.5"/>
+<text transform="matrix(1 0 0 -1 926.67 571.96)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">CLK</text>
+<path stroke="var(--sch-label, #0000ff)" d="M975 575.5L970 570.5L955 570.5L955 580.5L970 580.5L975 575.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1020 575.5L1015 575.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M1060 575.5L1070 575.5"/>
+<text transform="matrix(1 0 0 -1 1086.5 571.57)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M1080 575.5L1070 575.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1080 566.5L1080 584.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1082 569.5L1082 581.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1084 572.5L1084 578.5"/>
+<path stroke="var(--sch-part, #000000)" d="M1086 574.5L1086 576.5"/>
+<path stroke="var(--sch-part, #000000)" stroke-linecap="square" stroke-linejoin="miter" d="M915 805.5L1150 805.5L1150 525.5L915 525.5Z"/>
+<text transform="matrix(1 0 0 -1 930 545.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="16" fill="var(--sch-label, #0000ff)">SD Card</text>
+<path stroke="var(--sch-part, #000000)" stroke-linecap="square" stroke-linejoin="miter" d="M20 370.5L705 370.5L705 20.5L20 20.5Z"/>
+<text transform="matrix(1 0 0 -1 384.03 228.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">1k</text>
+<text transform="matrix(1 0 0 -1 384.03 237.38)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R1</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M380 225.5L400 225.5L400 215.5L380 215.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M400 220.5L410 220.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M380 220.5L370 220.5"/>
+<text transform="matrix(1 0 0 -1 424.03 228.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">1.8k</text>
+<text transform="matrix(1 0 0 -1 424.03 237.38)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R2</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M420 225.5L440 225.5L440 215.5L420 215.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M440 220.5L450 220.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M420 220.5L410 220.5"/>
+<text transform="matrix(1 0 0 -1 437 193.4)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M450 210.5L450 220.5"/>
+<path stroke="var(--sch-part, #000000)" d="M441 210.5L459 210.5"/>
+<path stroke="var(--sch-part, #000000)" d="M444 208.5L456 208.5"/>
+<path stroke="var(--sch-part, #000000)" d="M447 206.5L453 206.5"/>
+<path stroke="var(--sch-part, #000000)" d="M449 204.5L451 204.5"/>
+<text transform="matrix(1 0 0 -1 441.5 248.3)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A2</text>
+<path stroke="var(--sch-label, #0000ff)" d="M420 250.5L425 255.5L440 255.5L440 245.5L425 245.5L420 250.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M410 220.5L410 250.5L420 250.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M370 220.5L370 260.5L375 260.5"/>
+<text transform="matrix(1 0 0 -1 159.03 273.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">1k</text>
+<text transform="matrix(1 0 0 -1 159.03 282.38)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R6</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M155 270.5L175 270.5L175 260.5L155 260.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M175 265.5L185 265.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M155 265.5L145 265.5"/>
+<text transform="matrix(1 0 0 -1 199.03 273.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">1.8k</text>
+<text transform="matrix(1 0 0 -1 199.03 282.38)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R7</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M195 270.5L215 270.5L215 260.5L195 260.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M215 265.5L225 265.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M195 265.5L185 265.5"/>
+<text transform="matrix(1 0 0 -1 212 238.4)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M225 255.5L225 265.5"/>
+<path stroke="var(--sch-part, #000000)" d="M216 255.5L234 255.5"/>
+<path stroke="var(--sch-part, #000000)" d="M219 253.5L231 253.5"/>
+<path stroke="var(--sch-part, #000000)" d="M222 251.5L228 251.5"/>
+<path stroke="var(--sch-part, #000000)" d="M224 249.5L226 249.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M185 265.5L185 295.5L195 295.5"/>
+<text transform="matrix(1 0 0 -1 216.5 293.25)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A3</text>
+<path stroke="var(--sch-label, #0000ff)" d="M195 295.5L200 300.5L215 300.5L215 290.5L200 290.5L195 295.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M100 270.5L100 255.5L145 255.5L145 265.5"/>
+<text transform="matrix(1 0 0 -1 395 85.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="16" fill="var(--sch-label, #0000ff)">Sensorik</text>
+<text transform="matrix(1 0 0 -1 319.03 165.5)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">TXS0102DCUR</text>
+<text transform="matrix(1 0 0 -1 319.03 174.64)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U5</text>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" d="M291.5 157.5C291.5 158.33 290.83 159 290 159C289.17 159 288.5 158.33 288.5 157.5C288.5 156.67 289.17 156 290 156C290.83 156 291.5 156.67 291.5 157.5Z"/>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M287 162.5L363 162.5C364.11 162.5 365 161.6 365 160.5L365 110.5C365 109.4 363.9 108.5 363 108.5L287 108.5C285.9 108.5 285 109.61 285 110.5L285 160.5C285 161.6 286.11 162.5 287 162.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M291.5 157.5C291.5 158.33 290.83 159 290 159C289.17 159 288.5 158.33 288.5 157.5C288.5 156.67 289.17 156 290 156C290.83 156 291.5 156.67 291.5 157.5Z"/>
+<text transform="matrix(1 0 0 -1 288.7 146.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B2</text>
+<text transform="matrix(1 0 0 -1 278.79 151.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M275 150.5L285 150.5"/>
+<text transform="matrix(1 0 0 -1 288.7 136.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">GND</text>
+<text transform="matrix(1 0 0 -1 278.79 141.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-part, #000000)">2</text>
+<path stroke="var(--sch-part, #000000)" d="M275 140.5L285 140.5"/>
+<text transform="matrix(1 0 0 -1 288.7 126.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">VCCA</text>
+<text transform="matrix(1 0 0 -1 278.79 131.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">3</text>
+<path stroke="var(--sch-frame, #ff0000)" d="M275 130.5L285 130.5"/>
+<text transform="matrix(1 0 0 -1 288.7 116.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A2</text>
+<text transform="matrix(1 0 0 -1 278.79 121.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M275 120.5L285 120.5"/>
+<text transform="matrix(1 0 0 -1 349.44 116.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">A1</text>
+<text transform="matrix(1 0 0 -1 365.5 121.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 120.5L365 120.5"/>
+<text transform="matrix(1 0 0 -1 348.53 126.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">OE</text>
+<text transform="matrix(1 0 0 -1 365.5 131.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 130.5L365 130.5"/>
+<text transform="matrix(1 0 0 -1 336.42 136.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">VCCB</text>
+<text transform="matrix(1 0 0 -1 365.5 141.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-frame, #ff0000)">7</text>
+<path stroke="var(--sch-frame, #ff0000)" d="M375 140.5L365 140.5"/>
+<text transform="matrix(1 0 0 -1 349.42 146.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">B1</text>
+<text transform="matrix(1 0 0 -1 365.5 151.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">8</text>
+<path stroke="var(--sch-frame, #870000)" d="M375 150.5L365 150.5"/>
+<text transform="matrix(1 0 0 -1 237.66 126.38)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M265 130.5L275 130.5"/>
+<path stroke="var(--sch-part, #000000)" d="M265 125.5L265 135.5"/>
+<text transform="matrix(1 0 0 -1 385.5 136.38)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M385 140.5L375 140.5"/>
+<path stroke="var(--sch-part, #000000)" d="M385 145.5L385 135.5"/>
+<text transform="matrix(1 0 0 -1 385.5 126.38)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M385 130.5L375 130.5"/>
+<path stroke="var(--sch-part, #000000)" d="M385 135.5L385 125.5"/>
+<text transform="matrix(1 0 0 -1 396.5 118.3)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A5</text>
+<path stroke="var(--sch-label, #0000ff)" d="M375 120.5L380 125.5L395 125.5L395 115.5L380 115.5L375 120.5"/>
+<text transform="matrix(1 0 0 -1 239.96 116.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A4</text>
+<path stroke="var(--sch-label, #0000ff)" d="M275 120.5L270 115.5L255 115.5L255 125.5L270 125.5L275 120.5"/>
+<text transform="matrix(1 0 0 -1 232.5 136.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M265 140.5L275 140.5"/>
+<path stroke="var(--sch-part, #000000)" d="M265 149.5L265 131.5"/>
+<path stroke="var(--sch-part, #000000)" d="M263 146.5L263 134.5"/>
+<path stroke="var(--sch-part, #000000)" d="M261 143.5L261 137.5"/>
+<path stroke="var(--sch-part, #000000)" d="M259 141.5L259 139.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M130 160.5L130 165.5L70 165.5L70 110.5L180 110.5L180 190.5L395 190.5L395 150.5L375 150.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M130 170.5L65 170.5L65 105.5L185 105.5L185 150.5L275 150.5"/>
+<text transform="matrix(1 0 0 -1 577 123.17)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">TEMT6000X01</text>
+<text transform="matrix(1 0 0 -1 577 132.17)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U3</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M547 145.5L573 145.5C574.11 145.5 575 144.6 575 143.5L575 127.5C575 126.4 573.9 125.5 573 125.5L547 125.5C545.9 125.5 545 126.61 545 127.5L545 143.5C545 144.6 546.11 145.5 547 145.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M571.5 140.5C571.5 141.33 570.83 142 570 142C569.17 142 568.5 141.33 568.5 140.5C568.5 139.67 569.17 139 570 139C570.83 139 571.5 139.67 571.5 140.5Z"/>
+<text transform="matrix(0 1 1 0 569 136.08)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(0 1 1 0 564 146)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M565 155.5L565 145.5"/>
+<text transform="matrix(0 1 1 0 559 136.08)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(0 1 1 0 554 146)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M555 155.5L555 145.5"/>
+<text transform="matrix(0 1 1 0 564 129.2)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<text transform="matrix(0 1 1 0 559 119.28)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M560 115.5L560 125.5"/>
+<text transform="matrix(1 0 0 -1 572 183.17)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">10k</text>
+<text transform="matrix(1 0 0 -1 572 192.17)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">R4</text>
+<path stroke="var(--sch-frame, #a10000)" stroke-linecap="square" stroke-linejoin="miter" d="M560 205.5L570 205.5L570 185.5L560 185.5Z"/>
+<path stroke="var(--sch-frame, #870000)" d="M565 205.5L565 215.5"/>
+<path stroke="var(--sch-frame, #870000)" d="M565 185.5L565 175.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M565 155.5L565 175.5"/>
+<text transform="matrix(1 0 0 -1 552 234.67)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M565 225.5L565 215.5"/>
+<path stroke="var(--sch-part, #000000)" d="M574 225.5L556 225.5"/>
+<path stroke="var(--sch-part, #000000)" d="M571 227.5L559 227.5"/>
+<path stroke="var(--sch-part, #000000)" d="M568 229.5L562 229.5"/>
+<path stroke="var(--sch-part, #000000)" d="M566 231.5L564 231.5"/>
+<text transform="matrix(1 0 0 -1 607 156.57)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A6</text>
+<path stroke="var(--sch-label, #0000ff)" d="M585 160.5L590 165.5L605 165.5L605 155.5L590 155.5L585 160.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M585 160.5L565 160.5"/>
+<text transform="matrix(1 0 0 -1 164.96 582.1)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">A6</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 585.5L195 580.5L180 580.5L180 590.5L195 590.5L200 585.5"/>
+<text transform="matrix(1 0 0 -1 927.19 661.96)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">SD_DET</text>
+<path stroke="var(--sch-label, #0000ff)" d="M990 665.5L985 660.5L970 660.5L970 670.5L985 670.5L990 665.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M990 665.5L1015 665.5"/>
+<text transform="matrix(1 0 0 -1 137.19 571.96)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">SD_DET</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 575.5L195 570.5L180 570.5L180 580.5L195 580.5L200 575.5"/>
+<text transform="matrix(1 0 0 -1 783.03 303.67)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">XY303V-3.81-2P</text>
+<text transform="matrix(1 0 0 -1 783.03 312.33)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U6</text>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M787 300.5L803 300.5C804.11 300.5 805 299.61 805 298.5L805 272.5C805 271.4 803.9 270.5 803 270.5L787 270.5C785.9 270.5 785 271.61 785 272.5L785 298.5C785 299.61 786.11 300.5 787 300.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M791.5 295.5C791.5 296.33 790.83 297 790 297C789.17 297 788.5 296.33 788.5 295.5C788.5 294.67 789.17 294 790 294C790.83 294 791.5 294.67 791.5 295.5Z"/>
+<text transform="matrix(1 0 0 -1 788.7 286.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(1 0 0 -1 778.78 291.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M775 290.5L785 290.5"/>
+<text transform="matrix(1 0 0 -1 788.7 276.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(1 0 0 -1 778.78 281.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M775 280.5L785 280.5"/>
+<text transform="matrix(1 0 0 -1 743.07 286.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">+5V</text>
+<path stroke="var(--sch-part, #000000)" d="M765 290.5L775 290.5"/>
+<path stroke="var(--sch-part, #000000)" d="M765 285.5L765 295.5"/>
+<text transform="matrix(1 0 0 -1 762 254.5)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">GND</text>
+<path stroke="var(--sch-part, #000000)" d="M775 270.5L775 280.5"/>
+<path stroke="var(--sch-part, #000000)" d="M766 270.5L784 270.5"/>
+<path stroke="var(--sch-part, #000000)" d="M769 268.5L781 268.5"/>
+<path stroke="var(--sch-part, #000000)" d="M772 266.5L778 266.5"/>
+<path stroke="var(--sch-part, #000000)" d="M774 264.5L776 264.5"/>
+<text transform="matrix(1 0 0 -1 769.03 752.68)" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="var(--sch-label, #000080)">U7</text>
+<text transform="matrix(1 0 0 -1 779.87 626.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">22</text>
+<text transform="matrix(1 0 0 -1 795.5 631.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">22</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 630.5L795 630.5"/>
+<text transform="matrix(1 0 0 -1 779.87 636.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">20</text>
+<text transform="matrix(1 0 0 -1 795.5 641.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">20</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 640.5L795 640.5"/>
+<text transform="matrix(1 0 0 -1 758.7 626.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">21</text>
+<text transform="matrix(1 0 0 -1 743.07 631.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">21</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 630.5L755 630.5"/>
+<text transform="matrix(1 0 0 -1 758.7 636.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">19</text>
+<text transform="matrix(1 0 0 -1 743.07 641.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">19</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 640.5L755 640.5"/>
+<path stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M757 740.5L793 740.5C794.11 740.5 795 739.61 795 738.5L795 612.5C795 611.4 793.9 610.5 793 610.5L757 610.5C755.9 610.5 755 611.61 755 612.5L755 738.5C755 739.61 756.11 740.5 757 740.5"/>
+<path fill="var(--sch-frame, #870000)" stroke="var(--sch-frame, #870000)" stroke-linecap="square" stroke-linejoin="miter" d="M761.5 735.5C761.5 736.33 760.83 737 760 737C759.17 737 758.5 736.33 758.5 735.5C758.5 734.67 759.17 734 760 734C760.83 734 761.5 734.67 761.5 735.5Z"/>
+<text transform="matrix(1 0 0 -1 758.7 726.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<text transform="matrix(1 0 0 -1 748.78 731.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">1</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 730.5L755 730.5"/>
+<text transform="matrix(1 0 0 -1 779.87 646.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">18</text>
+<text transform="matrix(1 0 0 -1 795.5 651.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">18</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 650.5L795 650.5"/>
+<text transform="matrix(1 0 0 -1 758.7 716.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<text transform="matrix(1 0 0 -1 748.78 721.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">3</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 720.5L755 720.5"/>
+<text transform="matrix(1 0 0 -1 779.87 656.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">16</text>
+<text transform="matrix(1 0 0 -1 795.5 661.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">16</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 660.5L795 660.5"/>
+<text transform="matrix(1 0 0 -1 758.7 706.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<text transform="matrix(1 0 0 -1 748.78 711.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">5</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 710.5L755 710.5"/>
+<text transform="matrix(1 0 0 -1 779.87 666.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">14</text>
+<text transform="matrix(1 0 0 -1 795.5 671.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">14</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 670.5L795 670.5"/>
+<text transform="matrix(1 0 0 -1 758.7 696.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">7</text>
+<text transform="matrix(1 0 0 -1 748.78 701.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">7</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 700.5L755 700.5"/>
+<text transform="matrix(1 0 0 -1 779.87 676.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">12</text>
+<text transform="matrix(1 0 0 -1 795.5 681.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">12</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 680.5L795 680.5"/>
+<text transform="matrix(1 0 0 -1 758.7 686.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">9</text>
+<text transform="matrix(1 0 0 -1 748.78 691.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">9</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 690.5L755 690.5"/>
+<text transform="matrix(1 0 0 -1 779.87 686.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">10</text>
+<text transform="matrix(1 0 0 -1 795.5 691.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">10</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 690.5L795 690.5"/>
+<text transform="matrix(1 0 0 -1 758.7 676.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">11</text>
+<text transform="matrix(1 0 0 -1 743.07 681.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">11</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 680.5L755 680.5"/>
+<text transform="matrix(1 0 0 -1 785.58 696.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">8</text>
+<text transform="matrix(1 0 0 -1 795.5 701.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">8</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 700.5L795 700.5"/>
+<text transform="matrix(1 0 0 -1 758.7 666.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">13</text>
+<text transform="matrix(1 0 0 -1 743.07 671.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">13</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 670.5L755 670.5"/>
+<text transform="matrix(1 0 0 -1 785.58 706.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<text transform="matrix(1 0 0 -1 795.5 711.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">6</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 710.5L795 710.5"/>
+<text transform="matrix(1 0 0 -1 758.7 656.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">15</text>
+<text transform="matrix(1 0 0 -1 743.07 661.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">15</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 660.5L755 660.5"/>
+<text transform="matrix(1 0 0 -1 785.58 716.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<text transform="matrix(1 0 0 -1 795.5 721.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">4</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 720.5L795 720.5"/>
+<text transform="matrix(1 0 0 -1 758.7 646.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">17</text>
+<text transform="matrix(1 0 0 -1 743.07 651.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">17</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 650.5L755 650.5"/>
+<text transform="matrix(1 0 0 -1 785.58 726.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<text transform="matrix(1 0 0 -1 795.5 731.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">2</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 730.5L795 730.5"/>
+<text transform="matrix(1 0 0 -1 758.7 616.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">23</text>
+<text transform="matrix(1 0 0 -1 743.07 621.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">23</text>
+<path stroke="var(--sch-frame, #870000)" d="M745 620.5L755 620.5"/>
+<text transform="matrix(1 0 0 -1 779.87 616.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">24</text>
+<text transform="matrix(1 0 0 -1 795.5 621.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="9" fill="var(--sch-label, #0000ff)">24</text>
+<path stroke="var(--sch-frame, #870000)" d="M805 620.5L795 620.5"/>
+<text transform="matrix(1 0 0 -1 700.95 726.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO1</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 730.5L735 725.5L720 725.5L720 735.5L735 735.5L740 730.5"/>
+<text transform="matrix(1 0 0 -1 689.95 716.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">TXD0</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 720.5L735 715.5L720 715.5L720 725.5L735 725.5L740 720.5"/>
+<text transform="matrix(1 0 0 -1 695.45 706.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO42</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 710.5L735 705.5L720 705.5L720 715.5L735 715.5L740 710.5"/>
+<text transform="matrix(1 0 0 -1 695.45 696.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO40</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 700.5L735 695.5L720 695.5L720 705.5L735 705.5L740 700.5"/>
+<text transform="matrix(1 0 0 -1 695.45 686.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO38</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 690.5L735 685.5L720 685.5L720 695.5L735 695.5L740 690.5"/>
+<text transform="matrix(1 0 0 -1 695.45 676.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO36</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 680.5L735 675.5L720 675.5L720 685.5L735 685.5L740 680.5"/>
+<text transform="matrix(1 0 0 -1 695.45 666.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO45</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 670.5L735 665.5L720 665.5L720 675.5L735 675.5L740 670.5"/>
+<text transform="matrix(1 0 0 -1 695.45 656.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO47</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 660.5L735 655.5L720 655.5L720 665.5L735 665.5L740 660.5"/>
+<text transform="matrix(1 0 0 -1 695.45 646.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO14</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 650.5L735 645.5L720 645.5L720 655.5L735 655.5L740 650.5"/>
+<text transform="matrix(1 0 0 -1 695.45 636.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO46</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 640.5L735 635.5L720 635.5L720 645.5L735 645.5L740 640.5"/>
+<text transform="matrix(1 0 0 -1 700.95 626.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO8</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 630.5L735 625.5L720 625.5L720 635.5L735 635.5L740 630.5"/>
+<text transform="matrix(1 0 0 -1 695.45 616.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO17</text>
+<path stroke="var(--sch-label, #0000ff)" d="M740 620.5L735 615.5L720 615.5L720 625.5L735 625.5L740 620.5"/>
+<text transform="matrix(1 0 0 -1 832 726.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO2</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 730.5L815 735.5L830 735.5L830 725.5L815 725.5L810 730.5"/>
+<text transform="matrix(1 0 0 -1 832 716.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">RXD0</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 720.5L815 725.5L830 725.5L830 715.5L815 715.5L810 720.5"/>
+<text transform="matrix(1 0 0 -1 832 706.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO41</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 710.5L815 715.5L830 715.5L830 705.5L815 705.5L810 710.5"/>
+<text transform="matrix(1 0 0 -1 832 696.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO39</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 700.5L815 705.5L830 705.5L830 695.5L815 695.5L810 700.5"/>
+<text transform="matrix(1 0 0 -1 832 686.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO37</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 690.5L815 695.5L830 695.5L830 685.5L815 685.5L810 690.5"/>
+<text transform="matrix(1 0 0 -1 832 676.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO35</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 680.5L815 685.5L830 685.5L830 675.5L815 675.5L810 680.5"/>
+<text transform="matrix(1 0 0 -1 832 666.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO48</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 670.5L815 675.5L830 675.5L830 665.5L815 665.5L810 670.5"/>
+<text transform="matrix(1 0 0 -1 832 656.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO21</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 660.5L815 665.5L830 665.5L830 655.5L815 655.5L810 660.5"/>
+<text transform="matrix(1 0 0 -1 832 646.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO9</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 650.5L815 655.5L830 655.5L830 645.5L815 645.5L810 650.5"/>
+<text transform="matrix(1 0 0 -1 832 636.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO3</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 640.5L815 645.5L830 645.5L830 635.5L815 635.5L810 640.5"/>
+<text transform="matrix(1 0 0 -1 832 626.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO18</text>
+<path stroke="var(--sch-label, #0000ff)" d="M810 630.5L815 635.5L830 635.5L830 625.5L815 625.5L810 630.5"/>
+<text transform="matrix(1 0 0 -1 156.08 551.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO18</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 555.5L195 550.5L180 550.5L180 560.5L195 560.5L200 555.5"/>
+<text transform="matrix(0 1 1 0 243.53 421.91)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO3</text>
+<path stroke="var(--sch-label, #0000ff)" d="M240 460.5L245 455.5L245 440.5L235 440.5L235 455.5L240 460.5"/>
+<text transform="matrix(0 1 1 0 263.53 421.91)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO9</text>
+<path stroke="var(--sch-label, #0000ff)" d="M260 460.5L265 455.5L265 440.5L255 440.5L255 455.5L260 460.5"/>
+<text transform="matrix(0 1 1 0 323.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO21</text>
+<path stroke="var(--sch-label, #0000ff)" d="M320 460.5L325 455.5L325 440.5L315 440.5L315 455.5L320 460.5"/>
+<text transform="matrix(0 1 1 0 343.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO48</text>
+<path stroke="var(--sch-label, #0000ff)" d="M340 460.5L345 455.5L345 440.5L335 440.5L335 455.5L340 460.5"/>
+<text transform="matrix(1 0 0 -1 412 531.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO35</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 535.5L395 540.5L410 540.5L410 530.5L395 530.5L390 535.5"/>
+<text transform="matrix(1 0 0 -1 412 551.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO37</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 555.5L395 560.5L410 560.5L410 550.5L395 550.5L390 555.5"/>
+<text transform="matrix(1 0 0 -1 412 571.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO39</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 575.5L395 580.5L410 580.5L410 570.5L395 570.5L390 575.5"/>
+<text transform="matrix(1 0 0 -1 412 591.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO41</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 595.5L395 600.5L410 600.5L410 590.5L395 590.5L390 595.5"/>
+<text transform="matrix(1 0 0 -1 412 611.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">RXD0</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 615.5L395 620.5L410 620.5L410 610.5L395 610.5L390 615.5"/>
+<text transform="matrix(1 0 0 -1 412 631.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO2</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 635.5L395 640.5L410 640.5L410 630.5L395 630.5L390 635.5"/>
+<text transform="matrix(1 0 0 -1 155.45 561.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO17</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 565.5L195 560.5L180 560.5L180 570.5L195 570.5L200 565.5"/>
+<text transform="matrix(1 0 0 -1 160.95 541.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO8</text>
+<path stroke="var(--sch-label, #0000ff)" d="M200 545.5L195 540.5L180 540.5L180 550.5L195 550.5L200 545.5"/>
+<text transform="matrix(0 1 1 0 253.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO46</text>
+<path stroke="var(--sch-label, #0000ff)" d="M250 460.5L255 455.5L255 440.5L245 440.5L245 455.5L250 460.5"/>
+<text transform="matrix(0 1 1 0 313.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO14</text>
+<path stroke="var(--sch-label, #0000ff)" d="M310 460.5L315 455.5L315 440.5L305 440.5L305 455.5L310 460.5"/>
+<text transform="matrix(0 1 1 0 333.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO47</text>
+<path stroke="var(--sch-label, #0000ff)" d="M330 460.5L335 455.5L335 440.5L325 440.5L325 455.5L330 460.5"/>
+<text transform="matrix(0 1 1 0 353.53 416.58)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO45</text>
+<path stroke="var(--sch-label, #0000ff)" d="M350 460.5L355 455.5L355 440.5L345 440.5L345 455.5L350 460.5"/>
+<text transform="matrix(1 0 0 -1 412 541.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO36</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 545.5L395 550.5L410 550.5L410 540.5L395 540.5L390 545.5"/>
+<text transform="matrix(1 0 0 -1 412 561.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO38</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 565.5L395 570.5L410 570.5L410 560.5L395 560.5L390 565.5"/>
+<text transform="matrix(1 0 0 -1 412 581.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO40</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 585.5L395 590.5L410 590.5L410 580.5L395 580.5L390 585.5"/>
+<text transform="matrix(1 0 0 -1 412 601.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO42</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 605.5L395 610.5L410 610.5L410 600.5L395 600.5L390 605.5"/>
+<text transform="matrix(1 0 0 -1 412 621.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">TXD0</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 625.5L395 630.5L410 630.5L410 620.5L395 620.5L390 625.5"/>
+<text transform="matrix(1 0 0 -1 412 641.97)" font-family="'Times New Roman', Times, serif" font-size="11" fill="var(--sch-label, #0000ff)">IO1</text>
+<path stroke="var(--sch-label, #0000ff)" d="M390 645.5L395 650.5L410 650.5L410 640.5L395 640.5L390 645.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M380 525.5L380 495.5L475 495.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M310 460.5L310 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M320 460.5L320 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M330 460.5L330 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M340 460.5L340 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M350 460.5L350 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M260 460.5L260 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M250 460.5L250 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 645.5L380 645.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 635.5L380 635.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 625.5L380 625.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 615.5L380 615.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 605.5L380 605.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 595.5L380 595.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 585.5L380 585.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 575.5L380 575.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 565.5L380 565.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 555.5L380 555.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 545.5L380 545.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M390 535.5L380 535.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M240 460.5L240 475.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 545.5L210 545.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 555.5L210 555.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 565.5L210 565.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 575.5L210 575.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 585.5L210 585.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 595.5L210 595.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 605.5L210 605.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 615.5L210 615.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M200 625.5L210 625.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 630.5L740 630.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 640.5L740 640.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 730.5L740 730.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 720.5L740 720.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 710.5L740 710.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 700.5L740 700.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 690.5L740 690.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 680.5L740 680.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 670.5L740 670.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 660.5L740 660.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 650.5L740 650.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M745 620.5L740 620.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 630.5L810 630.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 640.5L810 640.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 650.5L810 650.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 660.5L810 660.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 670.5L810 670.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 680.5L810 680.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 690.5L810 690.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 700.5L810 700.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 710.5L810 710.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 720.5L810 720.5"/>
+<path stroke="var(--sch-wire, #008700)" d="M805 730.5L810 730.5"/>
+<path stroke="var(--sch-part, #000000)" stroke-linecap="square" stroke-linejoin="miter" d="M640 805.5L915 805.5L915 525.5L640 525.5Z"/>
+<text transform="matrix(1 0 0 -1 655 540.5)" font-family="Verdana, 'DejaVu Sans', sans-serif" font-size="16" fill="var(--sch-label, #0000ff)">Rest Pins</text>
+<path stroke="var(--sch-wire, #33cc33)" d="M946 449.5L954 441.5M954 449.5L946 441.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1036 459.5L1044 451.5M1044 459.5L1036 451.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1036 449.5L1044 441.5M1044 449.5L1036 441.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1036 439.5L1044 431.5M1044 439.5L1036 431.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1036 429.5L1044 421.5M1044 429.5L1036 421.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M946 419.5L954 411.5M954 419.5L946 411.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M371 274.5L379 266.5M379 274.5L371 266.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M96 284.5L104 276.5M104 284.5L96 276.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M126 184.5L134 176.5M134 184.5L126 176.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M126 194.5L134 186.5M134 194.5L126 186.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M471 489.5L479 481.5M479 489.5L471 481.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M801 624.5L809 616.5M809 624.5L801 616.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1011 749.5L1019 741.5M1019 749.5L1011 741.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M1011 679.5L1019 671.5M1019 679.5L1011 671.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M996 499.5L1004 491.5M1004 499.5L996 491.5"/>
+<path stroke="var(--sch-wire, #33cc33)" d="M551 159.5L559 151.5M559 159.5L551 151.5"/>
+<text transform="matrix(1 0 0 -1 547.66 94.41)" font-family="'Times New Roman', Times, serif" font-size="12" fill="var(--sch-part, #000000)">VCC</text>
+<path stroke="var(--sch-part, #000000)" d="M560 105.5L560 115.5"/>
+<path stroke="var(--sch-part, #000000)" d="M565 105.5L555 105.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M397.5 655.5C397.5 656.88 396.38 658 395 658C393.62 658 392.5 656.88 392.5 655.5C392.5 654.12 393.62 653 395 653C396.38 653 397.5 654.12 397.5 655.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M192.5 645.5C192.5 646.88 191.38 648 190 648C188.62 648 187.5 646.88 187.5 645.5C187.5 644.12 188.62 643 190 643C191.38 643 192.5 644.12 192.5 645.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M122.5 645.5C122.5 646.88 121.38 648 120 648C118.62 648 117.5 646.88 117.5 645.5C117.5 644.12 118.62 643 120 643C121.38 643 122.5 644.12 122.5 645.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M72.5 645.5C72.5 646.88 71.38 648 70 648C68.62 648 67.5 646.88 67.5 645.5C67.5 644.12 68.62 643 70 643C71.38 643 72.5 644.12 72.5 645.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M1007.5 625.5C1007.5 626.88 1006.38 628 1005 628C1003.62 628 1002.5 626.88 1002.5 625.5C1002.5 624.12 1003.62 623 1005 623C1006.38 623 1007.5 624.12 1007.5 625.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M1007.5 655.5C1007.5 656.88 1006.38 658 1005 658C1003.62 658 1002.5 656.88 1002.5 655.5C1002.5 654.12 1003.62 653 1005 653C1006.38 653 1007.5 654.12 1007.5 655.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M1007.5 645.5C1007.5 646.88 1006.38 648 1005 648C1003.62 648 1002.5 646.88 1002.5 645.5C1002.5 644.12 1003.62 643 1005 643C1006.38 643 1007.5 644.12 1007.5 645.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M1007.5 635.5C1007.5 636.88 1006.38 638 1005 638C1003.62 638 1002.5 636.88 1002.5 635.5C1002.5 634.12 1003.62 633 1005 633C1006.38 633 1007.5 634.12 1007.5 635.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M952.5 295.5C952.5 296.88 951.38 298 950 298C948.62 298 947.5 296.88 947.5 295.5C947.5 294.12 948.62 293 950 293C951.38 293 952.5 294.12 952.5 295.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M947.5 170.5C947.5 171.88 946.38 173 945 173C943.62 173 942.5 171.88 942.5 170.5C942.5 169.12 943.62 168 945 168C946.38 168 947.5 169.12 947.5 170.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M952.5 255.5C952.5 256.88 951.38 258 950 258C948.62 258 947.5 256.88 947.5 255.5C947.5 254.12 948.62 253 950 253C951.38 253 952.5 254.12 952.5 255.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M907.5 210.5C907.5 211.88 906.38 213 905 213C903.62 213 902.5 211.88 902.5 210.5C902.5 209.12 903.62 208 905 208C906.38 208 907.5 209.12 907.5 210.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M412.5 220.5C412.5 221.88 411.38 223 410 223C408.62 223 407.5 221.88 407.5 220.5C407.5 219.12 408.62 218 410 218C411.38 218 412.5 219.12 412.5 220.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M187.5 265.5C187.5 266.88 186.38 268 185 268C183.62 268 182.5 266.88 182.5 265.5C182.5 264.12 183.62 263 185 263C186.38 263 187.5 264.12 187.5 265.5"/>
+<path fill="var(--sch-frame, #cc0000)" d="M567.5 160.5C567.5 161.88 566.38 163 565 163C563.62 163 562.5 161.88 562.5 160.5C562.5 159.12 563.62 158 565 158C566.38 158 567.5 159.12 567.5 160.5"/>
+</g>
+</svg>
