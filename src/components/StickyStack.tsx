@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { type StaticImageData } from "next/image";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { Dictionary } from "@/content";
 import { images } from "@/lib/images";
 import { LeafMark } from "./LeafMark";
@@ -52,14 +52,22 @@ function PromptPanel({ label }: { label: string }) {
   );
 }
 
-function Caption({ item, side }: { item: Item; side: "left" | "right" }) {
+function Caption({
+  item,
+  side,
+  transition,
+}: {
+  item: Item;
+  side: "left" | "right";
+  transition: { duration: number; ease: "easeOut" };
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.6 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`hidden max-w-[15rem] lg:block ${
+      transition={transition}
+      className={`hidden max-w-[15rem] self-center lg:block ${
         side === "right" ? "justify-self-start" : "justify-self-end text-right"
       }`}
     >
@@ -76,8 +84,18 @@ function Caption({ item, side }: { item: Item; side: "left" | "right" }) {
 // Lassies Signatur-Sektion: drei Medienkarten, die beim Scrollen übereinander
 // stapeln. Die Texte stehen abwechselnd links und rechts daneben und blenden
 // mit ihrer Karte ein.
+//
+// Regel des Stapels: ab lg sitzt jede Karte am selben sticky-Anschlag und ist
+// gleich groß, die nachrückende deckt die vorige also pixelgenau. Deshalb wird
+// hier nichts am Kartenrahmen animiert — Skalierung oder Transparenz beim
+// Einblenden legten den Rand der darunterliegenden Karte frei, und man sähe
+// zwei versetzte Fotos gleichzeitig. Das Einblenden passiert stattdessen
+// innerhalb des Rahmens (Foto und Bedienfeld), wo es nichts verraten kann.
 export function StickyStack({ dict }: { dict: Dictionary }) {
   const s = dict.stack;
+  const reduced = useReducedMotion();
+  // Bei reduzierter Bewegung steht jeder Einblender sofort auf seinem Ziel.
+  const soft = { duration: reduced ? 0 : 0.7, ease: "easeOut" } as const;
 
   return (
     <section id="projekt" className="scroll-mt-24 px-5 pt-28 md:pt-40">
@@ -87,46 +105,81 @@ export function StickyStack({ dict }: { dict: Dictionary }) {
         {s.heading2}
       </h2>
 
-      <div className="mx-auto mt-20 max-w-6xl md:mt-28">
+      {/* Das Polster unten fängt den Überstand der Deckfläche der letzten Karte
+          auf, damit er nicht in die folgende Sektion ragt. */}
+      <div className="mx-auto mt-20 max-w-6xl md:mt-28 lg:pb-10">
         {s.items.map((item, i) => {
           const right = i % 2 === 1;
           return (
             <div
               key={item.title1}
               style={{ zIndex: i + 1 }}
-              className="mb-16 lg:sticky lg:top-[14vh] lg:mb-[24vh] lg:last:mb-0"
+              className="relative mb-16 lg:sticky lg:top-[14vh] lg:mb-[24vh] lg:last:mb-0"
             >
-              <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,38rem)_1fr]">
-                {right ? <div className="hidden lg:block" /> : <Caption item={item} side="left" />}
+              {/* Jede Zeile bringt ihren eigenen Papiergrund mit: beim Hochschieben
+                  löscht er die vorige Zeile mitsamt Bildunterschrift — sonst
+                  bliebe die Beschriftung der alten Karte neben der neuen stehen.
+                  Der Überstand nach unten schluckt deren Schlagschatten.
 
-                <motion.div
-                  initial={{ scale: 0.94, opacity: 0.65 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="relative mx-auto flex aspect-[5/4] w-full max-w-[38rem] items-center justify-center overflow-hidden rounded-[2rem] shadow-float"
-                >
-                  <Image
-                    src={media[i]}
-                    alt={item.mediaAlt}
-                    placeholder="blur"
-                    sizes="(min-width: 1024px) 608px, 92vw"
-                    className="absolute inset-0 size-full object-cover"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-ink/10"
-                  />
-                  <div className="relative flex w-full justify-center">
+                  Der Grund beginnt bewusst genau an der Oberkante und nicht
+                  darüber: zieht man ihn hoch, löscht die dritte Zeile die
+                  zweite schon, während diese noch die sichtbare Karte ist —
+                  die Fläche bleibt dann leer. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 -bottom-10 top-0 -z-10 hidden bg-paper lg:block"
+              />
+
+              {/* items-start statt -center: so hängt die Karte am oberen Rand ihrer
+                  Zeile und sitzt in jeder Zeile auf derselben Höhe, egal wie hoch
+                  der Text daneben ausfällt. Die Beschriftung zentriert sich selbst. */}
+              <div className="grid items-start gap-8 lg:grid-cols-[1fr_minmax(0,38rem)_1fr]">
+                {right ? (
+                  <div className="hidden lg:block" />
+                ) : (
+                  <Caption item={item} side="left" transition={soft} />
+                )}
+
+                {/* Der Sandgrund hält den Rahmen auch dann undurchsichtig, wenn das
+                    Foto noch lädt oder gerade einblendet. */}
+                <div className="relative mx-auto flex aspect-[5/4] w-full max-w-[38rem] items-center justify-center overflow-hidden rounded-[2rem] bg-sand shadow-float">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={soft}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={media[i]}
+                      alt={item.mediaAlt}
+                      placeholder="blur"
+                      sizes="(min-width: 1024px) 608px, 92vw"
+                      className="size-full object-cover"
+                    />
+                    <div aria-hidden="true" className="absolute inset-0 bg-ink/10" />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ ...soft, delay: reduced ? 0 : 0.12 }}
+                    className="relative flex w-full justify-center"
+                  >
                     {i === 2 ? (
                       <PromptPanel label={s.prompt} />
                     ) : (
                       <StatusPanel item={item} />
                     )}
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
 
-                {right ? <Caption item={item} side="right" /> : <div className="hidden lg:block" />}
+                {right ? (
+                  <Caption item={item} side="right" transition={soft} />
+                ) : (
+                  <div className="hidden lg:block" />
+                )}
               </div>
 
               {/* Unter lg steht der Text unter der Karte statt daneben */}

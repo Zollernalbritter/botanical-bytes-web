@@ -14,7 +14,29 @@ export const de = {
       { href: "#faq", label: "FAQ" },
     ],
     github: "GitHub",
+    contact: "Kontakt",
+    contactHref: "#kontakt",
     localeSwitch: "zur englischen Version wechseln",
+  },
+  // Presseband direkt unter dem Hero — dieselben Stationen wie in der
+  // Bauklotz-Fassung. Die id verbindet den Eintrag mit seiner Logodatei;
+  // der Pfad steht in der Komponente, weil er nicht übersetzt wird.
+  //
+  // `note` steht nur noch auf der Bauklotz-Seite (/v2) unter den Marken. Im
+  // Band der Startseite ist die Zeile weg — dort tragen jetzt die Logos allein,
+  // dafür deutlich größer. Der Schlüssel bleibt trotzdem, sonst bricht /v2.
+  press: {
+    label: "Ausgezeichnet von & bekannt aus",
+    items: [
+      { id: "bwki", name: "Bundeswettbewerb Künstliche Intelligenz", note: "Juniorpreis 2023" },
+      { id: "swr", name: "SWR", note: "Fernsehen" },
+      { id: "jufo", name: "Jugend forscht Baden-Württemberg", note: "2 Sonderpreise 2024" },
+      { id: "gea", name: "Reutlinger General-Anzeiger", note: "Presse" },
+      { id: "dasding", name: "DASDING", note: "Radio" },
+      { id: "tagblatt", name: "Schwäbisches Tagblatt", note: "Presse" },
+      { id: "swp", name: "Südwest Presse", note: "Presse" },
+      { id: "tflit", name: "TFLIT", note: "Projektfamilie" },
+    ],
   },
   hero: {
     headline1: "Pflanzen reden nicht.",
@@ -108,6 +130,9 @@ export const de = {
     heading2: "Überall nachbaubar.",
     note: "Platinendesign, Firmware, das neuronale Netz und ein kompletter Beispieldatensatz liegen auf GitHub.",
   },
+  // `logo` verweist auf die Datei in public/logos, `year` steht sichtbar
+  // daneben. `org` bleibt der volle Name — er trägt die Beschriftung des
+  // Logos für Screenreader, denn eine Silhouette lässt sich nicht vorlesen.
   milestones: {
     heading1: "Drei Jahre.",
     heading2: "Drei Meilensteine.",
@@ -116,18 +141,24 @@ export const de = {
         quote: "Juniorpreis beim Bundeswettbewerb Künstliche Intelligenz.",
         name: "Tillmann & Finn",
         org: "BWKI 2023",
+        logo: "bwki",
+        year: "2023",
         imgAlt: "Tillmann und Finn im Fotostudio mit Anzuchtschale und Platine",
       },
       {
         quote: "Mit dem Plant Growth Optimizer im Finale in Tübingen.",
         name: "Tillmann & Finn",
         org: "BWKI 2024",
+        logo: "bwki",
+        year: "2024",
         imgAlt: "Der Messestand beim BWKI-Finale mit Anzuchtschalen und Sensorik",
       },
       {
         quote: "Zwei Sonderpreise beim Landeswettbewerb Jugend forscht.",
         name: "Tillmann & Finn",
         org: "Jugend forscht 2024",
+        logo: "jufo",
+        year: "2024",
         imgAlt: "Tillmann und Finn am Stand beim Landeswettbewerb Jugend forscht",
       },
     ],
@@ -172,6 +203,9 @@ export const de = {
       },
     ],
   },
+  // Prototyp-Sektion: derselbe Schaltplan in drei Lesarten — als Fluss, als
+  // Originalplan, als fertige Platine. Die Knoten unten sind 1:1 die Bauteile
+  // aus schematic.pdf, damit die Beschriftung überprüfbar bleibt.
   tech: {
     heading: "Die Hardware im Detail",
     intro: "Platinendesign, Firmware, Netz und Datensatz – alles offen auf GitHub.",
@@ -195,19 +229,83 @@ export const de = {
           alt: "3D-Rendering der Data-Collector-Platine Version 3.0",
         },
       ],
-      downloads: "Pläne als PDF:",
-      downloadSchematic: "Schaltplan",
-      downloadPcb: "Platinen-Layout",
+      // ACHTUNG, derzeit unbenutzt: `tabs` trägt die Beschriftungen der drei
+      // Platinen-Generationen. Seit die Prototyp-Sektion entfallen ist, zeigt
+      // die Seite nur noch die dritte — als 3D-Modell. Die beiden Vorgänger
+      // haben damit keinen Platz mehr.
+      // Der Text bleibt stehen, bis entschieden ist, ob die Reihe „drei
+      // Generationen, drei Jahre“ irgendwo wieder auftaucht. Gelöscht wäre er
+      // weg, und er ist geschrieben.
+      //
+      // Die sieben Messgrößen stehen zwar schon im Fließtext, dort aber als
+      // Aufzählung mitten im Satz. Als Tabelle mit dem jeweiligen Geber
+      // dahinter sind sie nachschlagbar — und tragen die linke Spalte, die
+      // ohne den Umschalter sonst halb leer bliebe.
+      measuresLabel: "Sieben Messgrößen",
+      // `mark` benennt das gezeichnete Instrument in MeasureMark.tsx.
+      measures: [
+        { mark: "temperature", name: "Temperatur", source: "BME680" },
+        { mark: "pressure", name: "Luftdruck", source: "BME680" },
+        { mark: "humidity", name: "Luftfeuchte", source: "BME680" },
+        { mark: "gas", name: "Gaswerte", source: "BME680" },
+        { mark: "co2", name: "CO₂", source: "Kanal A3" },
+        { mark: "soil", name: "Bodenfeuchte", source: "XH-4AK" },
+        { mark: "light", name: "Helligkeit", source: "TEMT6000" },
+      ],
+      // Die vierte Generation steht als achte, gedämpfte Zeile in derselben
+      // Liste: was kommt, gehört neben das, was misst — nicht in einen Kasten
+      // daneben.
+      planned: {
+        mark: "planned",
+        name: "pH-Wert · Nährstoffdichte",
+        source: "Geplant",
+      },
+      // Die dritte Generation als drehbares Modell, gewandelt aus dem
+      // EasyEDA-Export. Der Export trägt nur Flächenfarben: Leiterbahnen und
+      // Bestückungsdruck fehlen im Modell und stehen deshalb im Hinweis.
+      model: {
+        label: "Data Collector v3.0",
+        alt: "Drehbares 3D-Modell der Data-Collector-Platine v3.0 mit ESP32-S3-Modul, microSD-Steckplatz, USB-C-Buchse und Sensoranschlüssen",
+        rotateHint: "Ziehen zum Drehen",
+        rotateReset: "Ansicht zurücksetzen",
+        note: "3D-Modell aus dem Platinenentwurf · 59,3 × 36,7 mm",
+      },
+      // Die Pläne standen bisher unter der Prototyp-Sektion. Die ist entfallen,
+      // die PDFs bleiben — sie sind der eigentliche Beleg für „alles offen“.
+      downloads: {
+        label: "Pläne als PDF:",
+        schematic: "Schaltplan",
+        pcb: "Platinen-Layout",
+        github: "Firmware auf GitHub",
+      },
     },
-    seed: {
-      headline: "Jeder Samen zählt. Wörtlich.",
-      body: "Mit OpenCV-Kantenerkennung analysieren wir, wie die Samen zueinander liegen – der Abstand beeinflusst die Keimung. Die Auswertung läuft noch von Hand.",
-      originalAlt: "Originalfoto der Kressesamen auf Watte",
-      compareLabel: "Canny und Sobel im Vergleich",
-      compareHint: "Regler ziehen: links Canny, rechts Sobel",
-      cannyAlt: "Canny-Kantenerkennung der Samen",
-      sobelAlt: "Sobel-Kantenerkennung der Samen",
-    },
+  },
+  seed: {
+    headline: "Jeder Samen zählt. Wörtlich.",
+    body: "Mit OpenCV-Kantenerkennung analysieren wir, wie die Samen zueinander liegen – der Abstand beeinflusst die Keimung. Die Auswertung läuft noch von Hand.",
+    // Drei Kacheln, drei Verfahren, EIN Ausschnitt. Vorher zeigte jede Stufe
+    // ein anderes Drittel des Fotos — nebeneinander verglich man dadurch nicht
+    // die Verfahren, sondern drei Stellen der Schale.
+    stages: [
+      {
+        mark: "camera",
+        label: "Original",
+        note: "Wie die Kamera es sieht",
+        alt: "Vier Nester Kressesamen auf Watte, unbearbeitet",
+      },
+      {
+        mark: "edge-hard",
+        label: "Canny",
+        note: "Harte Kante, klarer Umriss",
+        alt: "Dieselben vier Nester nach Canny-Kantenerkennung: helle Umrisse auf Schwarz",
+      },
+      {
+        mark: "edge-soft",
+        label: "Sobel",
+        note: "Weicher Verlauf, Richtung der Kante",
+        alt: "Dieselben vier Nester nach Sobel-Kantenerkennung: weiche Verläufe auf Grau",
+      },
+    ],
   },
   faq: {
     heading: "FAQ",

@@ -62,6 +62,48 @@ export function TrustGlobe({ dict }: { dict: Dictionary }) {
   );
 }
 
+/**
+ * Zuordnung id → Datei samt Maßen, wie im Presseband. Die Maße sind optisch
+ * ausgeglichen und nicht die Originalmaße: das zweizeilige BWKI-Signet braucht
+ * Höhe, der Schriftzug von Jugend forscht läuft flach.
+ *
+ * Gezeigt wird das Logo als Maske in Tinte, nicht als Bild — auf der weißen
+ * Karte neben einer Jahreszahl in Monospace wäre eine Hausfarbe der einzige
+ * bunte Fleck. So trägt die Marke denselben Ton wie die Schrift daneben.
+ */
+const awardLogos: Record<string, { src: string; w: number; h: number }> = {
+  bwki: { src: "/logos/bwki.png", w: 42, h: 18 },
+  jufo: { src: "/logos/jugend-forscht.png", w: 68, h: 10 },
+};
+
+function AwardMark({ id, label }: { id: string; label: string }) {
+  const logo = awardLogos[id];
+  // Fehlt die Datei, springt der Name ein — die Zeile bleibt vollständig.
+  if (!logo) {
+    return <span className="font-mono text-[11px] text-muted">{label}</span>;
+  }
+
+  return (
+    <span
+      role="img"
+      aria-label={label}
+      className="block shrink-0 bg-ink/60"
+      style={{
+        width: logo.w,
+        height: logo.h,
+        maskImage: `url(${logo.src})`,
+        WebkitMaskImage: `url(${logo.src})`,
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+        maskSize: "contain",
+        WebkitMaskSize: "contain",
+      }}
+    />
+  );
+}
+
 function Card({
   item,
   photo,
@@ -94,8 +136,9 @@ function Card({
         </blockquote>
         <figcaption className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-4 text-[13px]">
           <span className="text-ink">{item.name}</span>
-          <span className="rounded-md bg-card px-2 py-1 font-mono text-[11px] text-muted">
-            {item.org}
+          <span className="flex items-center gap-2 rounded-md bg-card px-2 py-1">
+            <AwardMark id={item.logo} label={item.org} />
+            <span className="font-mono text-[11px] text-muted">{item.year}</span>
           </span>
         </figcaption>
       </div>

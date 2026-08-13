@@ -24,6 +24,17 @@
   --shadow-pill: 0 1px 2px rgb(26 22 19 / 0.06), 0 4px 12px rgb(26 22 19 / 0.06);
   --shadow-float: 0 2px 6px rgb(26 22 19 / 0.06), 0 18px 44px rgb(26 22 19 / 0.13);
 
+  /* Kantigere Silhouette. Die Referenz-Navigation sitzt auf weichen
+     Rechtecken, nicht auf Halbkreisen — und die Einträge stehen dicht
+     beieinander. Beides hängt an diesen beiden Werten. */
+  --radius-nav: 0.95rem;
+  --radius-nav-item: 0.6rem;
+
+  /* Azure ist die Leitfarbe des Globus. Der tiefe Ton trägt die markierten
+     Länder, der helle die übrige Landmasse, der blasse das Meer-Raster. */
+  --color-azure-deep: #2f6d88;
+  --color-azure-pale: #a9cbd8;
+
   /* ————— Bauklotz-System (Seite /v2) —————
      Warmer Creme-Grund, fast-schwarze Tinte, ein Set gedeckter Spielfarben.
      Regel der Palette: jede Farbe muss als Vollfläche direkt neben jeder
@@ -174,21 +185,55 @@
     animation-range: exit-crossing 0% exit-crossing 30%;
   }
 
+  /* Je kleiner der Rahmen wird, desto stärker liest er sich als Bildröhre. */
+  .hero-tv {
+    animation: hero-tv-kf linear both;
+    animation-timeline: --hero;
+    animation-range: exit-crossing 14% exit-crossing 78%;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-scroll {
       height: 100svh;
     }
     .hero-frame,
-    .hero-content {
+    .hero-content,
+    .hero-tv {
       animation: none;
     }
   }
 }
 
+/* Der Rahmen schrumpft weiter als zuvor und landet auf einer deutlich
+   kantigeren Ecke — aus der abgerundeten Karte wird ein Apparat. */
 @keyframes hero-shrink-kf {
   to {
-    transform: scale(0.4);
-    border-radius: 3.5rem;
+    transform: scale(0.36);
+    border-radius: 1.4rem;
+  }
+}
+
+/* Zeilenraster und Randabdunklung des Fernsehers. Ohne scroll-driven
+   animations bleibt die Ebene unsichtbar — reine Zugabe. */
+.hero-tv {
+  opacity: 0;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgb(26 22 19 / 0.17) 0 1px,
+      transparent 1px 3px
+    ),
+    radial-gradient(
+      118% 96% at 50% 50%,
+      transparent 50%,
+      rgb(26 22 19 / 0.55) 100%
+    );
+  mix-blend-mode: multiply;
+}
+
+@keyframes hero-tv-kf {
+  to {
+    opacity: 1;
   }
 }
 
@@ -271,8 +316,20 @@ body:has(.studio) {
 }
 
 /* ————— Laufband —————
-   Zwei identische Hälften im Track; bei -50 % beginnt die Schleife von vorn.
-   Tempo kommt pro Instanz über --marquee-duration. */
+   Der Track enthält dieselbe Liste mehrfach und wandert um genau eine
+   Wiederholung nach links; dort sieht der Ausschnitt wieder exakt das Bild von
+   Sekunde null, die Schleife springt unsichtbar zurück. Wie viele Kopien es
+   sind, sagt --marquee-copies pro Instanz — der Weg folgt daraus, statt als
+   fester Prozentwert danebenzustehen und beim nächsten Kopie-Zusatz zu
+   veralten. Tempo kommt ebenso pro Instanz über --marquee-duration.
+
+   Die Kopienzahl ist kein Geschmack, sondern Rechnung: nach dem Sprung bleiben
+   nur die restlichen Kopien im Blickfeld, das Fenster darf also höchstens
+   (Kopien − 1) × Wiederholungsbreite breit sein. Ist es breiter, endet das Band
+   sichtbar vor dem rechten Rand. Wer eine Instanz umbaut, muss neu rechnen.
+
+   Einzige Ausnahme von der .studio-Klammer oben: das Presseband der Startseite
+   läuft auf demselben Mechanismus. Wer hier etwas ändert, ändert beide. */
 
 .marquee {
   overflow: hidden;
@@ -309,7 +366,11 @@ body:has(.studio) {
 
 @keyframes marquee-x-kf {
   to {
-    transform: translateX(-50%);
+    /* Prozent bezieht sich auf die eigene Breite, und die ist die Summe aller
+       Kopien — geteilt durch ihre Zahl ergibt das genau eine Wiederholung.
+       Vorgabe 2 ist der alte Stand, damit bestehende Bänder unverändert
+       laufen. */
+    transform: translateX(calc(-100% / var(--marquee-copies, 2)));
   }
 }
 
@@ -405,5 +466,11 @@ body:has(.studio) {
     overflow-x: auto;
     -webkit-mask-image: none;
     mask-image: none;
+  }
+  /* Ohne Lauf trägt die Wiederholung nichts mehr: wer selbst scrollt, käme
+     sonst an denselben Logos mehrfach vorbei und hielte das Band für länger,
+     als es ist. Die Kopien sind ohnehin schon als aria-hidden markiert. */
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
   }
 }

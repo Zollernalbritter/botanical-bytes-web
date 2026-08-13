@@ -22,13 +22,19 @@ export function VideoHero({
             pauseLabel={dict.hero.pause}
             playLabel={dict.hero.play}
           />
+          {/* Zeilenraster und Randabdunklung; blendet über dieselbe
+              view-timeline ein wie der schrumpfende Rahmen. */}
+          <div
+            aria-hidden="true"
+            className="hero-tv pointer-events-none absolute inset-0"
+          />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/35 to-ink/55"
           />
         </div>
 
-        <div className="hero-content on-video pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-5 pb-28 pt-16 text-center text-white">
+        <div className="hero-content on-dark pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-5 pb-28 pt-16 text-center text-white">
           <h1 className="font-display text-[clamp(2rem,10vw,2.6rem)] font-medium leading-[1.04] tracking-tight sm:text-6xl md:text-7xl">
             {dict.hero.headline1}
             <br />
@@ -40,12 +46,16 @@ export function VideoHero({
           <HeroChips chips={dict.hero.chips} />
         </div>
 
-        <div className="hero-content on-video absolute inset-x-0 bottom-6 flex justify-center px-5 md:bottom-9">
-          <HeroSignup
-            locale={locale}
-            hero={dict.hero}
-            newsletter={dict.newsletter}
-          />
+        {/* Der Rahmen ist voll breit und lag damit über dem Pause-Knopf in der
+            Ecke — Klicks nimmt deshalb nur das Pill selbst entgegen. */}
+        <div className="hero-content on-dark pointer-events-none absolute inset-x-0 bottom-6 flex justify-center px-5 md:bottom-9">
+          <div className="pointer-events-auto w-full max-w-sm">
+            <HeroSignup
+              locale={locale}
+              hero={dict.hero}
+              newsletter={dict.newsletter}
+            />
+          </div>
         </div>
       </div>
     </section>
