@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { confirmEmail } from "@/lib/emails";
+import { sendMail, sesConfigured } from "@/lib/mailer";
 import { createToken } from "@/lib/newsletter-token";
-import { NEWSLETTER_FROM, resolveLocale } from "../shared";
+import { resolveLocale } from "../shared";
 import { SITE_URL } from "@/lib/site";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -63,17 +63,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  if (!sesConfigured()) {
     return NextResponse.json({ error: "not_configured" }, { status: 500 });
   }
-  const resend = new Resend(apiKey);
 
-  // Kontakt als "unsubscribed" vormerken; abonniert wird erst nach Bestätigung.
-  // Fehler (z. B. existiert bereits) sind hier unkritisch — der Confirm-Schritt
-  // legt den Kontakt notfalls neu an.
-  await resend.contacts.create({ email, unsubscribed: true }).catch(() => {});
-
+  // Hier wird noch nichts gespeichert: Das Token trägt die Adresse signiert
+  // durch das Double-Opt-in, der Kontakt entsteht erst beim Bestätigen — so,
+  // wie es die Datenschutzerklärung zusagt.
   const token = createToken(email, "confirm", CONFIRM_TTL_MS);
   // Link führt auf eine Zwischenseite; die Mutation passiert erst per POST —
   // sonst bestätigen Mail-Scanner (SafeLinks & Co.) das Abo von selbst.
@@ -82,15 +78,15 @@ export async function POST(request: Request) {
   )}`;
   const mail = confirmEmail(locale, confirmUrl);
 
-  const sent = await resend.emails.send({
-    from: NEWSLETTER_FROM,
-    to: email,
-    subject: mail.subject,
-    html: mail.html,
-    text: mail.text,
-  });
-  if (sent.error) {
-    console.error("newsletter confirm mail failed:", sent.error);
+  try {
+    await sendMail({
+      to: email,
+      subject: mail.subject,
+      html: mail.html,
+      text: mail.text,
+    });
+  } catch (error) {
+    console.error("newsletter confirm mail failed:", error);
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
 

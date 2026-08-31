@@ -490,9 +490,9 @@ export const de = {
       {
         h: "Newsletter",
         lines: [
-          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Nach dem Eintragen erhalten Sie eine E-Mail mit einem Bestätigungslink; erst danach ist die Adresse gespeichert. Zum Versand nutzen wir den Dienst Resend.",
+          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Nach dem Eintragen erhalten Sie eine E-Mail mit einem Bestätigungslink; erst danach ist die Adresse gespeichert. Für den Versand nutzen wir Amazon Simple Email Service (Amazon Web Services, Region Frankfurt).",
           "Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Sie können sie jederzeit über den Abmeldelink am Ende jeder E-Mail widerrufen; die Adresse wird dann gelöscht.",
-          "[TODO: Auftragsverarbeitung mit Resend, Speicherdauer und Protokollierung der Einwilligung ergänzen]",
+          "[TODO: Auftragsverarbeitung mit Amazon Web Services (AWS DPA), Speicherdauer und Protokollierung der Einwilligung ergänzen]",
         ],
       },
       {

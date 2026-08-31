@@ -442,9 +442,9 @@ export const en: Dictionary = {
       {
         h: "Newsletter",
         lines: [
-          "Sign-up uses a double opt-in procedure: after entering your address you receive an e-mail with a confirmation link; only then is the address stored. We use the service Resend to send the messages.",
+          "Sign-up uses a double opt-in procedure: after entering your address you receive an e-mail with a confirmation link; only then is the address stored. We use Amazon Simple Email Service (Amazon Web Services, Frankfurt region) to send the messages.",
           "The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time via the unsubscribe link at the end of every e-mail; the address is then deleted.",
-          "[TODO: add data processing agreement with Resend, retention period and consent logging]",
+          "[TODO: add data processing agreement with Amazon Web Services (AWS DPA), retention period and consent logging]",
         ],
       },
       {

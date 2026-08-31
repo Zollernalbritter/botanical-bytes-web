@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { isSubscribed, subscribe } from "@/lib/contacts";
 import { welcomeEmail } from "@/lib/emails";
+import { sendMail, sesConfigured } from "@/lib/mailer";
 import { createToken, verifyToken } from "@/lib/newsletter-token";
-import { NEWSLETTER_FROM, resolveLocale } from "../../shared";
+import { resolveLocale } from "../../shared";
 import { SITE_URL } from "@/lib/site";
 
 const UNSUB_TTL_MS = 10 * 365 * 24 * 60 * 60 * 1000;
@@ -28,24 +29,16 @@ export async function POST(request: Request) {
   const email = verifyToken(String(form.get("token") ?? ""), "confirm");
   if (!email) return back("invalid");
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return back("error");
-  const resend = new Resend(apiKey);
+  if (!sesConfigured()) return back("error");
 
-  // Idempotenz: Wer schon abonniert ist, bekommt keine zweite Welcome-Mail —
-  // das entschärft auch Replays des Confirm-Links.
-  const existing = await resend.contacts.get({ email }).catch(() => null);
-  if (existing?.data && existing.data.unsubscribed === false) {
-    return back("confirmed");
-  }
-
-  const updated = await resend.contacts.update({ email, unsubscribed: false });
-  if (updated.error) {
-    const created = await resend.contacts.create({ email, unsubscribed: false });
-    if (created.error) {
-      console.error("newsletter confirm failed:", created.error);
-      return back("error");
-    }
+  try {
+    // Idempotenz: Wer schon abonniert ist, bekommt keine zweite Welcome-Mail —
+    // das entschärft auch Replays des Confirm-Links.
+    if (await isSubscribed(email)) return back("confirmed");
+    await subscribe(email);
+  } catch (error) {
+    console.error("newsletter confirm failed:", error);
+    return back("error");
   }
 
   const unsubToken = createToken(email, "unsub", UNSUB_TTL_MS);
@@ -53,15 +46,20 @@ export async function POST(request: Request) {
     unsubToken,
   )}`;
   const mail = welcomeEmail(locale, unsubUrl);
-  await resend.emails
-    .send({
-      from: NEWSLETTER_FROM,
-      to: email,
-      subject: mail.subject,
-      html: mail.html,
-      text: mail.text,
-    })
-    .catch((error) => console.error("welcome mail failed:", error));
+  await sendMail({
+    to: email,
+    subject: mail.subject,
+    html: mail.html,
+    text: mail.text,
+    // Ein-Klick-Abmeldung nach RFC 8058 — Gmail und Yahoo erwarten das von
+    // Newsletter-Absendern. Zielt auf dieselbe Route wie der Link in der Mail.
+    headers: {
+      "List-Unsubscribe": `<${SITE_URL}/api/newsletter/unsubscribe?token=${encodeURIComponent(
+        unsubToken,
+      )}>`,
+      "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+    },
+  }).catch((error) => console.error("welcome mail failed:", error));
 
   return back("confirmed");
 }
