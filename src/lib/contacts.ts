@@ -7,6 +7,7 @@ import {
   ListContactListsCommand,
   UpdateContactCommand,
 } from "@aws-sdk/client-sesv2";
+import type { Locale } from "@/content";
 import { getSes } from "./mailer";
 
 const DEFAULT_LIST = "botanical-bytes";
@@ -76,16 +77,27 @@ export async function isSubscribed(email: string): Promise<boolean> {
   }
 }
 
-export async function subscribe(email: string): Promise<void> {
+/**
+ * Der Zeitpunkt der Bestätigung ist der Nachweis der Einwilligung nach
+ * Art. 7 Abs. 1 DSGVO — die Datenschutzerklärung sagt genau das zu. Er landet
+ * deshalb am Kontakt, nicht nur implizit im Anlegedatum.
+ */
+export async function subscribe(email: string, locale: Locale): Promise<void> {
   const ses = getSes();
   if (!ses) throw new Error("AWS SES is not configured");
   const ContactListName = await contactList();
+  const AttributesData = JSON.stringify({
+    confirmedAt: new Date().toISOString(),
+    locale,
+    optIn: "double-opt-in",
+  });
   try {
     await ses.send(
       new CreateContactCommand({
         ContactListName,
         EmailAddress: email,
         UnsubscribeAll: false,
+        AttributesData,
       }),
     );
   } catch (error) {
@@ -96,6 +108,7 @@ export async function subscribe(email: string): Promise<void> {
         ContactListName,
         EmailAddress: email,
         UnsubscribeAll: false,
+        AttributesData,
       }),
     );
   }

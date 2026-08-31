@@ -359,7 +359,7 @@ export const en: Dictionary = {
   },
   impressum: {
     title: "Legal notice (Impressum)",
-    todoNote: "The e-mail address is still missing. The German version is legally binding.",
+    note: "The German version is legally binding.",
     sections: [
       {
         h: "Information according to § 5 DDG",
@@ -381,7 +381,7 @@ export const en: Dictionary = {
       },
       {
         h: "Contact",
-        lines: ["Phone: +49 1511 4490016", "E-mail: [TODO: email address]"],
+        lines: ["Phone: +49 1511 4490016", "E-mail: info@tflit.com"],
       },
       {
         h: "Responsible for content according to § 18 (2) MStV",
@@ -421,7 +421,7 @@ export const en: Dictionary = {
   },
   datenschutz: {
     title: "Privacy policy",
-    todoNote: "Hosting, data subject rights and the date are still missing. The German version is legally binding.",
+    note: "The German version is legally binding.",
     sections: [
       {
         h: "Controller",
@@ -430,28 +430,45 @@ export const en: Dictionary = {
           "Gölzstraße 12, 72072 Tübingen, Germany",
           "Represented by Tillmann Lang, Managing Director",
           "Phone: +49 1511 4490016",
-          "E-mail: [TODO: email address]",
+          "E-mail: info@tflit.com",
         ],
       },
       {
-        h: "Hosting",
+        h: "Hosting and server log files",
         lines: [
-          "[TODO: add hosting provider, server location, data processing agreement, server log files and retention period]",
+          "The website runs on a server operated by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany. The server is located in the Falkenstein data centre in Germany; the data does not leave the European Union. A data processing agreement under Art. 28 GDPR is in place with Hetzner.",
+          "When you open the website, the server infrastructure processes technically necessary connection data: IP address, date and time of the request, the address requested, the status code, the amount of data transferred and the identifier sent by your browser. The legal basis is our legitimate interest in secure and trouble-free operation under Art. 6 (1) (f) GDPR.",
+          "We evaluate this connection data solely for technical operation and troubleshooting. It is not combined with other data and is deleted once it is no longer needed for that purpose.",
+          "DNS resolution for tflit.com runs through Cloudflare. The page itself is served directly from our server — Cloudflare is not placed in front of the web server and does not see individual page views.",
+          "We use no cookies, no web analytics and no tracking. Fonts, images and videos are served from our own server; no external fonts or content delivery networks are embedded.",
+        ],
+      },
+      {
+        h: "Contacting us",
+        lines: [
+          "If you contact us by e-mail or phone, we process your details solely to handle your enquiry. The legal basis is Art. 6 (1) (f) GDPR, or Art. 6 (1) (b) GDPR for contract-related enquiries. We delete the messages once the enquiry has been dealt with and no statutory retention periods apply.",
         ],
       },
       {
         h: "Newsletter",
         lines: [
-          "Sign-up uses a double opt-in procedure: after entering your address you receive an e-mail with a confirmation link; only then is the address stored. We use Amazon Simple Email Service (Amazon Web Services, Frankfurt region) to send the messages.",
-          "The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time via the unsubscribe link at the end of every e-mail; the address is then deleted.",
-          "[TODO: add data processing agreement with Amazon Web Services (AWS DPA), retention period and consent logging]",
+          "Sign-up uses a double opt-in procedure: after entering your address you receive an e-mail with a confirmation link; only then is the address stored. If you do not confirm, nothing is stored — the link expires after 48 hours.",
+          "For sending and for the recipient list we use Amazon Simple Email Service provided by Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxembourg. Processing takes place in the Frankfurt region. A data processing agreement (AWS GDPR Data Processing Addendum) is in place.",
+          "We store your e-mail address, the time of your confirmation and the language you chose. The timestamp serves as proof of your consent under Art. 7 (1) GDPR.",
+          "The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time via the unsubscribe link at the end of every e-mail; the address is then deleted. Until then we store it in order to send you the newsletter.",
+          "Our e-mails contain no tracking pixels. We measure neither whether you open a message nor whether you click a link in it.",
         ],
       },
       {
         h: "Your rights",
-        lines: ["[TODO: list data subject rights under the GDPR]"],
+        lines: [
+          "You have the right to obtain information about the data stored about you (Art. 15 GDPR), to have inaccurate data corrected (Art. 16 GDPR), to erasure (Art. 17 GDPR), to restriction of processing (Art. 18 GDPR) and to receive your data in a commonly used format (Art. 20 GDPR).",
+          "You may object to processing based on a legitimate interest under Art. 21 GDPR. You can withdraw consent at any time with effect for the future (Art. 7 (3) GDPR); this does not affect the lawfulness of processing carried out before the withdrawal.",
+          "An informal message to info@tflit.com is enough for all of this.",
+          "Independently of that, you may lodge a complaint with a supervisory authority (Art. 77 GDPR). The authority responsible for us is the Landesbeauftragter für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart, Germany.",
+        ],
       },
-      { h: "Last updated", lines: ["[TODO: date]"] },
+      { h: "Last updated", lines: ["31 August 2026"] },
     ],
     backHome: "Back to home",
   },

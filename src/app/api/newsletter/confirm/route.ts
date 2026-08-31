@@ -12,7 +12,6 @@ const UNSUB_TTL_MS = 10 * 365 * 24 * 60 * 60 * 1000;
 // postet hierher. Mail-Scanner folgen GET-Links, füllen aber keine Formulare
 // aus — so bleibt das Double-Opt-in echte Nutzeraktion.
 export async function POST(request: Request) {
-  const origin = new URL(request.url).origin;
   let form: FormData;
   try {
     form = await request.formData();
@@ -20,9 +19,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
   const locale = resolveLocale(form.get("locale"));
+  // Zieladresse aus SITE_URL, nicht aus request.url: der Standalone-Server
+  // baut die absolute URL aus HOSTNAME/PORT des Containers zusammen und
+  // wuerde auf https://0.0.0.0:3000 weiterleiten.
   const back = (state: string) =>
     NextResponse.redirect(
-      `${origin}/${locale}?newsletter=${state}#newsletter`,
+      `${SITE_URL}/${locale}?newsletter=${state}#newsletter`,
       303,
     );
 
@@ -35,7 +37,7 @@ export async function POST(request: Request) {
     // Idempotenz: Wer schon abonniert ist, bekommt keine zweite Welcome-Mail —
     // das entschärft auch Replays des Confirm-Links.
     if (await isSubscribed(email)) return back("confirmed");
-    await subscribe(email);
+    await subscribe(email, locale);
   } catch (error) {
     console.error("newsletter confirm failed:", error);
     return back("error");

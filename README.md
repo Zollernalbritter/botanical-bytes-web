@@ -104,9 +104,14 @@ mehrstufiges Image auf Node 22, Next im `standalone`-Modus, Server auf Port 3000
 
 Ein Push auf `main` löst automatisch ein Redeploy aus.
 
-## Offene Punkte vor Veröffentlichung
+## Offene Punkte
 
-- [ ] Impressum + Datenschutzerklärung ausfüllen (`src/content/de.ts` / `en.ts`, Platzhalter sind markiert)
+- [x] Impressum + Datenschutzerklärung ausgefüllt — die Angaben zu Hosting, Newsletter
+      und Tracking sind gegen die tatsächliche Infrastruktur geprüft. Wer den Stack
+      ändert, muss `src/content/de.ts` und `en.ts` mitziehen.
+- [x] SES: Absenderdomain verifiziert, Produktionszugriff vorhanden, IAM-Keys in Coolify
+- [ ] Juristische Endabnahme der Datenschutzerklärung
+- [ ] Auftragsverarbeitungsverträge gegenprüfen: AVV bei Hetzner abgeschlossen, AWS-DPA
+      akzeptiert, und ob der AWS-Vertragspartner tatsächlich die AWS EMEA SARL ist
 - [ ] Presse-Einträge bestätigen (`press.outlets` in den Dictionaries)
-- [ ] SES: Absenderdomain verifizieren, Produktionszugriff beantragen, IAM-Keys in Coolify setzen
 - [ ] Logo-Datei einsetzen, falls vorhanden (aktuell Wortmarke + `src/app/icon.svg`)
