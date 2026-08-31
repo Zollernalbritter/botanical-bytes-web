@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { unsubscribe } from "@/lib/contacts";
+import { sesConfigured } from "@/lib/mailer";
 import { verifyToken } from "@/lib/newsletter-token";
 import { resolveLocale } from "../../shared";
 
 // POST statt GET — siehe confirm/route.ts: Mail-Scanner dürfen niemals
 // versehentlich Abmeldungen auslösen.
 export async function POST(request: Request) {
-  const origin = new URL(request.url).origin;
+  const url = new URL(request.url);
+  const origin = url.origin;
   let form: FormData;
   try {
     form = await request.formData();
@@ -20,18 +22,34 @@ export async function POST(request: Request) {
       303,
     );
 
-  const email = verifyToken(String(form.get("token") ?? ""), "unsub");
-  if (!email) return back("invalid");
+  // Ein-Klick-Abmeldung nach RFC 8058: Das Mailprogramm postet ohne Formular
+  // gegen die List-Unsubscribe-URL, das Token steht dann im Query-String. Es
+  // erwartet eine schlichte Antwort, keinen Redirect auf die Website.
+  const formToken = form.get("token");
+  const oneClick = typeof formToken !== "string" || formToken === "";
+  const token = oneClick ? (url.searchParams.get("token") ?? "") : formToken;
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return back("error");
-  const resend = new Resend(apiKey);
-
-  const updated = await resend.contacts.update({ email, unsubscribed: true });
-  if (updated.error) {
-    console.error("unsubscribe failed:", updated.error);
-    return back("error");
+  const email = verifyToken(token, "unsub");
+  if (!email) {
+    return oneClick
+      ? NextResponse.json({ error: "invalid_token" }, { status: 400 })
+      : back("invalid");
   }
 
-  return back("unsubscribed");
+  if (!sesConfigured()) {
+    return oneClick
+      ? NextResponse.json({ error: "not_configured" }, { status: 500 })
+      : back("error");
+  }
+
+  try {
+    await unsubscribe(email);
+  } catch (error) {
+    console.error("unsubscribe failed:", error);
+    return oneClick
+      ? NextResponse.json({ error: "unsubscribe_failed" }, { status: 502 })
+      : back("error");
+  }
+
+  return oneClick ? NextResponse.json({ ok: true }) : back("unsubscribed");
 }

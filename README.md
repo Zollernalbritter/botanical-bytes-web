@@ -15,7 +15,7 @@ mit Scroll-Shrink, schwebende Pill-Navigation, Feature-Karten mit Floating-UI-K�
 - **Fonts:** Newsreader (Serif-Display) · DM Sans (Body) · DM Mono (Messwerte), alle via `next/font`
 - **Scroll-Choreografie:** CSS scroll-driven animations (`view-timeline`) mit `@supports`-Fallback und Reduced-Motion-Pfad
 - **Hero-Video:** KI-generiert (Higgsfield, Seedance), Rohdatei in `assets-src/hero-raw.mp4`, Web-Fassung via `scripts/prepare-hero-video.mjs`
-- **Newsletter:** [Resend](https://resend.com) (Contacts + Double-Opt-in mit HMAC-Tokens, keine Datenbank)
+- **Newsletter:** [Amazon SES](https://aws.amazon.com/ses/) (Kontaktliste + Double-Opt-in mit HMAC-Tokens, keine Datenbank)
 
 ## Entwicklung
 
@@ -46,12 +46,50 @@ der alten Website und sind sonst nirgends gesichert.
 
 ## Umgebungsvariablen
 
-| Variable            | Zweck                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| `RESEND_API_KEY`    | Resend-API-Key                                               |
-| `NEWSLETTER_SECRET` | ≥ 32 zufällige Zeichen, signiert Confirm-/Unsubscribe-Links |
-| `SITE_URL`          | Öffentliche Basis-URL (für Mails, Sitemap, OG)              |
-| `NEWSLETTER_FROM`   | Absender (erst nach Domain-Verifizierung bei Resend ändern) |
+| Variable                | Zweck                                                          |
+| ----------------------- | -------------------------------------------------------------- |
+| `AWS_ACCESS_KEY_ID`     | IAM-Zugangsschlüssel für SES                                   |
+| `AWS_SECRET_ACCESS_KEY` | dito                                                            |
+| `AWS_REGION`            | SES-Region, Vorgabe `eu-central-1`                              |
+| `AWS_SES_FROM_EMAIL`    | Absenderadresse — Domain muss in SES verifiziert sein           |
+| `AWS_SES_FROM_NAME`     | Anzeigename des Absenders                                       |
+| `SES_CONTACT_LIST`      | optional, Name der Kontaktliste (Vorgabe `botanical-bytes`)     |
+| `NEWSLETTER_SECRET`     | ≥ 32 zufällige Zeichen, signiert Confirm-/Unsubscribe-Links     |
+| `SITE_URL`              | Öffentliche Basis-URL (für Mails, Sitemap, OG) — auch beim Build |
+
+### Newsletter über SES
+
+Der Versand läuft über `@aws-sdk/client-sesv2`, die Abonnentenliste über die
+SES-Kontaktlisten — dasselbe Konto wie bei tflit.com, dadurch keine zusätzliche
+Datenbank und kein zweiter Dienstleister.
+
+Der IAM-Nutzer braucht:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": [
+      "ses:SendEmail",
+      "ses:GetContactList", "ses:CreateContactList", "ses:ListContactLists",
+      "ses:CreateContact", "ses:GetContact", "ses:UpdateContact", "ses:DeleteContact"
+    ],
+    "Resource": "*"
+  }]
+}
+```
+
+Im TFLIT-Konto (Region Frankfurt) ist **`tflit.co`** per Easy DKIM verifiziert,
+mit `app.tflit.co` als Custom-MAIL-FROM; das Konto hat Produktionszugriff.
+`tflit.com` ist dort **nicht** verifiziert. Absender ist deshalb
+`newsletter@tflit.co`. Soll die Adresse auf `tflit.com` oder
+`botanicalbytes.tflit.com` lauten, muss die Domain zuerst in SES verifiziert
+werden (drei DKIM-CNAMEs in Cloudflare) — danach genügt ein Ändern von
+`AWS_SES_FROM_EMAIL`.
+
+Die Kontaktliste legt der erste bestätigte Abonnent automatisch an. SES erlaubt
+nur eine Liste pro Konto und Region; existiert bereits eine, wird sie mitbenutzt.
 
 ## Deployment (Coolify)
 
@@ -68,5 +106,5 @@ Ein Push auf `main` löst automatisch ein Redeploy aus.
 
 - [ ] Impressum + Datenschutzerklärung ausfüllen (`src/content/de.ts` / `en.ts`, Platzhalter sind markiert)
 - [ ] Presse-Einträge bestätigen (`press.outlets` in den Dictionaries)
-- [ ] Resend: Domain verifizieren, `RESEND_API_KEY` in Coolify setzen
+- [ ] SES: Absenderdomain verifizieren, Produktionszugriff beantragen, IAM-Keys in Coolify setzen
 - [ ] Logo-Datei einsetzen, falls vorhanden (aktuell Wortmarke + `src/app/icon.svg`)
