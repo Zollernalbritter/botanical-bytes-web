@@ -3,12 +3,12 @@ import { unsubscribe } from "@/lib/contacts";
 import { sesConfigured } from "@/lib/mailer";
 import { verifyToken } from "@/lib/newsletter-token";
 import { resolveLocale } from "../../shared";
+import { SITE_URL } from "@/lib/site";
 
 // POST statt GET — siehe confirm/route.ts: Mail-Scanner dürfen niemals
 // versehentlich Abmeldungen auslösen.
 export async function POST(request: Request) {
   const url = new URL(request.url);
-  const origin = url.origin;
   let form: FormData;
   try {
     form = await request.formData();
@@ -16,9 +16,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
   const locale = resolveLocale(form.get("locale"));
+  // Siehe confirm/route.ts: request.url zeigt im Container auf 0.0.0.0:3000.
   const back = (state: string) =>
     NextResponse.redirect(
-      `${origin}/${locale}?newsletter=${state}#newsletter`,
+      `${SITE_URL}/${locale}?newsletter=${state}#newsletter`,
       303,
     );
 

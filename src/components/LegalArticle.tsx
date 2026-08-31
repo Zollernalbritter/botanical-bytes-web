@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "./ui/icons";
 
 export type LegalData = {
   title: string;
-  todoNote: string;
+  note: string;
   sections: { h: string; lines: string[] }[];
   backHome: string;
 };
@@ -22,9 +22,11 @@ export function LegalArticle({
       <h1 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
         {data.title}
       </h1>
-      <p className="mt-4 inline-block rounded-full bg-moss-tint px-3.5 py-1.5 text-xs font-medium">
-        {data.todoNote}
-      </p>
+      {data.note && (
+        <p className="mt-4 inline-block rounded-full bg-moss-tint px-3.5 py-1.5 text-xs font-medium">
+          {data.note}
+        </p>
+      )}
       {data.sections.map((section) => (
         <section key={section.h} className="mt-8">
           <h2 className="font-display text-xl font-medium tracking-tight">

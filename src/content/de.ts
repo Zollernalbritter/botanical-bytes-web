@@ -401,7 +401,7 @@ export const de = {
   //    Medienstaatsvertrag ersetzt.
   impressum: {
     title: "Impressum",
-    todoNote: "Es fehlt noch die E-Mail-Adresse.",
+    note: "",
     sections: [
       {
         h: "Angaben gemäß § 5 DDG",
@@ -423,7 +423,7 @@ export const de = {
       },
       {
         h: "Kontakt",
-        lines: ["Telefon: +49 1511 4490016", "E-Mail: [TODO: E-Mail-Adresse]"],
+        lines: ["Telefon: +49 1511 4490016", "E-Mail: info@tflit.com"],
       },
       {
         h: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
@@ -461,15 +461,13 @@ export const de = {
     ],
     backHome: "Zurück zur Startseite",
   },
-  // Der Verantwortliche ist derselbe wie im Impressum — das ist keine
-  // Auslegungsfrage, sondern folgt daraus. Die übrigen Abschnitte bleiben
-  // bewusst als Lücke stehen: Hosting hängt am Betreibermodell (Coolify auf
-  // welchem Server, in welchem Land), und Betroffenenrechte gehören von
-  // jemandem geschrieben, der dafür geradesteht. Erfundene Angaben wären hier
-  // schlimmer als sichtbar fehlende.
+  // Alle Angaben hier sind gegen die tatsächliche Infrastruktur geprüft:
+  // Hetzner-Server in Falkenstein, SES in der Region Frankfurt, keine Cookies,
+  // kein Tracking, Schriften selbst gehostet. Wer den Stack ändert, ändert
+  // diesen Text mit — sonst steht hier eine Zusicherung, die nicht mehr gilt.
   datenschutz: {
     title: "Datenschutzerklärung",
-    todoNote: "Hosting, Betroffenenrechte und Stand fehlen noch.",
+    note: "",
     sections: [
       {
         h: "Verantwortlicher",
@@ -478,28 +476,45 @@ export const de = {
           "Gölzstraße 12, 72072 Tübingen, Deutschland",
           "Vertreten durch Tillmann Lang, Geschäftsführer",
           "Telefon: +49 1511 4490016",
-          "E-Mail: [TODO: E-Mail-Adresse]",
+          "E-Mail: info@tflit.com",
         ],
       },
       {
-        h: "Hosting",
+        h: "Hosting und Server-Logfiles",
         lines: [
-          "[TODO: Hostinganbieter, Standort der Server, Auftragsverarbeitungsvertrag, Server-Logfiles und Speicherdauer ergänzen]",
+          "Die Website läuft auf einem Server der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen. Der Server steht im Rechenzentrum Falkenstein in Deutschland; die Daten verlassen die Europäische Union nicht. Mit Hetzner besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
+          "Beim Aufruf der Website verarbeitet die Server-Infrastruktur technisch notwendige Verbindungsdaten: IP-Adresse, Datum und Uhrzeit der Anfrage, die aufgerufene Adresse, den Statuscode, die übertragene Datenmenge und die vom Browser übermittelte Kennung. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und störungsfreien Betrieb nach Art. 6 Abs. 1 lit. f DSGVO.",
+          "Diese Verbindungsdaten werten wir ausschließlich für den technischen Betrieb und die Fehlersuche aus. Sie werden nicht mit anderen Daten zusammengeführt und gelöscht, sobald sie dafür nicht mehr erforderlich sind.",
+          "Die DNS-Auflösung für tflit.com läuft über Cloudflare. Der Abruf dieser Seite geht direkt an unseren Server — Cloudflare ist dem Webserver nicht vorgeschaltet und sieht die einzelnen Seitenaufrufe nicht.",
+          "Wir setzen keine Cookies, keine Web-Analyse und kein Tracking ein. Auch Schriftarten, Bilder und Videos liefern wir vom eigenen Server aus; es werden keine externen Schriftarten oder Content-Delivery-Netzwerke eingebunden.",
+        ],
+      },
+      {
+        h: "Kontaktaufnahme",
+        lines: [
+          "Wenn Sie uns per E-Mail oder Telefon erreichen, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, bei vertragsbezogenen Anfragen Art. 6 Abs. 1 lit. b DSGVO. Wir löschen die Nachrichten, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
         ],
       },
       {
         h: "Newsletter",
         lines: [
-          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Nach dem Eintragen erhalten Sie eine E-Mail mit einem Bestätigungslink; erst danach ist die Adresse gespeichert. Für den Versand nutzen wir Amazon Simple Email Service (Amazon Web Services, Region Frankfurt).",
-          "Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Sie können sie jederzeit über den Abmeldelink am Ende jeder E-Mail widerrufen; die Adresse wird dann gelöscht.",
-          "[TODO: Auftragsverarbeitung mit Amazon Web Services (AWS DPA), Speicherdauer und Protokollierung der Einwilligung ergänzen]",
+          "Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Nach dem Eintragen erhalten Sie eine E-Mail mit einem Bestätigungslink; erst danach ist die Adresse gespeichert. Bestätigen Sie nicht, wird nichts gespeichert — der Link verfällt nach 48 Stunden.",
+          "Für den Versand und die Empfängerliste nutzen wir Amazon Simple Email Service der Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, 1855 Luxemburg. Die Verarbeitung findet in der Region Frankfurt statt. Es besteht ein Auftragsverarbeitungsvertrag (AWS GDPR Data Processing Addendum).",
+          "Gespeichert werden Ihre E-Mail-Adresse, der Zeitpunkt Ihrer Bestätigung und die gewählte Sprache. Der Zeitpunkt dient dem Nachweis Ihrer Einwilligung nach Art. 7 Abs. 1 DSGVO.",
+          "Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Sie können sie jederzeit über den Abmeldelink am Ende jeder E-Mail widerrufen; die Adresse wird dann gelöscht. Bis dahin speichern wir sie, um Ihnen den Newsletter zusenden zu können.",
+          "Unsere E-Mails enthalten keine Zählpixel. Wir messen weder, ob Sie eine Nachricht öffnen, noch, ob Sie einen Link darin anklicken.",
         ],
       },
       {
         h: "Ihre Rechte",
-        lines: ["[TODO: Betroffenenrechte nach DSGVO aufführen]"],
+        lines: [
+          "Sie haben das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO), auf Berichtigung unrichtiger Daten (Art. 16 DSGVO), auf Löschung (Art. 17 DSGVO), auf Einschränkung der Verarbeitung (Art. 18 DSGVO) und auf Herausgabe Ihrer Daten in einem gängigen Format (Art. 20 DSGVO).",
+          "Verarbeitungen, die auf einem berechtigten Interesse beruhen, können Sie nach Art. 21 DSGVO widersprechen. Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO); die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt davon unberührt.",
+          "Für all das genügt eine formlose Nachricht an info@tflit.com.",
+          "Unabhängig davon können Sie sich bei einer Aufsichtsbehörde beschweren (Art. 77 DSGVO). Für uns zuständig ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.",
+        ],
       },
-      { h: "Stand", lines: ["[TODO: Datum]"] },
+      { h: "Stand", lines: ["31. August 2026"] },
     ],
     backHome: "Zurück zur Startseite",
   },
