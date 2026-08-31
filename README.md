@@ -53,9 +53,20 @@ der alten Website und sind sonst nirgends gesichert.
 | `SITE_URL`          | Öffentliche Basis-URL (für Mails, Sitemap, OG)              |
 | `NEWSLETTER_FROM`   | Absender (erst nach Domain-Verifizierung bei Resend ändern) |
 
+## Deployment (Coolify)
+
+Die Seite läuft auf der Coolify-Instanz von TFLIT (`coolify-tflit.tflit.de`) unter
+<https://botanicalbytes.tflit.com>. Gebaut wird aus dem `Dockerfile` im Repo-Root:
+mehrstufiges Image auf Node 22, Next im `standalone`-Modus, Server auf Port 3000.
+
+`SITE_URL` wird als **Build-Variable** gebraucht — `sitemap.xml`, `robots.txt` und
+`metadataBase` werden beim Build vorgerendert. Die übrigen Variablen reichen zur Laufzeit.
+
+Ein Push auf `main` löst automatisch ein Redeploy aus.
+
 ## Offene Punkte vor Veröffentlichung
 
 - [ ] Impressum + Datenschutzerklärung ausfüllen (`src/content/de.ts` / `en.ts`, Platzhalter sind markiert)
 - [ ] Presse-Einträge bestätigen (`press.outlets` in den Dictionaries)
-- [ ] Resend: Domain verifizieren, Env-Vars in Vercel setzen
+- [ ] Resend: Domain verifizieren, `RESEND_API_KEY` in Coolify setzen
 - [ ] Logo-Datei einsetzen, falls vorhanden (aktuell Wortmarke + `src/app/icon.svg`)
