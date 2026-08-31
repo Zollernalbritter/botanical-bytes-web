@@ -1,0 +1,13 @@
+.git
+.github
+.context
+node_modules
+.next
+out
+build
+npm-debug.log*
+.DS_Store
+.env*
+!.env.example
+# Rohmaterial der Asset-Pipeline — wird nur lokal gebraucht, nie im Image
+assets-src
