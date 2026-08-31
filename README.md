@@ -80,13 +80,15 @@ Der IAM-Nutzer braucht:
 }
 ```
 
-Im TFLIT-Konto (Region Frankfurt) ist **`tflit.co`** per Easy DKIM verifiziert,
-mit `app.tflit.co` als Custom-MAIL-FROM; das Konto hat Produktionszugriff.
-`tflit.com` ist dort **nicht** verifiziert. Absender ist deshalb
-`newsletter@tflit.co`. Soll die Adresse auf `tflit.com` oder
-`botanicalbytes.tflit.com` lauten, muss die Domain zuerst in SES verifiziert
-werden (drei DKIM-CNAMEs in Cloudflare) — danach genügt ein Ändern von
-`AWS_SES_FROM_EMAIL`.
+Das TFLIT-Konto (Region Frankfurt) hat Produktionszugriff. Als Absenderdomain
+ist **`botanicalbytes.tflit.com`** eine eigene SES-Identität mit Easy DKIM —
+bewusst nicht `tflit.com`, damit die Zustell-Reputation des Newsletters von der
+Google-Workspace-Mail der Hauptdomain getrennt bleibt. Absender ist
+`newsletter@botanicalbytes.tflit.com`.
+
+DMARC erbt von `tflit.com` (`p=none`); DKIM signiert mit der Subdomain und ist
+damit strikt aligned. Ein Custom-MAIL-FROM ist nicht nötig, weil die
+DKIM-Ausrichtung DMARC allein erfüllt.
 
 Die Kontaktliste legt der erste bestätigte Abonnent automatisch an. SES erlaubt
 nur eine Liste pro Konto und Region; existiert bereits eine, wird sie mitbenutzt.

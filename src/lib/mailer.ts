@@ -30,7 +30,8 @@ function encodeHeaderWord(value: string): string {
 }
 
 function fromAddress(): string {
-  const email = process.env.AWS_SES_FROM_EMAIL ?? "newsletter@tflit.co";
+  const email =
+    process.env.AWS_SES_FROM_EMAIL ?? "newsletter@botanicalbytes.tflit.com";
   const name = process.env.AWS_SES_FROM_NAME ?? "Botanical Bytes";
   return `${encodeHeaderWord(name)} <${email}>`;
 }
